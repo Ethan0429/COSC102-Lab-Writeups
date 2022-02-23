@@ -45,7 +45,7 @@ It might seem daunting at first, but luckily C++ has made it almost as simple as
    
     - The `fstream` library has 3 types of ways to interact with a file: `ofstream`, `ifstream`, and `fstream`. Each of those words are types derived from the `fstream` library, and they allow you to define a variable that will be your "handle" for manipulating files. 
     `ofstream` allows you to *output* to a file, (hence the 'o'), `ifstream` allows you to *read* from a file, and `fstream` allows you to do both simultaneously. Their syntax varies compared to `iostream`'s `cout` & `cin`, but I hope you can already see the similarities.
-    
+
     ```c++
     #include <iostream>
     #include <fstream> // including fstream
@@ -180,6 +180,7 @@ All of this pedantic output formatting will be accomplished via the `<iomanip>` 
             Highway multiplier:     9.4412
             Residential multiplier: 17.1525
             None of the above:      12.152
+            
     From there, calculating the fine is easy. The multiplier is multiplied to the difference between the speed limit and the clocked speed to determine the fine's dollar amount. Note you'll need to use a switch statement to apply the fine multiplier as well. Look at step 5 to get more on that.
    
 
