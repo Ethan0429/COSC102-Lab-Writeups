@@ -15,9 +15,9 @@ I'm just ranting at this point.
 
 You can find me at the following things
 
-[GitHub](https://github.com/Ethan0429){: .btn .btn-black }
-[LinkedIn](https://www.linkedin.com/in/ethan-rickert-7817101b6/){: .btn .btn-black }
-[Discord](https://discord.com/users/191347573464760324/){: .btn .btn-black }
+[GitHub](https://github.com/Ethan0429){: .btn .btn-purple .mr-4}
+[LinkedIn](https://www.linkedin.com/in/ethan-rickert-7817101b6/){: .btn .btn-purple .mr-4}
+[Discord](https://discord.com/users/191347573464760324/){: .btn .btn-purple .mr-4}
 
 ###### here's a picture of me chasing my cat up a tree at 3 am because she's so adventerous and awful
 ![me&kitty](../img/kat.png)
