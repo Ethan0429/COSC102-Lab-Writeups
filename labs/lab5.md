@@ -14,7 +14,7 @@ nav_order: 1
 
 ## Step 1: Prompt for user input
 
-- #### Prompt user for
+- ### Prompt user for
     {: .no_toc }
 
   - ticket file (`std::string`)
@@ -37,11 +37,11 @@ nav_order: 1
 the interesting part of this lab is that this will likely be your first time working with file input/output in C++ (or maybe any programming language for that matter)
 It might seem daunting at first, but luckily C++ has made it almost as simple as `stdin` I/O, and you'll see that moving forward.
 
-- #### The `Fstream` Library
+- ### The `Fstream` Library
 
   - Similar to `<iostream>`, `<fstream>` is basically a subset of the former. It provides very similar methods for you to interact with files the same way you would `stdin` (i.e. reading/writing) For more information about the library, you can check out [the documentation here](https://en.cppreference.com/w/cpp/header/fstream). But I'll give a brief description of the bulk of it below.
 
-  - ##### Opening a file
+  - ### Opening a file
    
     - The `fstream` library has 3 types of ways to interact with a file: `ofstream`, `ifstream`, and `fstream`. Each of those words are types derived from the `fstream` library, and they allow you to define a variable that will be your "handle" for manipulating files. 
     `ofstream` allows you to *output* to a file, (hence the 'o'), `ifstream` allows you to *read* from a file, and `fstream` allows you to do both simultaneously. Their syntax varies compared to `iostream`'s `cout` & `cin`, but I hope you can already see the similarities.
