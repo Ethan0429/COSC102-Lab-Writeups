@@ -3,17 +3,19 @@ layout: default
 title: Lab 5 - Speeding Ticket Calculator
 nav_order: 1
 ---
-
 # Lab 5 - Speeding Ticket Calculator
+{: .no_toc }
 
-1. Quick Links
+## Table of contents
+{: .no_toc }
+- TOC
 {:toc}
 
 
 ## Step 1: Prompt for user input
 
 - #### Prompt user for
-{: .no_toc }
+    {: .no_toc }
 
   - ticket file (`std::string`)
   - report file (`std::string`)
