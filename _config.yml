@@ -1,3 +1,4 @@
 title: "COSC 102 Lab Writeups"
 remote_theme: pmarsceill/just-the-docs
-search_enabled: false
+logo: "img/server.png"
+search_enabled: true
