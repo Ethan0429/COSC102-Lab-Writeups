@@ -1,4 +1,14 @@
-# COSC 102 Lab 5 - Speeding Ticket Calculator
+---
+layout: default
+title: Lab 5 - Speeding Ticket Calculator
+nav_order: 1
+---
+
+# Lab 5 - Speeding Ticket Calculator
+
+1. Quick Links
+{:toc}
+
 
 ## Step 1: Prompt for user input
 
@@ -10,6 +20,7 @@
   - report end date (3 `int`'s in the format `mm dd yyy`)
 
     ##### example
+    {: .no_toc }
 
     ```c++
     Enter a ticket file: ticket // ticket file is "ticket"
@@ -115,7 +126,7 @@ So you've opened the file, but now you need to read from it. Luckily, this is al
     The type of road is a single character: I or i (Interstate), R or r (Residential), H or h (Highway).
 
     ### **TLDR**
-
+    {: .no_toc }
     Create variables to read in your citation number, month, day, etc, and read them from the file same as you would using `cin`.
     ```c++
     citation_number = std::string
