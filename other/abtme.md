@@ -1,8 +1,3 @@
----
-layout: default
-title: About Me
-nav_order: 8
----
 # About Me
 
 Hey I'm Ethan Rickert, and I'm currently an undergraduate TA for UTK's Spring 2022 COSC 102 course.
