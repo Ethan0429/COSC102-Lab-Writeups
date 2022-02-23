@@ -714,7 +714,6 @@ hue-6-2: #e6c07b
     </head>
     <body class="vscode-body vscode-light">
         <h1 id="cosc-102-lab-5---speeding-ticket-calculator">COSC 102 Lab 5 - Speeding Ticket Calculator</h1>
-<hr>
 <h2 id="step-1-prompt-for-user-input">Step 1: Prompt for user input</h2>
 <ul>
 <li>
@@ -727,7 +726,7 @@ hue-6-2: #e6c07b
 <p>report file (<code>std::string</code>)</p>
 </li>
 <li>
-<p>report start date (3 <code>int</code>' <code>mm dd yyy</code>)</p>
+<p>report start date (3 <code>int</code>'s <code>mm dd yyy</code>)</p>
 </li>
 <li>
 <p>report end date (3 <code>int</code>'s in the format <code>mm dd yyy</code>)</p>
@@ -779,7 +778,7 @@ Once you've opened a file, you can manipulate it the same way you can with <code
 <p>I'm sure you've already discussed this in lecture, but if you haven't you can read on <a href="https://www.cplusplus.com/reference/fstream/fstream/open/">how to do so here</a>.</p>
 <ul>
 <li>
-<h5 id="caveats">caveats</h5>
+<h5 id="caveats"><strong>caveats</strong></h5>
 <p>There are two important things to note for this step:</p>
 <ol>
 <li>
@@ -816,7 +815,7 @@ Once you've opened a file, you can manipulate it the same way you can with <code
 <p>And now you should see the striking similarities! The above code reads everything from a file, and stuffs each &quot;word&quot; (whitespcae-separated string) into a variable as many times as we specify.</p>
 <ul>
 <li>
-<h5 id="caveats-1">caveats</h5>
+<h5 id="caveats-1"><strong>caveats</strong></h5>
 <p>If you're paying attention, you'll notice that the above code isn't fullproof. It reads 3 words into integer variables until you've reached the end of a file. But this has so many potential for errors. There's no guarantee that the file you'll open contains even <em>1</em> integer. The code is also overwriting <code>v1</code> over and over. It's not practical. Of course the example is pretty contrived, but my point is that it's much easier to read from a file if you know what to expect, and luckily for this lab the input file will adhere to a specific format:</p>
 <pre><code>E059564 8 12 2018 89 55 i
 E515522 7 3 2017 105 50 r
@@ -844,7 +843,7 @@ The clocked speed is an integer in miles per hour.
 The speed limit is an integer in miles per hour.
 The type of road is a single character: I or i (Interstate), R or r (Residential), H or h (Highway).</p>
 </blockquote>
-<h3 id="tldr">TLDR</h3>
+<h3 id="tldr"><strong>TLDR</strong></h3>
 <p>Create variables to read in your citation number, month, day, etc, and read them from the file same as you would using <code>cin</code>.</p>
 <pre><code class="language-c++"><div>citation_number = <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>
 month           = <span class="hljs-keyword">int</span>
