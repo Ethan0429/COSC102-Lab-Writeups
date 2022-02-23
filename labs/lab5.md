@@ -100,7 +100,7 @@ So you've opened the file, but now you need to read from it. Luckily, this is al
 
   - ### Caveats
  
-    If you're paying attention, you'll notice that the above code isn't fullproof. It reads words into integer variables until you've reached the end of a file. But this has so many potential for errors. There's no guarantee that the file you'll open contains even *1* integer. The code is also overwriting `v1` over and over. It's not practical. Of course the example is pretty contrived, but my point is that it's much easier to read from a file if you know what to expect, and luckily for this lab the input file will adhere to a specific format:
+    If you're paying attention, you'll notice that the above code isn't fullproof. It reads words into integer variables until you've reached the end of a file. But this has so much potential for errors. There's no guarantee that the file you'll open contains even *1* integer. The code is also overwriting `v1` over and over. It's not practical. Of course the example is pretty contrived, but my point is that it's much easier to read from a file if you know what to expect, and luckily for this lab the input file will adhere to a specific format:
     
         E059564 8 12 2018 89 55 i
         E515522 7 3 2017 105 50 r
