@@ -5,6 +5,6 @@ search_enabled: true
 ga_tracking: UA-5555555-55
 ga_tracking_anonymize_ip: true
 aux_links:
-"My GitHub":
-  - "//github.com/Ethan0429"
+"Star This Repo!":
+  - "https://github.com/Ethan0429/COSC102-Lab-Writeups"
 footer_content: "Written by Ethan Rickert, Undergraduate TA for COSC 102 2022 spring semester"
