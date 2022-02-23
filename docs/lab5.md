@@ -70,7 +70,7 @@ It might seem daunting at first, but luckily C++ has made it almost as simple as
     
     I'm sure you've already discussed this in lecture, but if you haven't you can read on [how to do so here](https://www.cplusplus.com/reference/fstream/fstream/open/).
 
-    - ##### **caveats**
+    - #### Caveats
 
         There are two important things to note for this step:
         1. you must **check to make sure the file is open** before continuing your program. If it's not open (even after attempting to open it), then you should handle that. If you do encounter a file that cannot be opened, that means it doesn't exist, and your output should look like this if that is the case
@@ -97,7 +97,7 @@ So you've opened the file, but now you need to read from it. Luckily, this is al
   ```
   And now you should see the striking similarities! The above code reads everything from a file, and stuffs each "word" (whitespcae-separated string) into a variable as many times as we specify.
 
-  - ##### **caveats**
+  - #### Caveats
  
     If you're paying attention, you'll notice that the above code isn't fullproof. It reads 3 words into integer variables until you've reached the end of a file. But this has so many potential for errors. There's no guarantee that the file you'll open contains even *1* integer. The code is also overwriting `v1` over and over. It's not practical. Of course the example is pretty contrived, but my point is that it's much easier to read from a file if you know what to expect, and luckily for this lab the input file will adhere to a specific format:
     
@@ -168,7 +168,7 @@ should have the corresponding output
 
 All of this pedantic output formatting will be accomplished via the `<iomanip>` library. This allows you to manipulate streams using modifiers like `setw()`, `left`, `right`, and more.
 
-- ##### caveats
+- #### Caveats
 
     Same as step 3, you need to make sure you 
     1. are able to open the specified file
