@@ -1,4 +1,8 @@
 title: "COSC 102 Lab Writeups"
 remote_theme: pmarsceill/just-the-docs
 logo: "img/server.png"
+heading_anchors: true
 search_enabled: true
+ga_tracking: UA-5555555-55
+ga_tracking_anonymize_ip: true
+footer_content: "Written by Ethan Rickert, Undergraduate TA for COSC 102 2022 spring semester"
