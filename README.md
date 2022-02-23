@@ -1,2 +1,2 @@
 # Description
-lab 5 writeup for cs360
+Collection of writeups for COSC 102 Labs
