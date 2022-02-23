@@ -13,6 +13,7 @@ nav_order: 1
 ## Step 1: Prompt for user input
 
 - #### Prompt user for
+{: .no_toc }
 
   - ticket file (`std::string`)
   - report file (`std::string`)
