@@ -85,7 +85,7 @@ It might seem daunting at first, but luckily C++ has made it almost as simple as
 
 So you've opened the file, but now you need to read from it. Luckily, this is almost entirely the same as using `cin` with a few exceptions
 
-- #### Using `ifstream`
+- ### Using `ifstream`
   - while `cin` is an input stream manipulator just like `ifstream`, `cin` is pre-defined for you. You'll need to define your *own* `ifstream` manipulator before you can do any reading.
   ```c++
   ifstream fin;
