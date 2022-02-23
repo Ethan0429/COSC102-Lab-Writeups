@@ -45,6 +45,7 @@ It might seem daunting at first, but luckily C++ has made it almost as simple as
    
     - The `fstream` library has 3 types of ways to interact with a file: `ofstream`, `ifstream`, and `fstream`. Each of those words are types derived from the `fstream` library, and they allow you to define a variable that will be your "handle" for manipulating files. 
     `ofstream` allows you to *output* to a file, (hence the 'o'), `ifstream` allows you to *read* from a file, and `fstream` allows you to do both simultaneously. Their syntax varies compared to `iostream`'s `cout` & `cin`, but I hope you can already see the similarities.
+    
     ```c++
     #include <iostream>
     #include <fstream> // including fstream
