@@ -3,7 +3,6 @@ layout: default
 title: Lab 6 - Coming Soon
 nav_order: 2
 ---
-<<<<<<< HEAD
 
 # Lab 6 - Blackjack
 {: .no_toc }
@@ -26,8 +25,3 @@ In case it wasn't obvious from the name of the lab, the objective of this lab is
         
 so a card could be Ace of Spades, 3 of Clubs, Queen of Hearts -- you get the idea.
 4. Each card will have an abbreviation consisting of 2 capital chars
-
-
-=======
-# Coming soon...
->>>>>>> 5413af29070f49f87554359a64df586147663ab6
