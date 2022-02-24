@@ -6,6 +6,12 @@ nav_order: 1
 # Lab 5 - Speeding Ticket Calculator
 {: .no_toc }
 
+## Star me!
+{: .no_toc }
+If this lab writeup helped you, star the repo! It's instant and costs nothing whatsoever. It only serves to boost my ego and make a tiny bit happier
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/Ethan0429/COSC102-Lab-Writeups" data-color-scheme="no-preference: light; light: dark_high_contrast; dark: light_high_contrast;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star Ethan0429/COSC102-Lab-Writeups on GitHub">Star</a>
+
 ## Table of contents
 {: .no_toc }
 - TOC
