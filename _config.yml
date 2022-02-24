@@ -14,3 +14,8 @@ aux_links:
     - "https://ethan0429.github.io/COSC102-Lab-Writeups/other/abtme.html"
 
 aux_links_new_tab: true
+
+kramdown:
+syntax_highlighter_opts:
+  disable : true
+
