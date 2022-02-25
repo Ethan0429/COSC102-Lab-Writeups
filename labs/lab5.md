@@ -129,14 +129,16 @@ So you've opened the file, but now you need to read from it. Luckily, this is al
   Hopefully you've already done this assuming you've finished step 2. Once you've opened a file, you can interact with it the same way you interact with `stdin` (standard input e.g. the console/terminal) when you're getting user input. The difference is that the input is the contents of the file you're reading from.
   ```c++
   ifstream fin; // pretend we opened a file
-  int v;
-  while (fin >> v)
+  int v, v2, v3
+  while (fin >> v >> v2 >> v3) {
+      // do whatever we want...
+  }
   ```
   And now you should see the striking similarities! The above code reads everything from a file, and stuffs each "word" (whitespcae-separated string) into a variable as many times as we specify.
 
   - ### Caveats
  
-    If you're paying attention, you'll notice that the above code isn't fullproof. It reads words into integer variables until you've reached the end of a file. But this has so much potential for errors. There's no guarantee that the file you'll open contains even *1* integer. The code is also overwriting `v1` over and over. It's not practical. Of course the example is pretty contrived, but my point is that it's much easier to read from a file if you know what to expect, and luckily for this lab the input file will adhere to a specific format:
+    Given an input file with the following format, you should easily be able to `fin >>` as many times as there are "words" in the file. Move each value into its respective variable with `while (fin >> v1 >> v2 >> v3 >> v4 >> v5 >> v6 >> v)` (dont use those var names) and do stuff with them. This will read one line at a time from an input file with the following format
     
         E059564 8 12 2018 89 55 i
         E515522 7 3 2017 105 50 r
@@ -157,22 +159,23 @@ So you've opened the file, but now you need to read from it. Luckily, this is al
         speed limit     = 55
         type of road    = i
 
-    More information about the file format (straight from the lab page on Canvas)
-    > The citation number may contain numbers and letters.
-    The month is an integer between 1 (January) and 12 (December).
-    The day and year are integers.
-    The clocked speed is an integer in miles per hour.
-    The speed limit is an integer in miles per hour.
-    The type of road is a single character: I or i (Interstate), R or r (Residential), H or h (Highway).
+    More information about the file format (straight from the lab page on Canvas):
+
+    >The citation number may contain numbers and letters.
+    >The month is an integer between 1 (January) and 12 (December).
+    >The day and year are integers.
+    >The clocked speed is an integer in miles per hour.
+    >The speed limit is an integer in miles per hour.
+    >The type of road is a single character: I or i (Interstate), R or r (Residential), H or h (Highway).
 
     ### **TLDR**
     {: .no_toc }
     Create variables to read in your citation number, month, day, etc, and read them from the file same as you would using `cin`.
     ```c++
-    citation_number = std::string
+    citation_number = string
     month           = int
     day             = int
-    year            = int
+    year            = int //or string, more on this in the Hints section
     ...
     type of road    = char
     ```
@@ -208,9 +211,10 @@ All of this pedantic output formatting will be accomplished via the `<iomanip>` 
 - ### Caveats
 
     Same as step 3, you need to make sure you open/close and some more stuff:
-    1. are able to open the specified file
-    2. are closing the file handle once you're done with it (i.e. done outputting)
-    3. before you print anything, you'll need to determine if the ticket line you've just read is within a valid date range. If you did as I recommended in Step 1, then you will have setup your `difference` variables. Using these variable, you can determine if the date read from the ticket input file (in Step 3) is between the original `start` & `end` date using the following formula
+    1. you'll be calling `fout <<` in your `while` loop that's doing `fin >>`. So make sure you open the file with `fout` before starting the loop.
+    2. are able to open the specified file
+    3. are closing the file handle once you're done with it (i.e. done outputting)
+    4. before you print anything, you'll need to determine if the ticket line you've just read is within a valid date range. If you did as I recommended in Step 1, then you will have setup your `difference` variables. Using these variable, you can determine if the date read from the ticket input file (in Step 3) is between the original `start` & `end` date using the following formula
    
         ```python
         if end_year - ticket_yyyy <= diff_year and... [another condition] and ...:
@@ -240,7 +244,7 @@ Once you've done all of the above, you've basically finished! But there are a co
 
 ## Hints
 
-- #### `const`
+- ##### `const`
   a keyword that is added before a variable. If you use `const`, you are locking the value given to the variable in place for the entirety of your program. It's permanent, and you cannot change it. You won't ever `cin >> my_constant` either, because a `const` variable is defined at `compile time`, meaning you define its contents in your code before it's even run. If you create a const variable, it should almost always look something like
 
     ```c++
@@ -256,7 +260,7 @@ Once you've done all of the above, you've basically finished! But there are a co
 
     Notice how they're each assigned a value the moment they're declared. Just remmeber that value will not change!
 
-- #### `ifstream::open`
+- ##### `ifstream::open`
   in this case, it'll be `fin.open(filename)` because `fin` is the name I decided to give to my `ifstream` variable. This `fin.open(filename)` opens a file from the variable `filename`, which contains a `string` (e.g. something like "file.txt"). If that file doesn't exist, then `fin.open(filename)` will return `false`. If it does exist, then your `ifstream` handle (`fin` in this case) can read from the file the same way you read from input using `cin >>`:
    
     ```c++
@@ -280,7 +284,7 @@ Once you've done all of the above, you've basically finished! But there are a co
     fin.close() // make sure to close the file!!!
     ```
 
-- #### `ofstream::open` 
+- ##### `ofstream::open` 
     Almost the same as `ifstream::open`, except you can only **write** instead of **read**. If `filename` does not exist (e.g. file.txt is not a file in your current working directory) then `fout.open(filename)` will automatically create the file. If it *does* exist, then `fout.open(filename)` will delete the contents of `filename` and thus it will be empty. You can write to the file the same way you write to `stdout` (the console) using `cout <<`
     ```c++
     ofstream fout // create ofstream
@@ -301,7 +305,7 @@ Once you've done all of the above, you've basically finished! But there are a co
     fout.close() // make sure to close the file!!!
     ```
 
-- #### `<iomanip>`
+- ##### `<iomanip>`
   This is your output formatting library. For this assignment, you'll be using the following methods it provides you:
   - `left` prints any output following it in a left-justified field (i.e. it sticks to the left)
    
@@ -346,11 +350,11 @@ Once you've done all of the above, you've basically finished! But there are a co
     // thus it prints 6 more '-' characters to make it to width of 10
     ```
 
-- #### Formatting `yyyy`
+- ##### Formatting `yyyy`
   
   if you read `yyyy` into a `string` then you can check the size of a `string` similar to a `vector`; if you read `yyyy` into an `int` you can use `%` to determine the magnitude of a number, and thus its number digits.
 
-- #### Formatting `mm`
+- ##### Formatting `mm`
   
   remember that there are 12 month strings, so the size of the array is 12. You can index from 0-11, and the `mm` you read in is any value from 1-12) 
 
