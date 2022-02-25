@@ -36,7 +36,7 @@ nav_order: 1
 the interesting part of this lab is that this will likely be your first time working with file input/output in C++ (or maybe any programming language for that matter)
 It might seem daunting at first, but luckily C++ has made it almost as simple as `stdin` I/O, and you'll see that moving forward.
 
-- ### The `Fstream` Library
+- ### The `<fstream>` Library
 
   - Similar to `<iostream>`, `<fstream>` is basically a subset of the former. It provides very similar methods for you to interact with files the same way you would `stdin` (i.e. reading/writing) For more information about the library, you can check out [the documentation here](https://en.cppreference.com/w/cpp/header/fstream). But I'll give a brief description of the bulk of it below.
 
