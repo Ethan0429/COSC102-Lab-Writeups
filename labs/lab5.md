@@ -11,7 +11,7 @@ nav_order: 1
 - TOC
 {:toc}
 
-## Step 1: Prompt for user input
+## Step 1: Prompt for user input & General Setup
 
 - ### Prompt user for
     {: .no_toc }
@@ -31,6 +31,28 @@ nav_order: 1
     Enter report end date   (mm dd yyyy): 8 11 2018
     ```
 
+    This part is the same way you've been getting input. Just use `cin >> ` and read into the appropriate variables. 
+    
+- ### General Setup
+    Later in the lab you'll need to check if the line in the input file (more on that below) you're reading from contains a "date" that is between 
+    `[start date, end date]` (inclusive). I recommend setting this up at least somewhat here using the following formula:
+
+    ```c++
+    // from start date, read yyyy, dd, and mm into these variables respectively
+    int end_year, end_day, end_month; 
+    // read yyyy, dd, and mm into these variables respectively
+    int start_year, start_day, start_month; 
+
+    // once those are read in...
+
+    int year_difference = end_year - start_year;
+    int day_difference = end_day - start_day;
+    int month_difference = end_month - start_month;
+    ```
+
+    You'll see why this is useful in the later steps...
+    You should also initialize your `const` variables at the top of your program here. More info on this in the [Hints](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#hints) section.
+
 ## Step 2: File I/O
 
 the interesting part of this lab is that this will likely be your first time working with file input/output in C++ (or maybe any programming language for that matter)
@@ -45,23 +67,38 @@ It might seem daunting at first, but luckily C++ has made it almost as simple as
     - The `fstream` library has 3 types of ways to interact with a file: `ofstream`, `ifstream`, and `fstream`. Each of those words are types derived from the `fstream` library, and they allow you to define a variable that will be your "handle" for manipulating files. 
     `ofstream` allows you to *output* to a file, (hence the 'o'), `ifstream` allows you to *read* from a file, and `fstream` allows you to do both simultaneously. Their syntax varies compared to `iostream`'s `cout` & `cin`, but I hope you can already see the similarities.
 
-    ```c++
-    #include <iostream>
-    #include <fstream> // including fstream
-    using namespace std;
+        ```c++
+        #include <iostream>
+        #include <fstream> // including fstream
+        using namespace std;
 
-    int main() {
-        /* define handlers for file i/o 
-        note this is just demonstrating 
-        how fstream file handlers are declared */
+        int main() {
+            /* define handlers for file i/o 
+            note this is just demonstrating 
+            how fstream file handlers are declared */
 
-        ifstream fin; // can ONLY read files
-        ofstream fout; // can ONLY output to files
-        fstream finfout; // can BOTH read & output to files AND has a funny name
+            ifstream fin; // can ONLY read files
+            ofstream fout; // can ONLY output to files
+            fstream finfout; // can BOTH read & output to files AND has a funny name
 
-        // disclaimer you can call these whatever you want I was just making a joke
-    }
-    ```
+            // string to hold the name of our file
+            string file_name;
+
+            cout << "Enter file name: ";
+            // user enters file from the console and stores it in file_name
+            cin >> file_name;
+
+            // opens file_name for reading
+            fin.open(file_name);
+
+            // opens file_name for writing
+            fout.open(file_name);
+
+            // closes both file handles
+            fin.close();
+            fout.close();
+        }
+        ```
 
     Generally it's good practice to use whichever type of stream you'll need as opposed to using an `fstream` for everything, but I don't think it really matters for the purposes of this lab.
 
@@ -85,7 +122,7 @@ It might seem daunting at first, but luckily C++ has made it almost as simple as
 So you've opened the file, but now you need to read from it. Luckily, this is almost entirely the same as using `cin` with a few exceptions
 
 - ### Using `ifstream`
-  - while `cin` is an input stream manipulator just like `ifstream`, `cin` is pre-defined for you. You'll need to define your *own* `ifstream` manipulator before you can do any reading.
+  while `cin` is an input stream manipulator just like `ifstream`, `cin` is pre-defined for you. You'll need to define your *own* `ifstream` manipulator before you can do any reading.
   ```c++
   ifstream fin;
   ```
@@ -149,7 +186,7 @@ This process is very similar to step 3, and again has extremely familiar syntax 
 And even stricter:
 1. The day must be 2 digits exactly
 2. Month has to be any one of Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, or Dec
-3. The year must be either 4 digits. (ex. if you read 10 for the year, the output would be 2010; 17 the output would be 2017)
+3. The year must be 4 digits. (ex. if you read 10 for the year, the output would be 2010; 17 the output would be 2017)
 4. The citation will be output in a **left justified** field, **10 characters wide**. and should be immediately followed by a `$`. 
 5. The fine will be output after the `$`, **right justified**, and **9 characters wide**.
 6. Only print the citations that occurred between the start and end dates (inclusive) you read from step 1.
@@ -166,30 +203,155 @@ should have the corresponding output
     03-Jul-2017 E515522    $   943.39
     25-Dec-2017 E219221    $ 24182.48
 
-All of this pedantic output formatting will be accomplished via the `<iomanip>` library. This allows you to manipulate streams using modifiers like `setw()`, `left`, `right`, and more.
+All of this pedantic output formatting will be accomplished via the `<iomanip>` library. This allows you to manipulate streams using modifiers like `setw()`, `left`, `right`, and more. You can learn more about `<iomanip>` in the [Hints](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#hints) section.
 
 - ### Caveats
 
-    Same as step 3, you need to make sure you 
+    Same as step 3, you need to make sure you open/close and some more stuff:
     1. are able to open the specified file
     2. are closing the file handle once you're done with it (i.e. done outputting)
-    3. For printing the fine amount, you'll need to use the fine-multiplier specified in the lab writeup
+    3. before you print anything, you'll need to determine if the ticket line you've just read is within a valid date range. If you did as I recommended in Step 1, then you will have setup your `difference` variables. Using these variable, you can determine if the date read from the ticket input file (in Step 3) is between the original `start` & `end` date using the following formula
+   
+        ```python
+        if end_year - ticket_yyyy <= diff_year and... [another condition] and ...:
+            # then print ticket
+        else:
+            # skip this ticket
+        ```
+    The formula is a bit vague, but you should be able to do the rest yourself. You'll need to apply that formula for `dd`, `mm`, and `yyyy`. If any one of those checks returns false, then you'll skip that ticket.
+
+    1. for printing the correctly formatted year, you'll need to determine whether the `yyyy` you've read from the input file is 4 digits or less than 4 digits. There's more than one way to do this. 
+    2. for printing the month, you'll need to match the `mm` you've read in to the index of your `const string months[]` array. (I named my `months` you can name it whatever). 
+   *If you don't know what* `const` *is, read the* [Hints](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#hints) section.
+    1. for printing the fine amount, you'll need to use the fine-multiplier specified in the lab writeup
             
             Interstate multiplier:  5.2252
             Highway multiplier:     9.4412
             Residential multiplier: 17.1525
             None of the above:      12.152
             
-    From there, calculating the fine is easy. The multiplier is multiplied to the difference between the speed limit and the clocked speed to determine the fine's dollar amount. Note you'll need to use a switch statement to apply the fine multiplier as well. Look at step 5 to get more on that.
-   
+    From there, calculating the fine is easy. The multiplier is multiplied to the difference between the speed limit and the clocked speed to determine the fine's dollar amount. Note you'll need to use a switch statement to apply the fine multiplier as well. You should have a `const double` variable for each of the multipliers above. Define these at the beginning of your program. You'll use the switch statement to evaluate the `road type` `char`, and make a case for each potential `char` (`i`, `h`, `r`, and `p`). Each case should calculate the fine amount using whichever of the multipliers you've defined in your code. Again, more info on `const` in the [Hints](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#hints) section.
 
 ## Step 5: You made it!
 
 Once you've done all of the above, you've basically finished! But there are a couple things to look out for
 
 1. **MAKE SURE YOU'RE FORMATTING YOUR CODE NEATLY AND COMMENTING PROPERLY**. I made a small post about this on the Discord server, but it's very important you follow it. [Here's the link](https://discord.com/channels/935991929978621962/935991930582630404/945778803072974859). If you're not at least tangentially following that advice, you'll end up running into issues later down the line *I promise*.
-2. For formatting your 3-char months, you're ***required*** to have `const` **array** containing the variables you'll need to print (i.e. the months). 
-3. You're ***required*** to make your fine multipliers `const` variables as well. A `const` variable is just a variale that is declared at compile time, and using the keyword `const` is you making a promise (and the compiler as well) to not change the contents of that variable. It's good practice to make things that are static (unchanging) `const` so long as you know its value before even running the program.
-4. You're ***required*** to use a switch statement to apply the fine multiplier. (Hint, the signifier for each fine multiplier will be a char [i for interstate, for example])
+
+## Hints
+
+- #### `const`
+  a keyword that is added before a variable. If you use `const`, you are locking the value given to the variable in place for the entirety of your program. It's permanent, and you cannot change it. You won't ever `cin >> my_constant` either, because a `const` variable is defined at `compile time`, meaning you define its contents in your code before it's even run. If you create a const variable, it should almost always look something like
+
+    ```c++
+    // const array
+    const int arr[] = {1, 2, 3};
+
+    // const double
+    const double dbl = 2.0;
+
+    // const string
+    const string str = "this is constant";
+    ```
+
+    Notice how they're each assigned a value the moment they're declared. Just remmeber that value will not change!
+
+- #### `ifstream::open`
+  in this case, it'll be `fin.open(filename)` because `fin` is the name I decided to give to my `ifstream` variable. This `fin.open(filename)` opens a file from the variable `filename`, which contains a `string` (e.g. something like "file.txt"). If that file doesn't exist, then `fin.open(filename)` will return `false`. If it does exist, then your `ifstream` handle (`fin` in this case) can read from the file the same way you read from input using `cin >>`:
+   
+    ```c++
+    ifstream fin // create ifstream
+    fin.open("example_file.txt");
+
+    // pretend that example_file.txt has the following contents from /* to */:
+    /*
+    Hello my name is Ethan!
+    */
+
+    // define temporary string
+    string temporary_str;
+
+    fin >> temporary_str // temporary_str = Hello
+    fin >> temporary_str // temporary_str = my
+    fin >> temporary_str // temporary_str = name
+    fin >> temporary_str // temporary_str = is
+    fin >> temporary_str // temporary_str = Ethan!
+
+    fin.close() // make sure to close the file!!!
+    ```
+
+- #### `ofstream::open` 
+    Almost the same as `ifstream::open`, except you can only **write** instead of **read**. If `filename` does not exist (e.g. file.txt is not a file in your current working directory) then `fout.open(filename)` will automatically create the file. If it *does* exist, then `fout.open(filename)` will delete the contents of `filename` and thus it will be empty. You can write to the file the same way you write to `stdout` (the console) using `cout <<`
+    ```c++
+    ofstream fout // create ofstream
+    fout.open("example_file.txt");
+
+    // example_file.txt before writing with fout (empty)
+
+    fout << "I love ";
+    fout << "computer";
+    fout << " science\n";
+
+    // example_file.txt after writing with fout 
+    // has the following contents from /* to */:
+    /*
+    I love computer science
+
+    */
+    fout.close() // make sure to close the file!!!
+    ```
+
+- #### `<iomanip>`
+  This is your output formatting library. For this assignment, you'll be using the following methods it provides you:
+  - `left` prints any output following it in a left-justified field (i.e. it sticks to the left)
+   
+    ```c++
+    #include <iomanip> // include iomanip!!!
+    // other stuff...
+
+    cout << left << "I'm a lefty\n";
+    ```
+  - `right` prints any output following it in a right-justified field (i.e. it sticks to the right)
+   
+    ```c++
+    #include <iomanip> // include iomanip!!!
+    // other stuff...
+
+    cout << right << "I'm a righty\n";
+    ```
+  - `setfill(fill)` - defines the "fill" character using the paramter provided `fill`. Anything printed after this is set will fill whatever whitespace is output with whatever `fill` is
+    ```c++
+    #include <iomanip> // include iomanip!!!
+    // other stuff...
+
+    // set fill char to '-'
+    cout << left << setfill('-') << setw(10) << 1000 << '\n';
+
+    // prints:
+    // 1000------
+    ```
+  - `setw(len)` - defines the width in integer length `len` of the next value printed. If the value printed is 4 chars wide, and `setw(10)` is applied, then the value will be "padded" 6 extra characters (determined by `setfill()`) to get to a total width of 10
+
+    ```c++
+    #include <iomanip> // include iomanip!!!
+    // other stuff...
+
+    // set fill char to '-' & width to 10
+    cout << left << setfill('-') << setw(10) << 1000 << '\n';
+
+    // prints:
+    // 1000------
+
+    // notice how 1000 is 4 chars wide, and width is set to 10.
+    // thus it prints 6 more '-' characters to make it to width of 10
+    ```
+
+- #### Formatting `yyyy`
+  
+  if you read `yyyy` into a `string` then you can check the size of a `string` similar to a `vector`; if you read `yyyy` into an `int` you can use `%` to determine the magnitude of a number, and thus its number digits.
+
+- #### Formatting `mm`
+  
+  remember that there are 12 month strings, so the size of the array is 12. You can index from 0-11, and the `mm` you read in is any value from 1-12) 
 
 That's it. Bye!
