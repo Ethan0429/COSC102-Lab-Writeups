@@ -244,7 +244,7 @@ Once you've done all of the above, you've basically finished! But there are a co
 
 ## Hints
 
-- ##### `const`
+- ### `const`
   a keyword that is added before a variable. If you use `const`, you are locking the value given to the variable in place for the entirety of your program. It's permanent, and you cannot change it. You won't ever `cin >> my_constant` either, because a `const` variable is defined at `compile time`, meaning you define its contents in your code before it's even run. If you create a const variable, it should almost always look something like
 
     ```c++
@@ -260,7 +260,7 @@ Once you've done all of the above, you've basically finished! But there are a co
 
     Notice how they're each assigned a value the moment they're declared. Just remmeber that value will not change!
 
-- ##### `ifstream::open`
+- ### `ifstream::open`
   in this case, it'll be `fin.open(filename)` because `fin` is the name I decided to give to my `ifstream` variable. This `fin.open(filename)` opens a file from the variable `filename`, which contains a `string` (e.g. something like "file.txt"). If that file doesn't exist, then `fin.open(filename)` will return `false`. If it does exist, then your `ifstream` handle (`fin` in this case) can read from the file the same way you read from input using `cin >>`:
    
     ```c++
@@ -284,7 +284,7 @@ Once you've done all of the above, you've basically finished! But there are a co
     fin.close() // make sure to close the file!!!
     ```
 
-- ##### `ofstream::open` 
+- ### `ofstream::open` 
     Almost the same as `ifstream::open`, except you can only **write** instead of **read**. If `filename` does not exist (e.g. file.txt is not a file in your current working directory) then `fout.open(filename)` will automatically create the file. If it *does* exist, then `fout.open(filename)` will delete the contents of `filename` and thus it will be empty. You can write to the file the same way you write to `stdout` (the console) using `cout <<`
     ```c++
     ofstream fout // create ofstream
@@ -305,7 +305,7 @@ Once you've done all of the above, you've basically finished! But there are a co
     fout.close() // make sure to close the file!!!
     ```
 
-- ##### `<iomanip>`
+- ### `<iomanip>`
   This is your output formatting library. For this assignment, you'll be using the following methods it provides you:
   - `left` prints any output following it in a left-justified field (i.e. it sticks to the left)
    
@@ -350,11 +350,11 @@ Once you've done all of the above, you've basically finished! But there are a co
     // thus it prints 6 more '-' characters to make it to width of 10
     ```
 
-- ##### Formatting `yyyy`
+- ### Formatting `yyyy`
   
   if you read `yyyy` into a `string` then you can check the size of a `string` similar to a `vector`; if you read `yyyy` into an `int` you can use `%` to determine the magnitude of a number, and thus its number digits.
 
-- ##### Formatting `mm`
+- ### Formatting `mm`
   
   remember that there are 12 month strings, so the size of the array is 12. You can index from 0-11, and the `mm` you read in is any value from 1-12) 
 
