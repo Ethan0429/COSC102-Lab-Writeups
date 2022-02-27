@@ -16,6 +16,12 @@ aux_links:
 aux_links_new_tab: true
 
 kramdown:
+  input: GFM
   syntax_highlighter_opts:
-    disable : true
-
+    default_lang: html
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
