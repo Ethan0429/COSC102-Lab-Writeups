@@ -241,11 +241,12 @@ All of this pedantic output formatting will be accomplished via the `<iomanip>` 
 Once you've done all of the above, you've basically finished! But there are a couple things to look out for
 
 1. **MAKE SURE YOU'RE FORMATTING YOUR CODE NEATLY AND COMMENTING PROPERLY**. I made a small post about this on the Discord server, but it's very important you follow it. [Here's the link](https://discord.com/channels/935991929978621962/935991930582630404/945778803072974859). If you're not at least tangentially following that advice, you'll end up running into issues later down the line *I promise*.
+2. Make sure you're adhering to the rubric on the lab Canvas page. If you've not done everything as specified in the rubrik, then don't be surprised if your grade is penalized for it. That includes having your output match the solution output *exactly* (including any newline characters i.e. `\n`!)
 
 ## Hints
 
 - ### `const`
-  a keyword that is added before a variable. If you use `const`, you are locking the value given to the variable in place for the entirety of your program. It's permanent, and you cannot change it. You won't ever `cin >> my_constant` either, because a `const` variable is defined at `compile time`, meaning you define its contents in your code before it's even run. If you create a const variable, it should almost always look something like
+  a keyword that is added before a variable. If you use `const`, you are locking the value given to the variable in place for the entirety of your program. It's permanent, and you cannot change it. You won't ever `cin >> my_constant` either, because a `const` variable is defined at "compile time", meaning you define its contents in your code before it's even run. If you create a const variable, it should almost always look something like
 
     ```c++
     // const array
