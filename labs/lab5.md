@@ -24,12 +24,13 @@ nav_order: 1
     ##### example
     {: .no_toc }
 
-    {% highlight ruby linenos %}
+    {% highlight c++ linenos %}
     Enter a ticket file: ticket // ticket file is "ticket"
     Enter a report file: output // report file is "output"
     Enter report start date (mm dd yyyy): 7 1 2017 // three ints separated by spaces
     Enter report end date   (mm dd yyyy): 8 11 2018
     {% endhighlight %}
+
 
     This part is the same way you've been getting input. Just use `cin >> ` and read into the appropriate variables. 
     
@@ -37,7 +38,7 @@ nav_order: 1
     Later in the lab you'll need to check if the line in the input file (more on that below) you're reading from contains a "date" that is between 
     `[start date, end date]` (inclusive). I recommend setting this up at least somewhat here using the following formula:
 
-    {% highlight ruby linenos %}
+    {% highlight c++ linenos %}
     // from start date, read yyyy, dd, and mm into these variables respectively
     int end_year, end_day, end_month; 
     // read yyyy, dd, and mm into these variables respectively
@@ -49,6 +50,7 @@ nav_order: 1
     int day_difference = end_day - start_day;
     int month_difference = end_month - start_month;
     {% endhighlight %}
+
 
     You'll see why this is useful in the later steps...
     You should also initialize your `const` variables at the top of your program here. More info on this in the [Hints](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#hints) section.
@@ -67,7 +69,7 @@ It might seem daunting at first, but luckily C++ has made it almost as simple as
     The `fstream` library has 3 types of ways to interact with a file: `ofstream`, `ifstream`, and `fstream`. Each of those words are types derived from the `fstream` library, and they allow you to define a variable that will be your "handle" for manipulating files. 
     `ofstream` allows you to *output* to a file, (hence the 'o'), `ifstream` allows you to *read* from a file, and `fstream` allows you to do both simultaneously. Their syntax varies compared to `iostream`'s `cout` & `cin`, but I hope you can already see the similarities.
 
-    {% highlight ruby linenos %}
+    {% highlight c++ linenos %}
     #include <iostream>
     #include <fstream> // including fstream
     using namespace std;
@@ -100,6 +102,7 @@ It might seem daunting at first, but luckily C++ has made it almost as simple as
     }
     {% endhighlight %}
 
+
     Generally it's good practice to use whichever type of stream you'll need as opposed to using an `fstream` for everything, but I don't think it really matters for the purposes of this lab.
 
 **The end goal of this section** is to use the `fstream` library to *read* lines from a file (so you won't be needing `ofstream` anyway, and can just stick to `ifstream`).
@@ -123,17 +126,21 @@ So you've opened the file, but now you need to read from it. Luckily, this is al
 
 - ### Using `ifstream`
   while `cin` is an input stream manipulator just like `ifstream`, `cin` is pre-defined for you. You'll need to define your *own* `ifstream` manipulator before you can do any reading.
-  {% highlight ruby linenos %}
+
+  {% highlight c++ linenos %}
   ifstream fin;
   {% endhighlight %}
+
   Hopefully you've already done this assuming you've finished step 2. Once you've opened a file, you can interact with it the same way you interact with `stdin` (standard input e.g. the console/terminal) when you're getting user input. The difference is that the input is the contents of the file you're reading from.
-  {% highlight ruby linenos %}
+
+  {% highlight c++ linenos %}
   ifstream fin; // pretend we opened a file
   int v, v2, v3
   while (fin >> v >> v2 >> v3) {
       // do whatever we want...
   }
   {% endhighlight %}
+
   And now you should see the striking similarities! The above code reads everything from a file, and stuffs each "word" (whitespcae-separated string) into a variable as many times as we specify.
 
   - ### Caveats
@@ -171,7 +178,7 @@ So you've opened the file, but now you need to read from it. Luckily, this is al
     ### **TLDR**
     {: .no_toc }
     Create variables to read in your citation number, month, day, etc, and read them from the file same as you would using `cin`.
-    {% highlight ruby linenos %}
+    {% highlight c++ linenos %}
     citation_number = string
     month           = int
     day             = int
@@ -179,6 +186,7 @@ So you've opened the file, but now you need to read from it. Luckily, this is al
     ...
     type of road    = char
     {% endhighlight %}
+
 
 ## Step 4: Outputting to a file
 
@@ -216,12 +224,14 @@ All of this pedantic output formatting will be accomplished via the `<iomanip>` 
     3. are closing the file handle once you're done with it (i.e. done outputting)
     4. before you print anything, you'll need to determine if the ticket line you've just read is within a valid date range. If you did as I recommended in Step 1, then you will have setup your `difference` variables. Using these variable, you can determine if the date read from the ticket input file (in Step 3) is between the original `start` & `end` date using the following formula
    
-        {% endhighlight %}python
+        {% highlight python linenos %}
+        python
         if end_year - ticket_yyyy <= diff_year and... [another condition] and ...:
             # then print ticket
         else:
             # skip this ticket
         {% endhighlight %}
+
     The formula is a bit vague, but you should be able to do the rest yourself. You'll need to apply that formula for `dd`, `mm`, and `yyyy`. If any one of those checks returns false, then you'll skip that ticket.
 
     1. for printing the correctly formatted year, you'll need to determine whether the `yyyy` you've read from the input file is 4 digits or less than 4 digits. There's more than one way to do this. 
@@ -248,7 +258,7 @@ Once you've done all of the above, you've basically finished! But there are a co
 - ### `const`
   a keyword that is added before a variable. If you use `const`, you are locking the value given to the variable in place for the entirety of your program. It's permanent, and you cannot change it. You won't ever `cin >> my_constant` either, because a `const` variable is defined at "compile time", meaning you define its contents in your code before it's even run. If you create a const variable, it should almost always look something like
 
-    {% highlight ruby linenos %}
+    {% highlight c++ linenos %}
     // const array
     const int arr[] = {1, 2, 3};
 
@@ -259,12 +269,13 @@ Once you've done all of the above, you've basically finished! But there are a co
     const string str = "this is constant";
     {% endhighlight %}
 
+
     Notice how they're each assigned a value the moment they're declared. Just remmeber that value will not change!
 
 - ### `ifstream::open`
   in this case, it'll be `fin.open(filename)` because `fin` is the name I decided to give to my `ifstream` variable. This `fin.open(filename)` opens a file from the variable `filename`, which contains a `string` (e.g. something like "file.txt"). If that file doesn't exist, then `fin.open(filename)` will return `false`. If it does exist, then your `ifstream` handle (`fin` in this case) can read from the file the same way you read from input using `cin >>`:
    
-    {% highlight ruby linenos %}
+    {% highlight c++ linenos %}
     ifstream fin // create ifstream
     fin.open("example_file.txt");
 
@@ -285,9 +296,10 @@ Once you've done all of the above, you've basically finished! But there are a co
     fin.close() // make sure to close the file!!!
     {% endhighlight %}
 
+
 - ### `ofstream::open` 
     Almost the same as `ifstream::open`, except you can only **write** instead of **read**. If `filename` does not exist (e.g. file.txt is not a file in your current working directory) then `fout.open(filename)` will automatically create the file. If it *does* exist, then `fout.open(filename)` will delete the contents of `filename` and thus it will be empty. You can write to the file the same way you write to `stdout` (the console) using `cout <<`
-    {% highlight ruby linenos %}
+    {% highlight c++ linenos %}
     ofstream fout // create ofstream
     fout.open("example_file.txt");
 
@@ -306,26 +318,29 @@ Once you've done all of the above, you've basically finished! But there are a co
     fout.close() // make sure to close the file!!!
     {% endhighlight %}
 
+
 - ### `<iomanip>`
   This is your output formatting library. For this assignment, you'll be using the following methods it provides you:
   - `left` prints any output following it in a left-justified field (i.e. it sticks to the left)
    
-    {% highlight ruby linenos %}
+    {% highlight c++ linenos %}
     #include <iomanip> // include iomanip!!!
     // other stuff...
 
     cout << left << "I'm a lefty\n";
     {% endhighlight %}
+
   - `right` prints any output following it in a right-justified field (i.e. it sticks to the right)
    
-    {% highlight ruby linenos %}
+    {% highlight c++ linenos %}
     #include <iomanip> // include iomanip!!!
     // other stuff...
 
     cout << right << "I'm a righty\n";
     {% endhighlight %}
+
   - `setfill(fill)` - defines the "fill" character using the paramter provided `fill`. Anything printed after this is set will fill whatever whitespace is output with whatever `fill` is
-    {% highlight ruby linenos %}
+    {% highlight c++ linenos %}
     #include <iomanip> // include iomanip!!!
     // other stuff...
 
@@ -335,9 +350,10 @@ Once you've done all of the above, you've basically finished! But there are a co
     // prints:
     // 1000------
     {% endhighlight %}
+
   - `setw(len)` - defines the width in integer length `len` of the next value printed. If the value printed is 4 chars wide, and `setw(10)` is applied, then the value will be "padded" 6 extra characters (determined by `setfill()`) to get to a total width of 10
 
-    {% highlight ruby linenos %}
+    {% highlight c++ linenos %}
     #include <iomanip> // include iomanip!!!
     // other stuff...
 
@@ -350,6 +366,7 @@ Once you've done all of the above, you've basically finished! But there are a co
     // notice how 1000 is 4 chars wide, and width is set to 10.
     // thus it prints 6 more '-' characters to make it to width of 10
     {% endhighlight %}
+
 
 - ### Formatting `yyyy`
   
