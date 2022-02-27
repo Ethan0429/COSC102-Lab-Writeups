@@ -337,7 +337,7 @@ Once you've done all of the above, you've basically finished! But there are a co
     ```
   - `setw(len)` - defines the width in integer length `len` of the next value printed. If the value printed is 4 chars wide, and `setw(10)` is applied, then the value will be "padded" 6 extra characters (determined by `setfill()`) to get to a total width of 10
 
-    ```c++
+    ~~~c++
     #include <iomanip> // include iomanip!!!
     // other stuff...
 
@@ -349,7 +349,7 @@ Once you've done all of the above, you've basically finished! But there are a co
 
     // notice how 1000 is 4 chars wide, and width is set to 10.
     // thus it prints 6 more '-' characters to make it to width of 10
-    ```
+    ~~~
 
 - ### Formatting `yyyy`
   
