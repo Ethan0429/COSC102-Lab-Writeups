@@ -24,7 +24,7 @@ nav_order: 1
     ##### example
     {: .no_toc }
 
-    {% highlight c++ linenos %}
+    {% highlight c++ %}
     Enter a ticket file: ticket // ticket file is "ticket"
     Enter a report file: output // report file is "output"
     Enter report start date (mm dd yyyy): 7 1 2017 // three ints separated by spaces
@@ -38,7 +38,7 @@ nav_order: 1
     Later in the lab you'll need to check if the line in the input file (more on that below) you're reading from contains a "date" that is between 
     `[start date, end date]` (inclusive). I recommend setting this up at least somewhat here using the following formula:
 
-    {% highlight c++ linenos %}
+    {% highlight c++ %}
     // from start date, read yyyy, dd, and mm into these variables respectively
     int end_year, end_day, end_month; 
     // read yyyy, dd, and mm into these variables respectively
@@ -69,7 +69,7 @@ It might seem daunting at first, but luckily C++ has made it almost as simple as
     The `fstream` library has 3 types of ways to interact with a file: `ofstream`, `ifstream`, and `fstream`. Each of those words are types derived from the `fstream` library, and they allow you to define a variable that will be your "handle" for manipulating files. 
     `ofstream` allows you to *output* to a file, (hence the 'o'), `ifstream` allows you to *read* from a file, and `fstream` allows you to do both simultaneously. Their syntax varies compared to `iostream`'s `cout` & `cin`, but I hope you can already see the similarities.
 
-    {% highlight c++ linenos %}
+    {% highlight c++ %}
     #include <iostream>
     #include <fstream> // including fstream
     using namespace std;
@@ -127,13 +127,13 @@ So you've opened the file, but now you need to read from it. Luckily, this is al
 - ### Using `ifstream`
   while `cin` is an input stream manipulator just like `ifstream`, `cin` is pre-defined for you. You'll need to define your *own* `ifstream` manipulator before you can do any reading.
 
-  {% highlight c++ linenos %}
+  {% highlight c++ %}
   ifstream fin;
   {% endhighlight %}
 
   Hopefully you've already done this assuming you've finished step 2. Once you've opened a file, you can interact with it the same way you interact with `stdin` (standard input e.g. the console/terminal) when you're getting user input. The difference is that the input is the contents of the file you're reading from.
 
-  {% highlight c++ linenos %}
+  {% highlight c++ %}
   ifstream fin; // pretend we opened a file
   int v, v2, v3
   while (fin >> v >> v2 >> v3) {
@@ -178,7 +178,7 @@ So you've opened the file, but now you need to read from it. Luckily, this is al
     ### **TLDR**
     {: .no_toc }
     Create variables to read in your citation number, month, day, etc, and read them from the file same as you would using `cin`.
-    {% highlight c++ linenos %}
+    {% highlight c++ %}
     citation_number = string
     month           = int
     day             = int
@@ -224,7 +224,7 @@ All of this pedantic output formatting will be accomplished via the `<iomanip>` 
     3. are closing the file handle once you're done with it (i.e. done outputting)
     4. before you print anything, you'll need to determine if the ticket line you've just read is within a valid date range. If you did as I recommended in Step 1, then you will have setup your `difference` variables. Using these variable, you can determine if the date read from the ticket input file (in Step 3) is between the original `start` & `end` date using the following formula
    
-        {% highlight python linenos %}
+        {% highlight python %}
         python
         if end_year - ticket_yyyy <= diff_year and... [another condition] and ...:
             # then print ticket
@@ -258,7 +258,7 @@ Once you've done all of the above, you've basically finished! But there are a co
 - ### `const`
   a keyword that is added before a variable. If you use `const`, you are locking the value given to the variable in place for the entirety of your program. It's permanent, and you cannot change it. You won't ever `cin >> my_constant` either, because a `const` variable is defined at "compile time", meaning you define its contents in your code before it's even run. If you create a const variable, it should almost always look something like
 
-    {% highlight c++ linenos %}
+    {% highlight c++ %}
     // const array
     const int arr[] = {1, 2, 3};
 
@@ -275,7 +275,7 @@ Once you've done all of the above, you've basically finished! But there are a co
 - ### `ifstream::open`
   in this case, it'll be `fin.open(filename)` because `fin` is the name I decided to give to my `ifstream` variable. This `fin.open(filename)` opens a file from the variable `filename`, which contains a `string` (e.g. something like "file.txt"). If that file doesn't exist, then `fin.open(filename)` will return `false`. If it does exist, then your `ifstream` handle (`fin` in this case) can read from the file the same way you read from input using `cin >>`:
    
-    {% highlight c++ linenos %}
+    {% highlight c++ %}
     ifstream fin // create ifstream
     fin.open("example_file.txt");
 
@@ -299,7 +299,7 @@ Once you've done all of the above, you've basically finished! But there are a co
 
 - ### `ofstream::open` 
     Almost the same as `ifstream::open`, except you can only **write** instead of **read**. If `filename` does not exist (e.g. file.txt is not a file in your current working directory) then `fout.open(filename)` will automatically create the file. If it *does* exist, then `fout.open(filename)` will delete the contents of `filename` and thus it will be empty. You can write to the file the same way you write to `stdout` (the console) using `cout <<`
-    {% highlight c++ linenos %}
+    {% highlight c++ %}
     ofstream fout // create ofstream
     fout.open("example_file.txt");
 
@@ -323,7 +323,7 @@ Once you've done all of the above, you've basically finished! But there are a co
   This is your output formatting library. For this assignment, you'll be using the following methods it provides you:
   - `left` prints any output following it in a left-justified field (i.e. it sticks to the left)
    
-    {% highlight c++ linenos %}
+    {% highlight c++ %}
     #include <iomanip> // include iomanip!!!
     // other stuff...
 
@@ -332,7 +332,7 @@ Once you've done all of the above, you've basically finished! But there are a co
 
   - `right` prints any output following it in a right-justified field (i.e. it sticks to the right)
    
-    {% highlight c++ linenos %}
+    {% highlight c++ %}
     #include <iomanip> // include iomanip!!!
     // other stuff...
 
@@ -340,7 +340,7 @@ Once you've done all of the above, you've basically finished! But there are a co
     {% endhighlight %}
 
   - `setfill(fill)` - defines the "fill" character using the paramter provided `fill`. Anything printed after this is set will fill whatever whitespace is output with whatever `fill` is
-    {% highlight c++ linenos %}
+    {% highlight c++ %}
     #include <iomanip> // include iomanip!!!
     // other stuff...
 
@@ -353,7 +353,7 @@ Once you've done all of the above, you've basically finished! But there are a co
 
   - `setw(len)` - defines the width in integer length `len` of the next value printed. If the value printed is 4 chars wide, and `setw(10)` is applied, then the value will be "padded" 6 extra characters (determined by `setfill()`) to get to a total width of 10
 
-    {% highlight c++ linenos %}
+    {% highlight c++ %}
     #include <iomanip> // include iomanip!!!
     // other stuff...
 
