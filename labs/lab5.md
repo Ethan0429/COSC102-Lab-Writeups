@@ -225,7 +225,6 @@ All of this pedantic output formatting will be accomplished via the `<iomanip>` 
     4. before you print anything, you'll need to determine if the ticket line you've just read is within a valid date range. If you did as I recommended in Step 1, then you will have setup your `difference` variables. Using these variable, you can determine if the date read from the ticket input file (in Step 3) is between the original `start` & `end` date using the following formula
    
         ```python
-        python
         if end_year - ticket_yyyy <= diff_year and... [another condition] and ...:
             # then print ticket
         else:
@@ -299,7 +298,7 @@ Once you've done all of the above, you've basically finished! But there are a co
 
 - ### `ofstream::open` 
     Almost the same as `ifstream::open`, except you can only **write** instead of **read**. If `filename` does not exist (e.g. file.txt is not a file in your current working directory) then `fout.open(filename)` will automatically create the file. If it *does* exist, then `fout.open(filename)` will delete the contents of `filename` and thus it will be empty. You can write to the file the same way you write to `stdout` (the console) using `cout <<`
-    
+
     ```c++
     ofstream fout // create ofstream
     fout.open("example_file.txt");
