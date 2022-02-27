@@ -14,14 +14,3 @@ aux_links:
     - "https://ethan0429.github.io/COSC102-Lab-Writeups/other/abtme.html"
 
 aux_links_new_tab: true
-
-kramdown:
-  input: GFM
-  syntax_highlighter_opts:
-    default_lang: html
-    css_class: 'highlight'
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
-      start_line: 1
