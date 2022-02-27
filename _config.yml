@@ -15,5 +15,7 @@ aux_links:
 
 aux_links_new_tab: true
 
-
+kramdown:
+  syntax_highlighter_opts:
+    disable : true
 
