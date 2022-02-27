@@ -60,62 +60,62 @@ It might seem daunting at first, but luckily C++ has made it almost as simple as
 
 - ### The `<fstream>` Library
 
-  - Similar to `<iostream>`, `<fstream>` is basically a subset of the former. It provides very similar methods for you to interact with files the same way you would `stdin` (i.e. reading/writing) For more information about the library, you can check out [the documentation here](https://en.cppreference.com/w/cpp/header/fstream). But I'll give a brief description of the bulk of it below.
+  Similar to `<iostream>`, `<fstream>` is basically a subset of the former. It provides very similar methods for you to interact with files the same way you would `stdin` (i.e. reading/writing) For more information about the library, you can check out [the documentation here](https://en.cppreference.com/w/cpp/header/fstream). But I'll give a brief description of the bulk of it below.
 
   - ### Opening a file
    
-    - The `fstream` library has 3 types of ways to interact with a file: `ofstream`, `ifstream`, and `fstream`. Each of those words are types derived from the `fstream` library, and they allow you to define a variable that will be your "handle" for manipulating files. 
+    The `fstream` library has 3 types of ways to interact with a file: `ofstream`, `ifstream`, and `fstream`. Each of those words are types derived from the `fstream` library, and they allow you to define a variable that will be your "handle" for manipulating files. 
     `ofstream` allows you to *output* to a file, (hence the 'o'), `ifstream` allows you to *read* from a file, and `fstream` allows you to do both simultaneously. Their syntax varies compared to `iostream`'s `cout` & `cin`, but I hope you can already see the similarities.
 
-        ```c++
-        #include <iostream>
-        #include <fstream> // including fstream
-        using namespace std;
+    ```c++
+    #include <iostream>
+    #include <fstream> // including fstream
+    using namespace std;
 
-        int main() {
-            /* define handlers for file i/o 
-            note this is just demonstrating 
-            how fstream file handlers are declared */
+    int main() {
+        /* define handlers for file i/o 
+        note this is just demonstrating 
+        how fstream file handlers are declared */
 
-            ifstream fin; // can ONLY read files
-            ofstream fout; // can ONLY output to files
-            fstream finfout; // can BOTH read & output to files AND has a funny name
+        ifstream fin; // can ONLY read files
+        ofstream fout; // can ONLY output to files
+        fstream finfout; // can BOTH read & output to files AND has a funny name
 
-            // string to hold the name of our file
-            string file_name;
+        // string to hold the name of our file
+        string file_name;
 
-            cout << "Enter file name: ";
-            // user enters file from the console and stores it in file_name
-            cin >> file_name;
+        cout << "Enter file name: ";
+        // user enters file from the console and stores it in file_name
+        cin >> file_name;
 
-            // opens file_name for reading
-            fin.open(file_name);
+        // opens file_name for reading
+        fin.open(file_name);
 
-            // opens file_name for writing
-            fout.open(file_name);
+        // opens file_name for writing
+        fout.open(file_name);
 
-            // closes both file handles
-            fin.close();
-            fout.close();
-        }
-        ```
+        // closes both file handles
+        fin.close();
+        fout.close();
+    }
+    ```
 
     Generally it's good practice to use whichever type of stream you'll need as opposed to using an `fstream` for everything, but I don't think it really matters for the purposes of this lab.
 
-    **The end goal of this section** is to use the `fstream` library to *read* lines from a file (so you won't be needing `ofstream` anyway, and can just stick to `ifstream`).
-    Once you've opened a file, you can manipulate it the same way you can with `cin`.
-    
-    I'm sure you've already discussed this in lecture, but if you haven't you can read on [how to do so here](https://www.cplusplus.com/reference/fstream/fstream/open/).
+**The end goal of this section** is to use the `fstream` library to *read* lines from a file (so you won't be needing `ofstream` anyway, and can just stick to `ifstream`).
+Once you've opened a file, you can manipulate it the same way you can with `cin`.
 
-    - ### Caveats
+I'm sure you've already discussed this in lecture, but if you haven't you can read on [how to do so here](https://www.cplusplus.com/reference/fstream/fstream/open/).
 
-        There are two important things to note for this step:
-        1. you must **check to make sure the file is open** before continuing your program. If it's not open (even after attempting to open it), then you should handle that. If you do encounter a file that cannot be opened, that means it doesn't exist, and your output should look like this if that is the case
+- ### Caveats
 
-                Enter a ticket file: somebadfilename
-                Unable to open somebadfilename.
+  There are two important things to note for this step:
+  1. you must **check to make sure the file is open** before continuing your program. If it's not open (even after attempting to open it), then you should handle that. If you do encounter a file that cannot be opened, that means it doesn't exist, and your output should look like this if that is the case
 
-        2. you must **close the file** after you're finished with it. Technically this is not really necessary for C++, but it is for your grade. Everything that is opened must be closed, as this is the safest and best practice for you as a programmer.
+          Enter a ticket file: somebadfilename
+          Unable to open somebadfilename.
+
+  2. you must **close the file** after you're finished with it. Technically this is not really necessary for C++, but it is for your grade. Everything that is opened must be closed, as this is the safest and best practice for you as a programmer.
 
 ## Step 3: Reading from the file
 
