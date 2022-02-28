@@ -7,7 +7,7 @@ nav_order: 1
 # Status: <font color="green">Completed</font>
 {: .no_toc }
 
-#### Status Rubrik
+#### Status Rubric
 {: .no_toc }
 
 <style type="text/css">
@@ -16,23 +16,22 @@ nav_order: 1
   font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg th{background-color:#f0f0f0;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
   font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-ovyb{border-color:inherit;font-family:sans-serif !important;font-weight:bold;text-align:center;vertical-align:top}
-.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
 </style>
 <table class="tg">
 <thead>
   <tr>
-    <th class="tg-ovyb"><span style="color:#036400">Completed</span></th>
-    <th class="tg-7btt"><span style="color:#F8A102">In-Progress</span></th>
-    <th class="tg-7btt"><span style="color:#3166FF">Recently Updated</span></th>
+    <th class="tg-0lax"><span style="font-weight:bold;color:#036400">Completed</span></th>
+    <th class="tg-1wig"><span style="color:#F8A102">In-Progress</span></th>
+    <th class="tg-1wig"><span style="color:#3166FF">Recently Updated</span></th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td class="tg-0pky">All information is up-to-date and has compiled on hydra/tesla</td>
-    <td class="tg-0pky">Information is subject to change and has not been tested on hydra/tesla</td>
-    <td class="tg-0pky">Information has been recently updated</td>
+    <td class="tg-0lax">All information is up-to-date and has compiled on hydra/tesla</td>
+    <td class="tg-0lax">Information is subject to change and has not been tested on hydra/tesla</td>
+    <td class="tg-0lax">Information has been recently updated</td>
   </tr>
 </tbody>
 </table>
