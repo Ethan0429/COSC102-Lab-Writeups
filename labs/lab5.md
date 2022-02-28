@@ -264,7 +264,7 @@ All of this pedantic output formatting will be accomplished via the `<iomanip>` 
             Residential multiplier: 17.1525
             None of the above:      12.152
             
-    From there, calculating the fine is easy. The multiplier is multiplied to the difference between the speed limit and the clocked speed to determine the fine's dollar amount. Note you'll need to use a switch statement to apply the fine multiplier as well. You should have a `const double` variable for each of the multipliers above. Define these at the beginning of your program. You'll use the switch statement to evaluate the `road type` `char`, and make a case for each potential `char` (`i`, `h`, `r`, and `p`). Each case should calculate the fine amount using whichever of the multipliers you've defined in your code. Again, more info on `const` in the [Hints](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#hints) section.
+        From there, calculating the fine is easy. The multiplier is multiplied to the difference between the speed limit and the clocked speed to determine the fine's dollar amount. Note you'll need to use a switch statement to apply the fine multiplier as well. You should have a `const double` variable for each of the multipliers above. Define these at the beginning of your program. You'll use the switch statement to evaluate the `road type` `char`, and make a case for each potential `char` (`i`, `h`, `r`, and `p`). Each case should calculate the fine amount using whichever of the multipliers you've defined in your code. Again, more info on `const` in the [Hints](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#hints) section.
 
 ## Step 5: You made it!
 
