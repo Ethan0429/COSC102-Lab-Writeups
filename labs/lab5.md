@@ -34,10 +34,10 @@ nav_order: 1
   </tr>
 </tbody>
 </table>
-
+<hr>
 #### <font color="maroon">change-log:</font>
-- updated the [ticket date range checking](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#checking-ticket-date-range)
----
+  - updated the [ticket date range checking](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#checking-ticket-date-range)
+
 
 # Lab 5 - Speeding Ticket Calculator
 {: .no_toc }
