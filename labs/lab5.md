@@ -9,9 +9,9 @@ nav_order: 1
 
 #### Status Rubrik
 {: .no_toc }
-| <font color="green">Completed</font>                                                     | <font color="orange">In-Progress<font>                                                             | <font color="blue">Recently Updated</font>                      |
-|---------------------------------------------------------------|-------------------------------------------------------------------------|---------------------------------------|
-| All information is up-to-date and has compiled on hydra/tesla | Information is subject to change and has not been tested on hydra/tesla | Information has been recently updated |
+| <font color="green">Completed</font>                          | <font color="orange">In-Progress</font>                                 | <font color="blue">Recently Updated</font> |
+|---------------------------------------------------------------|-------------------------------------------------------------------------|--------------------------------------------|
+| All information is up-to-date and has compiled on hydra/tesla | Information is subject to change and has not been tested on hydra/tesla | Information has been recently updated      |
 
 #### <font color="maroon">change-log:</font>
 - updated the [ticket date range checking](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#checking-ticket-date-range)
