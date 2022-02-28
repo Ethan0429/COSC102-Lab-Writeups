@@ -9,9 +9,31 @@ nav_order: 1
 
 #### Status Rubrik
 {: .no_toc }
-| <font color="green">Completed</font>                          | <font color="orange">In-Progress</font>                                 | <font color="blue">Recently Updated</font> |
-|---------------------------------------------------------------|-------------------------------------------------------------------------|--------------------------------------------|
-| All information is up-to-date and has compiled on hydra/tesla | Information is subject to change and has not been tested on hydra/tesla | Information has been recently updated      |
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-fymr{border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-fymr"><span style="color:#036400">Completed</span></th>
+    <th class="tg-fymr"><span style="color:#F8A102">In-Progress</span></th>
+    <th class="tg-fymr"><span style="color:#3166FF">Recently Updated</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">All information is up-to-date and has compiled on hydra/tesla</td>
+    <td class="tg-0pky">Information is subject to change and has not been tested on hydra/tesla</td>
+    <td class="tg-0pky">Information has been recently updated</td>
+  </tr>
+</tbody>
+</table>
 
 #### <font color="maroon">change-log:</font>
 - updated the [ticket date range checking](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#checking-ticket-date-range)
