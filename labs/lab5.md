@@ -16,15 +16,16 @@ nav_order: 1
   font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg th{background-color:#f0f0f0;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
   font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
 .tg .tg-0lax{text-align:left;vertical-align:top}
 </style>
 <table class="tg">
 <thead>
   <tr>
-    <th class="tg-0lax"><span style="font-weight:bold;color:#036400">Completed</span></th>
-    <th class="tg-1wig"><span style="color:#F8A102">In-Progress</span></th>
-    <th class="tg-1wig"><span style="color:#3166FF">Recently Updated</span></th>
+    <th class="tg-baqh"><span style="font-weight:bold;color:#036400">Completed</span></th>
+    <th class="tg-amwm"><span style="color:#F8A102">In-Progress</span></th>
+    <th class="tg-amwm"><span style="color:#3166FF">Recently Updated</span></th>
   </tr>
 </thead>
 <tbody>
@@ -38,7 +39,7 @@ nav_order: 1
 
 #### <font color="maroon">change-log:</font>
   - updated the [ticket date range checking](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#checking-ticket-date-range)
-  
+  `Mon, 28 Feb 2022 13:30:03 EST`
 <hr>
 
 # Lab 5 - Speeding Ticket Calculator
