@@ -252,11 +252,11 @@ All of this pedantic output formatting will be accomplished via the `<iomanip>` 
         ```
 
         The logic really isn't complicated, it's just tediously verbose. It's just stepping through the date from the broadest point (year) to the most specific point (day) and deciding to print based on the comparison from the current date (from the ticket line) vs. the start/end dates from Step 1.
-        $~$
+$~$
         If the current year is between the start/end years, then we can print it for sure (so print). If it's equal to one of the start/end years, then we need to check which one it's equal to. If it's the same as the *start year*, then we need to check if the current month is after or equal to the start month. (because then it falls in range of `(start month, end month)`, and we've already checked the year) And again, if the current month is equal to the start month, then we need to get more specific and check if the current day comes after the start day. Then you apply the same logic for the end year/month/day but invert the comparison. If the current year is equal to the end year, then we need to get more specific and see if the current month comes before the end month. If it does we can print, otherwise we need to check if the current month is equal to the end month, and then check if the current day comes before the end day. If it comes before or is equal to the end day, then we can print the ticket.
-        $~$
+$~$
         Technically we don't need to write any `else` statements here since the date will fall either between or outside of the range, and if it is outside then we don't do anything. We just continue to read the next ticket line and repeat the logic.
-        $~$
+$~$
     5. for printing the correctly formatted year, you'll need to determine whether the `yyyy` you've read from the input file is 4 digits or less than 4 digits. There's more than one way to do this. 
     6. for printing the month, you'll need to match the `mm` you've read in to the index of your `const string months[]` array. (I named my `months` you can name it whatever). 
    *If you don't know what* `const` *is, read the* [Hints](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#hints) section.
@@ -394,7 +394,7 @@ Once you've done all of the above, you've basically finished! But there are a co
 
 - ### Formatting `yyyy`
   
-  if you read `yyyy` into a `string` then you can check the size of a `string` similar to a `vector`; if you read `yyyy` into an `int` you can use `%` to determine the magnitude of a number, and thus its number digits.
+  I recommend reading `yyyy` as an int, and then checking its magnitude using the modulo `%` operator. For instance, `1013 % 1000 = 13`, and `13 % 1000 = 13`. You'll need to print the year as a 4 digit number. So if you get a year `17` in the ticket file, you need to print `2017`, and if you get a year `2017`, you'll still print `2017`. You're also to assume that a 2 digit year like `17` is in the 21st century. Hopefully this hint helps you format the year.
 
 - ### Formatting `mm`
   
