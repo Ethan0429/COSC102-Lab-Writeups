@@ -3,6 +3,20 @@ layout: default
 title: Lab 5 - Speeding Ticket Calculator
 nav_order: 1
 ---
+
+# Status: <font color="green">Completed</font>
+{: .no_toc }
+
+#### Status Rubrik
+{: .no_toc }
+| <font color="green">Completed</font>                                                     | <font color="orange">In-Progress<font>                                                             | <font color="blue">Recently Updated</font>                      |
+|---------------------------------------------------------------|-------------------------------------------------------------------------|---------------------------------------|
+| All information is up-to-date and has compiled on hydra/tesla | Information is subject to change and has not been tested on hydra/tesla | Information has been recently updated |
+
+#### <font color="maroon">change-log:</font>
+- updated the [ticket date range checking](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#checking-ticket-date-range)
+---
+
 # Lab 5 - Speeding Ticket Calculator
 {: .no_toc }
 
@@ -107,11 +121,13 @@ I'm sure you've already discussed this in lecture, but if you haven't you can re
 - ### Caveats
 
   There are two important things to note for this step:
+  #### make sure file is open
   1. you must **check to make sure the file is open** before continuing your program. If it's not open (even after attempting to open it), then you should handle that. If you do encounter a file that cannot be opened, that means it doesn't exist, and your output should look like this if that is the case
 
           Enter a ticket file: somebadfilename
           Unable to open somebadfilename.
 
+  #### make sure you close the file
   2. you must **close the file** after you're finished with it. Technically this is not really necessary for C++, but it is for your grade. Everything that is opened must be closed, as this is the safest and best practice for you as a programmer.
 
 ## Step 3: Reading from the file
@@ -137,7 +153,7 @@ So you've opened the file, but now you need to read from it. Luckily, this is al
 
   And now you should see the striking similarities! The above code reads everything from a file, and stuffs each "word" (whitespcae-separated string) into a variable as many times as we specify.
 
-  - ### Caveats
+  - ### Input File Format
  
     Given an input file with the following format, you should easily be able to `fin >>` as many times as there are "words" in the file. Move each value into its respective variable with `while (fin >> v1 >> v2 >> v3 >> v4 >> v5 >> v6 >> v)` (dont use those var names) and do stuff with them. This will read one line at a time from an input file with the following format
     
@@ -184,6 +200,7 @@ So you've opened the file, but now you need to read from it. Luckily, this is al
 
 ## Step 4: Outputting to a file
 
+#### Output Format Requirements
 This process is very similar to step 3, and again has extremely familiar syntax to its `iostream` analog `cout`. You'll be creating a file (this is done automatically when you output to a file) with the name of whatever you read in from step 1. The output should follow a strict format:
     
     <day>-<3-character Month>-<Year> <citation> $<fine>
@@ -213,10 +230,12 @@ All of this pedantic output formatting will be accomplished via the `<iomanip>` 
 - ### Caveats
 
     Same as step 3, you need to make sure you open/close and some more stuff:
+
     1. you'll be calling `fout <<` in your `while` loop that's doing `fin >>`. So make sure you open the file with `fout` before starting the loop.
     2. are able to open the specified file
     3. are closing the file handle once you're done with it (i.e. done outputting)
-    4. before you print anything, you'll need to determine if the ticket line you've just read is within a valid date range. If you did as I recommended in Step 1, then you'll already have some variables set to make the process a bit easier. As far as I'm aware, you're not allowed to use the STL time library, so you'll have to resort to some good ol' logic unless your instructor has said otherwise. Here's how I've done it (the following code is "pseudo-code" which is just simplified code to make it easier on the eyes. The logic still applies and will be implemented the same regardless of your language of choice)
+    4. #### Checking Ticket Date Range
+       before you print anything, you'll need to determine if the ticket line you've just read is within a valid date range. If you did as I recommended in Step 1, then you'll already have some variables set to make the process a bit easier. As far as I'm aware, you're not allowed to use the STL time library, so you'll have to resort to some good ol' logic unless your instructor has said otherwise. Here's how I've done it (the following code is "pseudo-code" which is just simplified code to make it easier on the eyes. The logic still applies and will be implemented the same regardless of your language of choice)
         ```python
         # check if the year we've just read is in (start_year, end_year)
         if current_year > start_year and current_year < end_year:
@@ -254,10 +273,14 @@ All of this pedantic output formatting will be accomplished via the `<iomanip>` 
         The logic really isn't complicated, it's just tediously verbose. It's just stepping through the date from the broadest point (year) to the most specific point (day) and deciding to print based on the comparison from the current date (from the ticket line) vs. the start/end dates from Step 1.<br><br>
         If the current year is between the start/end years, then we can print it for sure (so print). If it's equal to one of the start/end years, then we need to check which one it's equal to. If it's the same as the *start year*, then we need to check if the current month is after or equal to the start month. (because then it falls in range of `(start month, end month)`, and we've already checked the year) And again, if the current month is equal to the start month, then we need to get more specific and check if the current day comes after the start day. Then you apply the same logic for the end year/month/day but invert the comparison. If the current year is equal to the end year, then we need to get more specific and see if the current month comes before the end month. If it does we can print, otherwise we need to check if the current month is equal to the end month, and then check if the current day comes before the end day. If it comes before or is equal to the end day, then we can print the ticket.<br><br>
         Technically we don't need to write any `else` statements here since the date will fall either between or outside of the range, and if it is outside then we don't do anything. We just continue to read the next ticket line and repeat the logic.<br><br>
-    5. for printing the correctly formatted year, you'll need to determine whether the `yyyy` you've read from the input file is 4 digits or less than 4 digits. There's more than one way to do this. 
-    6. for printing the month, you'll need to match the `mm` you've read in to the index of your `const string months[]` array. (I named my `months` you can name it whatever). 
+    5. #### Formatting The Year
+        for printing the correctly formatted year, you'll need to determine whether the `yyyy` you've read from the input file is 4 digits or less than 4 digits. There's more than one way to do this. 
+    6. #### Formatting The Month
+        for printing the month, you'll need to match the `mm` you've read in to the index of your `const string months[]` array. (I named my `months` you can name it whatever). 
    *If you don't know what* `const` *is, read the* [Hints](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#hints) section.
-    1. for printing the fine amount, you'll need to use the fine-multiplier specified in the lab writeup
+   
+    7. #### Calculating Fine Amount
+        for printing the fine amount, you'll need to use the fine-multiplier specified in the lab writeup
             
             Interstate multiplier:  5.2252
             Highway multiplier:     9.4412
