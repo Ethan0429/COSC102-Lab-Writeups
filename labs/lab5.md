@@ -36,24 +36,18 @@ nav_order: 1
     
 - ### General Setup
     Later in the lab you'll need to check if the line in the input file (more on that below) you're reading from contains a "date" that is between 
-    `[start date, end date]` (inclusive). I recommend setting this up at least somewhat here using the following formula:
+    `[start date, end date]` (inclusive). I recommend setting this up to prepare for the actual date recognition later on:
 
     ```c++
     // from start date, read yyyy, dd, and mm into these variables respectively
     int end_year, end_day, end_month; 
     // read yyyy, dd, and mm into these variables respectively
     int start_year, start_day, start_month; 
-
-    // once those are read in...
-
-    int year_difference = end_year - start_year;
-    int day_difference = end_day - start_day;
-    int month_difference = end_month - start_month;
     ```
 
 
     You'll see why this is useful in the later steps...
-    You should also initialize your `const` variables at the top of your program here. More info on this in the [Hints](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#hints) section.
+    You should also initialize your `const` variables at the top of your program here as well. More info on `const` in the [Hints](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#hints) section, and I'll explain what exactly needs to be `const` in the later steps.
 
 ## Step 2: File I/O
 
@@ -222,19 +216,49 @@ All of this pedantic output formatting will be accomplished via the `<iomanip>` 
     1. you'll be calling `fout <<` in your `while` loop that's doing `fin >>`. So make sure you open the file with `fout` before starting the loop.
     2. are able to open the specified file
     3. are closing the file handle once you're done with it (i.e. done outputting)
-    4. before you print anything, you'll need to determine if the ticket line you've just read is within a valid date range. If you did as I recommended in Step 1, then you will have setup your `difference` variables. Using these variable, you can determine if the date read from the ticket input file (in Step 3) is between the original `start` & `end` date using the following formula
-   
+    4. before you print anything, you'll need to determine if the ticket line you've just read is within a valid date range. If you did as I recommended in Step 1, then you'll already have some variables set to make the process a bit easier. As far as I'm aware, you're not allowed to use the STL time library, so you'll have to resort to some good ol' logic unless your instructor has said otherwise. Here's how I've done it (the following code is "pseudo-code" which is just simplified code to make it easier on the eyes. The logic still applies and will be implemented the same regardless of your language of choice)
         ```python
-        if end_year - ticket_yyyy <= diff_year and... [another condition] and ...:
-            # then print ticket
-        else:
-            # skip this ticket
+        # check if the year we've just read is in (start_year, end_year)
+        if current_year > start_year and current_year < end_year:
+          # if it is, then we can print the ticket no matter what
+        
+        # if not, check if the current year is the same as start year
+        else if current_year == start_year:
+          # if it is, then we should now check the start month
+          if current_month > start_month:
+            # if the current month is after the start month, then we can print
+          
+          # if not, chcek if the current month is the same as the start month
+          if current_month == start_month:
+            # if it is, then we need to compare the days
+            if current_day >= start_day:
+              # if the current day is the same or past the start day, then we can print
+        
+        # if not, check if the current year is the same as end year
+        else if current_year == end_year:
+          # if it is, then we should now check the end month
+          if current_month < end_month:
+            # if the current month is before the end month, then we can print
+          
+          # if not check if the current month is the same as the end month
+          if current_month == end_month:
+            # if it is, then we need to compare the days
+            if current_day <= end_day:
+              # if the current day is the same or before the end day, then we can print
+        
+        # otherwise the current year is neither between nor equal to the years
+        else
+          # skip ticket
         ```
 
-    The formula is a bit vague, but you should be able to do the rest yourself. You'll need to apply that formula for `dd`, `mm`, and `yyyy`. If any one of those checks returns false, then you'll skip that ticket.
-
-    1. for printing the correctly formatted year, you'll need to determine whether the `yyyy` you've read from the input file is 4 digits or less than 4 digits. There's more than one way to do this. 
-    2. for printing the month, you'll need to match the `mm` you've read in to the index of your `const string months[]` array. (I named my `months` you can name it whatever). 
+        The logic really isn't complicated, it's just tediously verbose. It's just stepping through the date from the broadest point (year) to the most specific point (day) and deciding to print based on the comparison from the current date (from the ticket line) vs. the start/end dates from Step 1.
+        $~$
+        If the current year is between the start/end years, then we can print it for sure (so print). If it's equal to one of the start/end years, then we need to check which one it's equal to. If it's the same as the *start year*, then we need to check if the current month is after or equal to the start month. (because then it falls in range of `(start month, end month)`, and we've already checked the year) And again, if the current month is equal to the start month, then we need to get more specific and check if the current day comes after the start day. Then you apply the same logic for the end year/month/day but invert the comparison. If the current year is equal to the end year, then we need to get more specific and see if the current month comes before the end month. If it does we can print, otherwise we need to check if the current month is equal to the end month, and then check if the current day comes before the end day. If it comes before or is equal to the end day, then we can print the ticket.
+        $~$
+        Technically we don't need to write any `else` statements here since the date will fall either between or outside of the range, and if it is outside then we don't do anything. We just continue to read the next ticket line and repeat the logic.
+        $~$
+    5. for printing the correctly formatted year, you'll need to determine whether the `yyyy` you've read from the input file is 4 digits or less than 4 digits. There's more than one way to do this. 
+    6. for printing the month, you'll need to match the `mm` you've read in to the index of your `const string months[]` array. (I named my `months` you can name it whatever). 
    *If you don't know what* `const` *is, read the* [Hints](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#hints) section.
     1. for printing the fine amount, you'll need to use the fine-multiplier specified in the lab writeup
             
