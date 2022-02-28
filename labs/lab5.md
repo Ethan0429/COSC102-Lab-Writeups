@@ -202,13 +202,14 @@ So you've opened the file, but now you need to read from it. Luckily, this is al
         type of road    = i
 
     More information about the file format (straight from the lab page on Canvas):
-
-    >The citation number may contain numbers and letters.
-    >The month is an integer between 1 (January) and 12 (December).
-    >The day and year are integers.
-    >The clocked speed is an integer in miles per hour.
-    >The speed limit is an integer in miles per hour.
-    >The type of road is a single character: I or i (Interstate), R or r (Residential), H or h (Highway).
+    <blockquote>
+    The citation number may contain numbers and letters.
+    The month is an integer between 1 (January) and 12 (December).
+    The day and year are integers.
+    The clocked speed is an integer in miles per hour.
+    The speed limit is an integer in miles per hour.
+    The type of road is a single character: I or i (Interstate), R or r (Residential), H or h (Highway).
+    </blockquote>
 
     ### **TLDR**
     {: .no_toc }
