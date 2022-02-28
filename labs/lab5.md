@@ -9,21 +9,23 @@ nav_order: 1
 
 #### Status Rubrik
 {: .no_toc }
+
 <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-fymr{border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
+.tg  {border-collapse:collapse;border-color:#ccc;border-spacing:0;}
+.tg td{background-color:#fff;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#f0f0f0;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-ovyb{border-color:inherit;font-family:sans-serif !important;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
 .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
 </style>
 <table class="tg">
 <thead>
   <tr>
-    <th class="tg-fymr"><span style="color:#036400">Completed</span></th>
-    <th class="tg-fymr"><span style="color:#F8A102">In-Progress</span></th>
-    <th class="tg-fymr"><span style="color:#3166FF">Recently Updated</span></th>
+    <th class="tg-ovyb"><span style="color:#036400">Completed</span></th>
+    <th class="tg-7btt"><span style="color:#F8A102">In-Progress</span></th>
+    <th class="tg-7btt"><span style="color:#3166FF">Recently Updated</span></th>
   </tr>
 </thead>
 <tbody>
@@ -34,8 +36,10 @@ nav_order: 1
   </tr>
 </tbody>
 </table>
+
 #### <font color="maroon">change-log:</font>
   - updated the [ticket date range checking](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#checking-ticket-date-range)
+  
 <hr>
 
 # Lab 5 - Speeding Ticket Calculator
