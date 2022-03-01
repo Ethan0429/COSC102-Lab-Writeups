@@ -453,10 +453,7 @@ Once you've done all of the above, you've basically finished! But there are a co
     ```
 
   - #### IMPORTANT `IOMANIP` FEATURE
-  All of the stream manipulators I've listed here, except for `setw()`, are "sticky". This means that whenever you use a manipulator like `setfill('x')`, that gets applied to anything you print after.
-  ```
-  cout << setfill('x') << 12
-
+    All of the stream manipulators I've listed here, except for `setw()`, are "sticky". This means that whenever you use a manipulator like `setfill('x')`, that gets applied to anything you print after. So make sure you're aware of that when using `cout`. The only one that does not stick is `setw()`, which resets after it's been used.
 - ### Formatting `yyyy`
   
   I recommend reading `yyyy` as an int, and then checking its magnitude using the modulo `%` operator. For instance, `1013 % 1000 = 13`, and `13 % 1000 = 13`. You'll need to print the year as a 4 digit number. So if you get a year `17` in the ticket file, you need to print `2017`, and if you get a year `2017`, you'll still print `2017`. You're also to assume that a 2 digit year like `17` is in the 21st century. Hopefully this hint helps you format the year.
