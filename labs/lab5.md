@@ -148,13 +148,13 @@ I'm sure you've already discussed this in lecture, but if you haven't you can re
 
   There are two important things to note for this step:
   #### make sure file is open
-  1. you must **check to make sure the file is open** before continuing your program. If it's not open (even after attempting to open it), then you should handle that. If you do encounter a file that cannot be opened, that means it doesn't exist, and your output should look like this if that is the case
+  you must **check to make sure the file is open** before continuing your program. If it's not open (even after attempting to open it), then you should handle that. If you do encounter a file that cannot be opened, that means it doesn't exist, and your output should look like this if that is the case
 
           Enter a ticket file: somebadfilename
           Unable to open somebadfilename.
 
   #### make sure you close the file
-  2. you must **close the file** after you're finished with it. Technically this is not really necessary for C++, but it is for your grade. Everything that is opened must be closed, as this is the safest and best practice for you as a programmer.
+  you must **close the file** after you're finished with it. Technically this is not really necessary for C++, but it is for your grade. Everything that is opened must be closed, as this is the safest and best practice for you as a programmer.
 
 ## Step 3: Reading from the file
 
