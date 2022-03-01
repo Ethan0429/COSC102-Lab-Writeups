@@ -38,7 +38,8 @@ nav_order: 1
 </table>
 
 #### <font color="maroon">change-log:</font>
-  - updated the [ticket date range checking](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#checking-ticket-date-range) -- `Mon, 28 Feb 2022 13:30:03 EST`
+  - added `fixed` & `setprecision()` to [iomanip](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#iomanip) section<br>$~~$Timestamp - `Mon, 29 Feb 2022 00:33:03 EST`
+  - updated the [ticket date range checking](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#checking-ticket-date-range)<br>$~~$Timestamp - `Mon, 28 Feb 2022 13:30:03 EST`
 <hr>
 
 # Lab 5 - Speeding Ticket Calculator
@@ -434,6 +435,27 @@ Once you've done all of the above, you've basically finished! But there are a co
     // thus it prints 6 more '-' characters to make it to width of 10
     ```
 
+  - `fixed` & `setprecision()` - sets the stream to print any decimal places to a fixed amount specified by `setprecision(x)` where `x` is some `int` specifying the amount of decimal places to be printed
+  
+    ```c++
+    #include <iomanip> // includ iomanip!!!
+    // other stuff
+    double pi = 3.14;
+    cout << fixed << setprecision(3) << pi;
+    
+    // prints:
+    // 3.140
+
+    cout << fixed << setprecision(1) << pi;
+
+    // prints:
+    // 3.1
+    ```
+
+  - #### IMPORTANT `IOMANIP` FEATURE
+  All of the stream manipulators I've listed here, except for `setw()`, are "sticky". This means that whenever you use a manipulator like `setfill('x')`, that gets applied to anything you print after.
+  ```
+  cout << setfill('x') << 12
 
 - ### Formatting `yyyy`
   
