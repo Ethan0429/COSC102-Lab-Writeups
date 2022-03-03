@@ -35,10 +35,15 @@ nav_order: 8
   </tr>
 </tbody>
 </table>
-<details markdown="1">
-    <summary markdown="0">
-        <b><font color="maroon">change-log:</font></b>
-    </summary>
+
+<details>
+<summary>
+<b><font color="maroon">cilck to view change-log</font></b>
+</summary>
+
+  <div markdown="1">
+
+  </div>
 </details>
 <hr>
 

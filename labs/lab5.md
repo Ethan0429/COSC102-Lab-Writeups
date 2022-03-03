@@ -39,7 +39,7 @@ nav_order: 1
 
 <details>
 <summary>
-<b><font color="maroon">cilck to viewchange-log</font></b>
+<b><font color="maroon">cilck to view change-log</font></b>
 </summary>
 
   <div markdown="1">
