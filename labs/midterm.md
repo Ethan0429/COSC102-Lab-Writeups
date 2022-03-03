@@ -36,7 +36,7 @@ nav_order: 8
 </tbody>
 </table>
 <details markdown="1">
-    <summary>
+    <summary markdown="0">
         <b><font color="maroon">change-log:</font></b>
     </summary>
 </details>
