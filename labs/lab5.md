@@ -37,15 +37,12 @@ nav_order: 1
 </tbody>
 </table>
 
-<details>
+<details markdown="1">
     <summary>
-        <h4>
-          <font color="maroon">change-log:</font>
-          {: .no_toc }
-        </h4>
-    </summary><pre>
+          <b><font color="maroon">change-log:</font><b>
+    </summary>
   - added `fixed` & `setprecision()`, and [IMPORTANT](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#important-iomanip-feature) to [iomanip](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#iomanip) section<br>*timestamp* - `Mon, 29 Feb 2022 00:33:03 EST`<br><br>
-  - updated the [ticket date range checking](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#checking-ticket-date-range)<br>*timestamp* - `Mon, 28 Feb 2022 13:30:03 EST`</pre>
+  - updated the [ticket date range checking](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#checking-ticket-date-range)<br>*timestamp* - `Mon, 28 Feb 2022 13:30:03 EST`
 </details>
 <hr>
 
