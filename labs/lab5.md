@@ -4,7 +4,7 @@ title: Lab 5 - Speeding Ticket Calculator
 nav_order: 1
 ---
 
-# Status: <font color="green">Completed</font> | <font color="blue">Recently Updated</font>
+# Status: <font color="green">Completed</font>
 {: .no_toc }
 
 #### Status Rubric
