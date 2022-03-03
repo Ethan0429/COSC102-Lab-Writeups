@@ -39,7 +39,7 @@ nav_order: 1
 
 <details>
 <summary>
-<b><font color="maroon">change-log</font></b>
+<b><font color="maroon">cilck to view change-log</font></b>
 </summary>
 
   - added `fixed` & `setprecision()`, and [IMPORTANT](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#important-iomanip-feature) to [iomanip](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#iomanip) section
