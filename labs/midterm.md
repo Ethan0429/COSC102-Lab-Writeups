@@ -35,9 +35,12 @@ nav_order: 8
   </tr>
 </tbody>
 </table>
-
-#### <font color="maroon">change-log:</font>
-{: .no_toc }
+<details>
+    <summary>
+        <h4><font color="maroon">change-log:</font></h4>
+        {: .no_toc }
+    </summary>
+</details>
 <hr>
 
 # Midterm Review
