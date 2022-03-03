@@ -37,14 +37,15 @@ nav_order: 1
 </tbody>
 </table>
 
-<details markdown="1">
-    <summary>
+<details>
+    <summary markdown="1">
 ### change-log
     </summary>
-
+  <div markdown="1">
   - added `fixed` & `setprecision()`, and [IMPORTANT](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#important-iomanip-feature) to [iomanip](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#iomanip) section
   *timestamp* - `Mon, 29 Feb 2022 00:33:03 EST`<br><br>
   - updated the [ticket date range checking](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#checking-ticket-date-range)<br>*timestamp* - `Mon, 28 Feb 2022 13:30:03 EST`
+  </div>
 </details>
 <hr>
 
