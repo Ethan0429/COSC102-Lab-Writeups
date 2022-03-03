@@ -37,8 +37,7 @@ nav_order: 8
 </table>
 <details markdown="1">
     <summary>
-        <h4><font color="maroon">change-log:</font></h4>
-        {: .no_toc }
+        <b><font color="maroon">change-log:</font></b>
     </summary>
 </details>
 <hr>
