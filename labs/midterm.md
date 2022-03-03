@@ -38,7 +38,7 @@ nav_order: 8
 
 <details>
 <summary>
-<b><font color="maroon">cilck to view change-log</font></b>
+<b><font color="maroon">click to view change-log</font></b>
 </summary>
 
   <div markdown="1">
