@@ -98,7 +98,8 @@ All topics discussed in detail are referenced by the official study guide for th
 
   - `cin.eof()` - returns a `bool` indicating true if the end of `stdin` has been reached i.e. there is no more input to be read, stands for **end-of-file**.
     
-    <pre><code class="language-cpp">while (cin >> dest) {
+    <pre><code class="language-cpp">#include&ltiostream&gt
+    while (cin >> dest) {
       if (cin.eof()) {
         // we've reached the end of input, so break
         break;
@@ -130,11 +131,9 @@ All topics discussed in detail are referenced by the official study guide for th
         // erase the input that was placed in the buffer to restore future reading operations
         // which is "hello" in this case
         
-        // notice we use numeric_limits which is from the <limits> library
-        cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
-  </code>
-  </pre>
-  
+        // notice we use numeric_limits which is from the &ltlimits&gt library
+        cin.ignore(std::numeric_limits&ltstreamsize&gt::max(), '\n');</code></pre>
+
   - `cin.get(dest)` - reads a `char` from `stdin` into whatever variable is specified by `dest`, which should always be a `char` since that is what `cin.get()` reads specifically. There are two big differences between `cin.get()` and `cin >>`. The obvious one is that `cin.get()` only reads a single `char`, whereas `cin >>` reads by starting at the first non-whitespace character and then ending when it encounters a whitespace character (basically it reads a word, by default).  The not so obvious difference is that `cin.get()` also reads the `\n` character, which is the newline character. Any time you enter something into the console and read it in, the computer interprets it as `[input]\n`. There is always an implicit `\n` at the end of any input.
     
     <pre><code class="language-cpp">char dest;
