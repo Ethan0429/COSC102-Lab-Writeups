@@ -190,17 +190,17 @@ So you've opened the file, but now you need to read from it. Luckily, this is al
 
     Each line contains
         
-        <citation number> <month> <day> <year> <clocked speed> <speed limit> <type of road>
+      <pre><code class="language-plaintext">&lt;citation number&gt; &lt;month&gt; &lt;day&gt; &lt;year&gt; &lt;clocked speed&gt; &lt;speed limit&gt; &lt;type of road&gt;</code></pre>
 
     in that exact order and specification. So line 1 for example would be parsed as
 
-        citation number = E059564
-        month           = 8
-        day             = 12
-        year            = 2018
-        clocked speed   = 89
-        speed limit     = 55
-        type of road    = i
+      <pre><code class="language-plaintext">citation number = E059564
+    month           = 8
+    day             = 12
+    year            = 2018
+    clocked speed   = 89
+    speed limit     = 55
+    type of road    = i</code></pre>
 
     More information about the file format (straight from the lab page on Canvas):
     <q>The citation number may contain numbers and letters.
