@@ -75,8 +75,7 @@ nav_order: 1
     ##### example
     {: .no_toc }
 
-    <pre><code class="language-cpp">
-    Enter a ticket file: ticket // ticket file is "ticket"
+    <pre><code class="language-plaintext">Enter a ticket file: ticket // ticket file is "ticket"
     Enter a report file: output // report file is "output"
     Enter report start date (mm dd yyyy): 7 1 2017 // three ints separated by spaces
     Enter report end date   (mm dd yyyy): 8 11 2018</code></pre>
@@ -88,8 +87,7 @@ nav_order: 1
     Later in the lab you'll need to check if the line in the input file (more on that below) you're reading from contains a "date" that is between 
     `[start date, end date]` (inclusive). I recommend setting this up to prepare for the actual date recognition later on:
 
-    <pre><code class="language-cpp">
-    // from start date, read yyyy, dd, and mm into these variables respectively
+    <pre><code class="language-cpp">// from start date, read yyyy, dd, and mm into these variables respectively
     int end_year, end_day, end_month; 
     // read yyyy, dd, and mm into these variables respectively
     int start_year, start_day, start_month; </code></pre>
@@ -112,8 +110,7 @@ It might seem daunting at first, but luckily C++ has made it almost as simple as
     The `fstream` library has 3 types of ways to interact with a file: `ofstream`, `ifstream`, and `fstream`. Each of those words are types derived from the `fstream` library, and they allow you to define a variable that will be your "handle" for manipulating files. 
     `ofstream` allows you to *output* to a file, (hence the 'o'), `ifstream` allows you to *read* from a file, and `fstream` allows you to do both simultaneously. Their syntax varies compared to `iostream`'s `cout` & `cin`, but I hope you can already see the similarities.
 
-    <pre><code class="language-cpp">
-    #include &lt;iostream&gt;
+    <pre><code class="language-cpp">#include &lt;iostream&gt;
     #include &lt;fstream&gt; // including fstream
     using namespace std;
 
@@ -171,13 +168,11 @@ So you've opened the file, but now you need to read from it. Luckily, this is al
 - ### Using `ifstream`
   while `cin` is an input stream manipulator just like `ifstream`, `cin` is pre-defined for you. You'll need to define your *own* `ifstream` manipulator before you can do any reading.
 
-  <pre><code class="language-cpp">
-  ifstream fin;</code></pre>
+  <pre><code class="language-cpp">ifstream fin;</code></pre>
 
   Hopefully you've already done this assuming you've finished step 2. Once you've opened a file, you can interact with it the same way you interact with `stdin` (standard input e.g. the console/terminal) when you're getting user input. The difference is that the input is the contents of the file you're reading from.
 
-  <pre><code class="language-cpp">
-  ifstream fin; // pretend we opened a file
+  <pre><code class="language-cpp">ifstream fin; // pretend we opened a file
   int v, v2, v3
   while (fin >> v >> v2 >> v3) {
       // do whatever we want...
@@ -220,8 +215,7 @@ So you've opened the file, but now you need to read from it. Luckily, this is al
     {: .no_toc }
     Create variables to read in your citation number, month, day, etc, and read them from the file same as you would using `cin`.
 
-    <pre><code class="language-cpp">
-    citation_number = string
+    <pre><code class="language-cpp">citation_number = string
     month           = int
     day             = int
     year            = int //or string, more on this in the Hints section
@@ -404,6 +398,7 @@ Once you've done all of the above, you've basically finished! But there are a co
     cout << right << "I'm a righty\n";</code></pre>
 
   - `setfill(fill)` - defines the "fill" character using the paramter provided `fill`. Anything printed after this is set will fill whatever whitespace is output with whatever `fill` is
+  - 
     <pre><code class="language-cpp">#include &lt;iomanip&gt; // include iomanip!!!
     // other stuff...
 
