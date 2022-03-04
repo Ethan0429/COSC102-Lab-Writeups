@@ -127,8 +127,8 @@ All topics discussed in detail are referenced by the official study guide for th
         // so clear the state and continue reading
         cin.clear();
 
-        /* erase the input that was placed in the buffer to restore future reading operations
-        which is "hello" in this case */
+        // erase the input that was placed in the buffer to restore future reading operations
+        // which is "hello" in this case
         
         // notice we use numeric_limits which is from the <limits> library
         cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
