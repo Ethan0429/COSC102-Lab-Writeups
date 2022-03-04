@@ -6,6 +6,5 @@ nav_order: 0
 
 # There's nothing here...
 
-![pickachu surprise face](img/o.png)
-
+<img src="img/o.png" height=250px width=auto>
 ###### u rn
