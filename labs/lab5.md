@@ -44,10 +44,10 @@ nav_order: 1
 
   <div markdown="1">
 
-*timestamp* - `Mon, 29 Feb 2022 00:33:03 EST`
+`Mon, 29 Feb 2022 00:33:03 EST`
   - added `fixed` & `setprecision()`, and [IMPORTANT](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#important-iomanip-feature) to [iomanip](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#iomanip) section<br><br>
 
-*timestamp* - `Mon, 28 Feb 2022 13:30:03 EST`
+`Mon, 28 Feb 2022 13:30:03 EST`
   - updated the [ticket date range checking](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#checking-ticket-date-range)
 
   </div>
