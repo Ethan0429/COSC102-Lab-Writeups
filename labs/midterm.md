@@ -97,17 +97,17 @@ All topics discussed in detail are referenced by the official study guide for th
    - `cin/cout` - the input/output stream operators, respectively. `cin` allows us to receive input from `stdin` i.e. input from console, and `cout` allows us to "print" output to `stdout` i.e. the console screen. `cin` reads **one word at a time**, where a word is any value until (and not including) a whitespace character is encountered.
 
   - `cin.eof()` - returns a `bool` indicating true if the end of `stdin` has been reached i.e. there is no more input to be read, stands for **end-of-file**.
-    ```c++
+    <pre><code>
     while (cin >> dest) {
       if (cin.eof()) {
         // we've reached the end of input, so break
         break;
       }
     }
-    ```
+    </pre></code>
   
   - `cin.clear()` - clears the error-state of `cin` which is "set" i.e. raised when `cin` reads in "bad-input" e.g. reading a `string` into an `int` variable.
-    ```c++
+    <pre><code>
     int dest;
     while (cin >> dest) {
       /* if we read in something like "hello", then the error flag is raised for cin
@@ -117,9 +117,9 @@ All topics discussed in detail are referenced by the official study guide for th
         cin.clear();
       }
     }
-    ```
+    </pre></code>
   - `cin.ignore(size, delimiter)` - "ignores" (I like to say "erases") whatever is in the "buffer" that's between `cin` & the variable you're reading into. Its arguments `size` and `delimiter` are the amount of characters to be ignored if inside the buffer and the character that signals to stop ignoring once encountered, respectively. So `cin.ignore(size, delimiter)` will stop ignoring either when it reaches whatever number `size` is, or when it encounteres the `char` passed to `delimiter` (usually `'\n'`).<br><br>If you were to read bad input, then that input gets left in the buffer instead of going into the intended variable. If it's left inside the buffer, then it would cause issues for future reading because `cin` will start reading from where it left off from inside the buffer, and in this case would be corrupted because of the bad input left over. If either of these passages confuse you, consider reading this [little post I made](https://discord.com/channels/935991929978621962/935991930582630404/941465195572760576) to explain the concept a bit more in depth. Note that the following example uses `#include <limits>` because the `size` argument passed is `std::numeric_limits<streamsize>::max()`
-    ```c++
+    <pre><code>
     int value;
     while (cin >> value) {
       /* if we read in something like "hello", then the error flag is raised for cin
@@ -134,33 +134,33 @@ All topics discussed in detail are referenced by the official study guide for th
         cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
       }
     }
-    ```
+    </pre></code>
     You'll notice we use `cin.clear()` & `cin.ignore()` in tandem, which is typically the case.<br><br>
 
   - `cin.get(dest)` - reads a `char` from `stdin` into whatever variable is specified by `dest`, which should always be a `char` since that is what `cin.get()` reads specifically. There are two big differences between `cin.get()` and `cin >>`. The obvious one is that `cin.get()` only reads a single `char`, whereas `cin >>` reads by starting at the first non-whitespace character and then ending when it encounters a whitespace character (basically it reads a word, by default).  The not so obvious difference is that `cin.get()` also reads the `\n` character, which is the newline character. Any time you enter something into the console and read it in, the computer interprets it as `[input]\n`. There is always an implicit `\n` at the end of any input.
-    ```c++
+    <pre><code>
     char dest;
     while (cin.get(dest)) {
       // read & print every char while possible
       cout << dest;
     }
-    ```
+    </pre></code>
 
    - wrapping `cin` in if-statement - `cin` is able to return true or false based on whether or not it successfully read a value from input.
-      ```c++
+      <pre><code>
       int dest;
       /* reads dest while it can. If "bad" input was read or EOF was 
         encountered, it should fail */
       while (cin >> dest) {
         cout << dest;
       }
-      ```
+      </pre></code>
 
   - `printf(string, formating_args...)` - I'm not sure if you need to know what `printf()` is exactly, but it is essentially the `C` analog to `cout <<`. `string` is the string to be printed, and `formatting_args` are the format specifiers to be passed to the string. It's a bit similar to how you would print with Java from 101.
-      ```c++
+      <pre><code>
       /* prints "I am 21 years old" using printf. */
       printf("I am %d years old", 21);
-      ```
+      </pre></code>
     At the very least, be familiar with the following format specifiers (very similar to the ones in 101)
 
         %d - integer specifier
