@@ -302,13 +302,14 @@ All of this pedantic output formatting will be accomplished via the `<iomanip>` 
         for printing the month, you'll need to match the `mm` you've read in to the index of your `const string months[]` array. (I named my `months` you can name it whatever). 
    *If you don't know what* `const` *is, read the* [Hints](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#hints) section.
    
-    1. #### Calculating Fine Amount
+    7. #### Calculating Fine Amount
+
         for printing the fine amount, you'll need to use the fine-multiplier specified in the lab writeup
 
           <pre><code class="language-plaintext">Interstate multiplier:  5.2252
-        Highway multiplier:     9.4412
-        Residential multiplier: 17.1525
-        None of the above:      12.152</code></pre>
+      Highway multiplier:     9.4412
+      Residential multiplier: 17.1525
+      None of the above:      12.152</code></pre>
             
         From there, calculating the fine is easy. The multiplier is multiplied to the difference between the speed limit and the clocked speed to determine the fine's dollar amount. Note you'll need to use a switch statement to apply the fine multiplier as well. You should have a `const double` variable for each of the multipliers above. Define these at the beginning of your program. You'll use the switch statement to evaluate the `road type` `char`, and make a case for each potential `char` (`i`, `h`, `r`, and `p`). Each case should calculate the fine amount using whichever of the multipliers you've defined in your code. Again, more info on `const` in the [Hints](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#hints) section.
 
