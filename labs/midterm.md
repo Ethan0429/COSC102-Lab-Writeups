@@ -55,6 +55,11 @@ nav_order: 8
 # Midterm Review
 All topics discussed in detail are referenced by the official study guide for the exam. [Refer to this study guide Camille created](../assets/../midterm.pdf) for a reference to the midterm material.
 
+## Table of contents
+{: .no_toc }
+- TOC
+{:toc}
+
 ## Vim
 
 - ### What is Vim?
