@@ -340,7 +340,7 @@ Once you've done all of the above, you've basically finished! But there are a co
   in this case, it'll be `fin.open(filename)` because `fin` is the name I decided to give to my `ifstream` variable. This `fin.open(filename)` opens a file from the variable `filename`, which contains a `string` (e.g. something like "file.txt"). If that file doesn't exist, then `fin.open(filename)` will return `false`. If it does exist, then your `ifstream` handle (`fin` in this case) can read from the file the same way you read from input using `cin >>`:
    
     <pre><code class="language-cpp">ifstream fin // create ifstream
-    fin.open("example_file.txt");
+  fin.open("example_file.txt");
 
     // pretend that example_file.txt has the following contents from /* to */:
     /*
