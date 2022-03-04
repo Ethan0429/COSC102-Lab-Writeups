@@ -88,9 +88,9 @@ nav_order: 1
     `[start date, end date]` (inclusive). I recommend setting this up to prepare for the actual date recognition later on:
 
     <pre><code class="language-cpp">// from start date, read yyyy, dd, and mm into these variables respectively
-    int end_year, end_day, end_month; 
-    // read yyyy, dd, and mm into these variables respectively
-    int start_year, start_day, start_month; </code></pre>
+  int end_year, end_day, end_month; 
+  // read yyyy, dd, and mm into these variables respectively
+  int start_year, start_day, start_month; </code></pre>
 
 
     You'll see why this is useful in the later steps...
