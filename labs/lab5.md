@@ -183,11 +183,10 @@ So you've opened the file, but now you need to read from it. Luckily, this is al
   - ### Input File Format
  
     Given an input file with the following format, you should easily be able to `fin >>` as many times as there are "words" in the file. Move each value into its respective variable with `while (fin >> v1 >> v2 >> v3 >> v4 >> v5 >> v6 >> v)` (dont use those var names) and do stuff with them. This will read one line at a time from an input file with the following format
-    
-        E059564 8 12 2018 89 55 i
+        <pre><code class="language-plaintext">E059564 8 12 2018 89 55 i
         E515522 7 3 2017 105 50 r
         E712221 6 4 2015 200 25 h
-        E219221 12 25 17 2000 10 p
+        E219221 12 25 17 2000 10 p</code></pre>
 
     Each line contains
         
@@ -228,7 +227,7 @@ So you've opened the file, but now you need to read from it. Luckily, this is al
 #### Output Format Requirements
 This process is very similar to step 3, and again has extremely familiar syntax to its `iostream` analog `cout`. You'll be creating a file (this is done automatically when you output to a file) with the name of whatever you read in from step 1. The output should follow a strict format:
     
-    <day>-<3-character Month>-<Year> <citation> $<fine>
+  <pre><code class="language-plaintext">&lt;day&gt;-&lt;3-character Month&gt;-&lt;Year&gt; &lt;citation&gt; $&lt;fine&gt;</code></pre>
 
 And even stricter:
 1. The day must be 2 digits exactly
@@ -239,16 +238,15 @@ And even stricter:
 6. Only print the citations that occurred between the start and end dates (inclusive) you read from step 1.
 
 So input 
-    
-    E059564 8 12 2018 89 55 i
+    <pre><code class="language-plaintext">E059564 8 12 2018 89 55 i
     E515522 7 3 2017 105 50 r
     E712221 6 4 2015 200 25 h
-    E219221 12 25 17 2000 10 p
+    E219221 12 25 17 2000 10 p</code></pre>
 
 should have the corresponding output
 
-    03-Jul-2017 E515522    $   943.39
-    25-Dec-2017 E219221    $ 24182.48
+  <pre><code class="language-plaintext">03-Jul-2017 E515522    $   943.39
+25-Dec-2017 E219221    $ 24182.48</code></pre>
 
 All of this pedantic output formatting will be accomplished via the `<iomanip>` library. This allows you to manipulate streams using modifiers like `setw()`, `left`, `right`, and more. You can learn more about `<iomanip>` in the [Hints](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#hints) section.
 
