@@ -303,11 +303,10 @@ All of this pedantic output formatting will be accomplished via the `<iomanip>` 
    
     1. #### Calculating Fine Amount
         for printing the fine amount, you'll need to use the fine-multiplier specified in the lab writeup
-            
-            Interstate multiplier:  5.2252
+            <pre><code class="language-plaintext">Interstate multiplier:  5.2252
             Highway multiplier:     9.4412
             Residential multiplier: 17.1525
-            None of the above:      12.152
+            None of the above:      12.152</code></pre>
             
         From there, calculating the fine is easy. The multiplier is multiplied to the difference between the speed limit and the clocked speed to determine the fine's dollar amount. Note you'll need to use a switch statement to apply the fine multiplier as well. You should have a `const double` variable for each of the multipliers above. Define these at the beginning of your program. You'll use the switch statement to evaluate the `road type` `char`, and make a case for each potential `char` (`i`, `h`, `r`, and `p`). Each case should calculate the fine amount using whichever of the multipliers you've defined in your code. Again, more info on `const` in the [Hints](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#hints) section.
 
@@ -324,7 +323,7 @@ Once you've done all of the above, you've basically finished! But there are a co
   a keyword that is added before a variable. If you use `const`, you are locking the value given to the variable in place for the entirety of your program. It's permanent, and you cannot change it. You won't ever `cin >> my_constant` either, because a `const` variable is defined at "compile time", meaning you define its contents in your code before it's even run. If you create a const variable, it should almost always look something like
 
     <pre><code class="language-cpp">// const array
-    const int arr[] = {1, 2, 3};
+  const int arr[] = {1, 2, 3};
 
     // const double
     const double dbl = 2.0;
@@ -362,7 +361,7 @@ Once you've done all of the above, you've basically finished! But there are a co
     Almost the same as `ifstream::open`, except you can only **write** instead of **read**. If `filename` does not exist (e.g. file.txt is not a file in your current working directory) then `fout.open(filename)` will automatically create the file. If it *does* exist, then `fout.open(filename)` will delete the contents of `filename` and thus it will be empty. You can write to the file the same way you write to `stdout` (the console) using `cout <<`
 
     <pre><code class="language-cpp">ofstream fout // create ofstream
-    fout.open("example_file.txt");
+  fout.open("example_file.txt");
 
     // example_file.txt before writing with fout (empty)
 
@@ -396,7 +395,7 @@ Once you've done all of the above, you've basically finished! But there are a co
     cout << right << "I'm a righty\n";</code></pre>
 
   - `setfill(fill)` - defines the "fill" character using the paramter provided `fill`. Anything printed after this is set will fill whatever whitespace is output with whatever `fill` is
-  - 
+ 
     <pre><code class="language-cpp">#include &lt;iomanip&gt; // include iomanip!!!
     // other stuff...
 
