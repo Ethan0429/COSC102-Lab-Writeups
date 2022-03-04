@@ -31,7 +31,7 @@ nav_order: 8
   <tr>
     <td class="tg-0lax">All information is up-to-date and has compiled on hydra/tesla</td>
     <td class="tg-0lax">Information is subject to change and has not been tested on hydra/tesla</td>
-    <td class="tg-0lax">Information has been recently updated, so you should read the changelog below in case it concerns something you've already completed.</td>
+    <td class="tg-0lax">Information has been recently updated, so you should read the changelog below in case it concerns something you've already completed</td>
   </tr>
 </tbody>
 </table>
