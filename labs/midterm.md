@@ -44,8 +44,8 @@ nav_order: 8
   <div markdown="1">
 
   - added [Vim](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#vim) section
-  - added [Unix/Linux](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#unix-linux) section
-  - added [C++ Input/Output](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#c++-input-output) section<br>
+  - added [Unix/Linux](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#unixlinux) section
+  - added [C++ Input/Output](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#c++-inputoutput) section<br>
   `Fri, 04 Mar 2022 00:49:19 EST`
 
   </div>
