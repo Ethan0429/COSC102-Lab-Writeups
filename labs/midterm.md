@@ -133,6 +133,7 @@ All topics discussed in detail are referenced by the official study guide for th
         cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
       }
     }</code></pre>
+<br>
     
     You'll notice we use `cin.clear()` & `cin.ignore()` in tandem, which is typically the case.<br><br>
 
