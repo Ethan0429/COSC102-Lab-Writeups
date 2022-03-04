@@ -328,11 +328,11 @@ Once you've done all of the above, you've basically finished! But there are a co
     <pre><code class="language-cpp">// const array
   const int arr[] = {1, 2, 3};
 
-    // const double
-    const double dbl = 2.0;
+  // const double
+  const double dbl = 2.0;
 
-    // const string
-    const string str = "this is constant";</code></pre>
+  // const string
+  const string str = "this is constant";</code></pre>
 
     Notice how they're each assigned a value the moment they're declared. Just remmeber that value will not change!
 
@@ -342,21 +342,21 @@ Once you've done all of the above, you've basically finished! But there are a co
     <pre><code class="language-cpp">ifstream fin // create ifstream
   fin.open("example_file.txt");
 
-    // pretend that example_file.txt has the following contents from /* to */:
-    /*
-    Hello my name is Ethan!
-    */
+  // pretend that example_file.txt has the following contents from /* to */:
+  /*
+  Hello my name is Ethan!
+  */
 
-    // define temporary string
-    string temporary_str;
+  // define temporary string
+  string temporary_str;
 
-    fin >> temporary_str // temporary_str = Hello
-    fin >> temporary_str // temporary_str = my
-    fin >> temporary_str // temporary_str = name
-    fin >> temporary_str // temporary_str = is
-    fin >> temporary_str // temporary_str = Ethan!
+  fin >> temporary_str // temporary_str = Hello
+  fin >> temporary_str // temporary_str = my
+  fin >> temporary_str // temporary_str = name
+  fin >> temporary_str // temporary_str = is
+  fin >> temporary_str // temporary_str = Ethan!
 
-    fin.close() // make sure to close the file!!!</code></pre>
+  fin.close() // make sure to close the file!!!</code></pre>
 
 
 - ### `ofstream::open` 
