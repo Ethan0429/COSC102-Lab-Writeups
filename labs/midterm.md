@@ -47,7 +47,7 @@ nav_order: 8
   - added completed [Vim](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#vim) section
   - added completed [Unix/Linux](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#unixlinux) section
   - added *mostly* completed [C++ Input/Output](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#c++-inputoutput) section
-  - added incomplete [Vector](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#vector) section
+  - added incomplete [Vectors](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#vectors) section
 
   </div>
 </details>
