@@ -3,7 +3,7 @@ layout: default
 title: Midterm Review
 nav_order: 8
 ---
-# Status: <font color="orange">In-Progress</font>
+# Status: <font color="orange">In-Progress</font> | <font color="blue">Recently Updated</font>
 {: .no_toc }
 
 #### Status Rubric
@@ -162,7 +162,7 @@ All topics discussed in detail are referenced by the official study guide for th
         %s - string specifier
         %c - char specifier
 
-  - `iomanip` - You can refer to the [iomanip](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#iomanip) for all of this.
+  - `iomanip` - You can refer to the [iomanip](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#iomanip) section of the lab 5 writeup for all of this.
   
 ### Vectors
 Coming soon...
