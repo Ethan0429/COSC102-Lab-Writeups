@@ -153,7 +153,7 @@ All topics discussed in detail are referenced by the official study guide for th
 
   - `printf(string, formating_args...)` - I'm not sure if you need to know what `printf()` is exactly, but it is essentially the `C` analog to `cout <<`. `string` is the string to be printed, and `formatting_args` are the format specifiers to be passed to the string. It's a bit similar to how you would print with Java from 101.
       
-      <pre><code class="language-cpp">/* prints "I am 21 years old" using printf. */
+      <pre><code class="language-plaintext">/* prints "I am 21 years old" using printf. */
       printf("I am %d years old", 21);</code></pre>
 
     At the very least, be familiar with the following format specifiers (very similar to the ones in 101)

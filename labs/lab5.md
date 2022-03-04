@@ -75,12 +75,11 @@ nav_order: 1
     ##### example
     {: .no_toc }
 
-    ```c++
+    <pre><code class="language-cpp">
     Enter a ticket file: ticket // ticket file is "ticket"
     Enter a report file: output // report file is "output"
     Enter report start date (mm dd yyyy): 7 1 2017 // three ints separated by spaces
-    Enter report end date   (mm dd yyyy): 8 11 2018
-    ```
+    Enter report end date   (mm dd yyyy): 8 11 2018</code></pre>
 
 
     This part is the same way you've been getting input. Just use `cin >> ` and read into the appropriate variables. 
@@ -89,12 +88,11 @@ nav_order: 1
     Later in the lab you'll need to check if the line in the input file (more on that below) you're reading from contains a "date" that is between 
     `[start date, end date]` (inclusive). I recommend setting this up to prepare for the actual date recognition later on:
 
-    ```c++
+    <pre><code class="language-cpp">
     // from start date, read yyyy, dd, and mm into these variables respectively
     int end_year, end_day, end_month; 
     // read yyyy, dd, and mm into these variables respectively
-    int start_year, start_day, start_month; 
-    ```
+    int start_year, start_day, start_month; </code></pre>
 
 
     You'll see why this is useful in the later steps...
@@ -114,9 +112,9 @@ It might seem daunting at first, but luckily C++ has made it almost as simple as
     The `fstream` library has 3 types of ways to interact with a file: `ofstream`, `ifstream`, and `fstream`. Each of those words are types derived from the `fstream` library, and they allow you to define a variable that will be your "handle" for manipulating files. 
     `ofstream` allows you to *output* to a file, (hence the 'o'), `ifstream` allows you to *read* from a file, and `fstream` allows you to do both simultaneously. Their syntax varies compared to `iostream`'s `cout` & `cin`, but I hope you can already see the similarities.
 
-    ```c++
-    #include <iostream>
-    #include <fstream> // including fstream
+    <pre><code class="language-cpp">
+    #include &lt;iostream&gt;
+    #include &lt;fstream&gt; // including fstream
     using namespace std;
 
     int main() {
@@ -144,8 +142,7 @@ It might seem daunting at first, but luckily C++ has made it almost as simple as
         // closes both file handles
         fin.close();
         fout.close();
-    }
-    ```
+    }</code></pre>
 
 
     Generally it's good practice to use whichever type of stream you'll need as opposed to using an `fstream` for everything, but I don't think it really matters for the purposes of this lab.
@@ -174,19 +171,17 @@ So you've opened the file, but now you need to read from it. Luckily, this is al
 - ### Using `ifstream`
   while `cin` is an input stream manipulator just like `ifstream`, `cin` is pre-defined for you. You'll need to define your *own* `ifstream` manipulator before you can do any reading.
 
-  ```c++
-  ifstream fin;
-  ```
+  <pre><code class="language-cpp">
+  ifstream fin;</code></pre>
 
   Hopefully you've already done this assuming you've finished step 2. Once you've opened a file, you can interact with it the same way you interact with `stdin` (standard input e.g. the console/terminal) when you're getting user input. The difference is that the input is the contents of the file you're reading from.
 
-  ```c++
+  <pre><code class="language-cpp">
   ifstream fin; // pretend we opened a file
   int v, v2, v3
   while (fin >> v >> v2 >> v3) {
       // do whatever we want...
-  }
-  ```
+  }</code></pre>
 
   And now you should see the striking similarities! The above code reads everything from a file, and stuffs each "word" (whitespcae-separated string) into a variable as many times as we specify.
 
@@ -224,14 +219,14 @@ So you've opened the file, but now you need to read from it. Luckily, this is al
     ### **TLDR**
     {: .no_toc }
     Create variables to read in your citation number, month, day, etc, and read them from the file same as you would using `cin`.
-    ```c++
+
+    <pre><code class="language-cpp">
     citation_number = string
     month           = int
     day             = int
     year            = int //or string, more on this in the Hints section
     ...
-    type of road    = char
-    ```
+    type of road    = char</code></pre>
 
 
 ## Step 4: Outputting to a file
@@ -272,39 +267,38 @@ All of this pedantic output formatting will be accomplished via the `<iomanip>` 
     3. are closing the file handle once you're done with it (i.e. done outputting)
     4. #### Checking Ticket Date Range
        before you print anything, you'll need to determine if the ticket line you've just read is within a valid date range. If you did as I recommended in Step 1, then you'll already have some variables set to make the process a bit easier. As far as I'm aware, you're not allowed to use the STL time library, so you'll have to resort to some good ol' logic unless your instructor has said otherwise. Here's how I've done it (the following code is "pseudo-code" which is just simplified code to make it easier on the eyes. The logic still applies and will be implemented the same regardless of your language of choice)
-        ```python
-        # check if the year we've just read is in (start_year, end_year)
-        if current_year > start_year and current_year < end_year:
+
+        <pre><code class="language-python"># check if the year we've just read is in (start_year, end_year)
+        if current_year &gt; start_year and current_year &lt; end_year:
           # if it is, then we can print the ticket no matter what
         
         # if not, check if the current year is the same as start year
         else if current_year == start_year:
           # if it is, then we should now check the start month
-          if current_month > start_month:
+          if current_month &gt; start_month:
             # if the current month is after the start month, then we can print
           
           # if not, chcek if the current month is the same as the start month
           if current_month == start_month:
             # if it is, then we need to compare the days
-            if current_day >= start_day:
+            if current_day &gt;= start_day:
               # if the current day is the same or past the start day, then we can print
         
         # if not, check if the current year is the same as end year
         else if current_year == end_year:
           # if it is, then we should now check the end month
-          if current_month < end_month:
+          if current_month &lt; end_month:
             # if the current month is before the end month, then we can print
           
           # if not check if the current month is the same as the end month
           if current_month == end_month:
             # if it is, then we need to compare the days
-            if current_day <= end_day:
+            if current_day &lt;= end_day:
               # if the current day is the same or before the end day, then we can print
         
         # otherwise the current year is neither between nor equal to the years
         else
-          # skip ticket
-        ```
+          # skip ticket</code></pre>
 
         The logic really isn't complicated, it's just tediously verbose. It's just stepping through the date from the broadest point (year) to the most specific point (day) and deciding to print based on the comparison from the current date (from the ticket line) vs. the start/end dates from Step 1.<br><br>
         If the current year is between the start/end years, then we can print it for sure (so print). If it's equal to one of the start/end years, then we need to check which one it's equal to. If it's the same as the *start year*, then we need to check if the current month is after or equal to the start month. (because then it falls in range of `(start month, end month)`, and we've already checked the year) And again, if the current month is equal to the start month, then we need to get more specific and check if the current day comes after the start day. Then you apply the same logic for the end year/month/day but invert the comparison. If the current year is equal to the end year, then we need to get more specific and see if the current month comes before the end month. If it does we can print, otherwise we need to check if the current month is equal to the end month, and then check if the current day comes before the end day. If it comes before or is equal to the end day, then we can print the ticket.<br><br>
@@ -315,7 +309,7 @@ All of this pedantic output formatting will be accomplished via the `<iomanip>` 
         for printing the month, you'll need to match the `mm` you've read in to the index of your `const string months[]` array. (I named my `months` you can name it whatever). 
    *If you don't know what* `const` *is, read the* [Hints](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#hints) section.
    
-    7. #### Calculating Fine Amount
+    1. #### Calculating Fine Amount
         for printing the fine amount, you'll need to use the fine-multiplier specified in the lab writeup
             
             Interstate multiplier:  5.2252
@@ -337,16 +331,14 @@ Once you've done all of the above, you've basically finished! But there are a co
 - ### `const`
   a keyword that is added before a variable. If you use `const`, you are locking the value given to the variable in place for the entirety of your program. It's permanent, and you cannot change it. You won't ever `cin >> my_constant` either, because a `const` variable is defined at "compile time", meaning you define its contents in your code before it's even run. If you create a const variable, it should almost always look something like
 
-    ```c++
-    // const array
+    <pre><code class="language-cpp">// const array
     const int arr[] = {1, 2, 3};
 
     // const double
     const double dbl = 2.0;
 
     // const string
-    const string str = "this is constant";
-    ```
+    const string str = "this is constant";</code></pre>
 
 
     Notice how they're each assigned a value the moment they're declared. Just remmeber that value will not change!
@@ -354,8 +346,7 @@ Once you've done all of the above, you've basically finished! But there are a co
 - ### `ifstream::open`
   in this case, it'll be `fin.open(filename)` because `fin` is the name I decided to give to my `ifstream` variable. This `fin.open(filename)` opens a file from the variable `filename`, which contains a `string` (e.g. something like "file.txt"). If that file doesn't exist, then `fin.open(filename)` will return `false`. If it does exist, then your `ifstream` handle (`fin` in this case) can read from the file the same way you read from input using `cin >>`:
    
-    ```c++
-    ifstream fin // create ifstream
+    <pre><code class="language-cpp">ifstream fin // create ifstream
     fin.open("example_file.txt");
 
     // pretend that example_file.txt has the following contents from /* to */:
@@ -372,15 +363,13 @@ Once you've done all of the above, you've basically finished! But there are a co
     fin >> temporary_str // temporary_str = is
     fin >> temporary_str // temporary_str = Ethan!
 
-    fin.close() // make sure to close the file!!!
-    ```
+    fin.close() // make sure to close the file!!!</code></pre>
 
 
 - ### `ofstream::open` 
     Almost the same as `ifstream::open`, except you can only **write** instead of **read**. If `filename` does not exist (e.g. file.txt is not a file in your current working directory) then `fout.open(filename)` will automatically create the file. If it *does* exist, then `fout.open(filename)` will delete the contents of `filename` and thus it will be empty. You can write to the file the same way you write to `stdout` (the console) using `cout <<`
 
-    ```c++
-    ofstream fout // create ofstream
+    <pre><code class="language-cpp">ofstream fout // create ofstream
     fout.open("example_file.txt");
 
     // example_file.txt before writing with fout (empty)
@@ -395,46 +384,38 @@ Once you've done all of the above, you've basically finished! But there are a co
     I love computer science
 
     */
-    fout.close() // make sure to close the file!!!
-    ```
+    fout.close() // make sure to close the file!!!</code></pre>
 
 
 - ### `<iomanip>`
   This is your output formatting library. For this assignment, you'll be using the following methods it provides you:
   - `left` prints any output following it in a left-justified field (i.e. it sticks to the left)
    
-    ```c++
-    #include <iomanip> // include iomanip!!!
+    <pre><code class="language-cpp">#include &lt;iomanip&gt; // include iomanip!!!
     // other stuff...
 
-    cout << left << "I'm a lefty\n";
-    ```
+    cout << left << "I'm a lefty\n";</code></pre>
 
   - `right` prints any output following it in a right-justified field (i.e. it sticks to the right)
    
-    ```c++
-    #include <iomanip> // include iomanip!!!
+    <pre><code class="language-cpp">#include &lt;iomanip&gt; // include iomanip!!!
     // other stuff...
 
-    cout << right << "I'm a righty\n";
-    ```
+    cout << right << "I'm a righty\n";</code></pre>
 
   - `setfill(fill)` - defines the "fill" character using the paramter provided `fill`. Anything printed after this is set will fill whatever whitespace is output with whatever `fill` is
-    ```c++
-    #include <iomanip> // include iomanip!!!
+    <pre><code class="language-cpp">#include &lt;iomanip&gt; // include iomanip!!!
     // other stuff...
 
     // set fill char to '-'
     cout << left << setfill('-') << setw(10) << 1000 << '\n';
 
     // prints:
-    // 1000------
-    ```
+    // 1000------</code></pre>
 
   - `setw(len)` - defines the width in integer length `len` of the next value printed. If the value printed is 4 chars wide, and `setw(10)` is applied, then the value will be "padded" 6 extra characters (determined by `setfill()`) to get to a total width of 10
 
-    ```c++
-    #include <iomanip> // include iomanip!!!
+    <pre><code class="language-cpp">#include &lt;iomanip&gt; // include iomanip!!!
     // other stuff...
 
     // set fill char to '-' & width to 10
@@ -444,13 +425,11 @@ Once you've done all of the above, you've basically finished! But there are a co
     // 1000------
 
     // notice how 1000 is 4 chars wide, and width is set to 10.
-    // thus it prints 6 more '-' characters to make it to width of 10
-    ```
+    // thus it prints 6 more '-' characters to make it to width of 10</code></pre>
 
   - `fixed` & `setprecision()` - sets the stream to print any decimal places to a fixed amount specified by `setprecision(x)` where `x` is some `int` specifying the amount of decimal places to be printed
   
-    ```c++
-    #include <iomanip> // includ iomanip!!!
+    <pre><code class="language-cpp">#include &lt;iomanip&gt; // include iomanip!!!
     // other stuff
     double pi = 3.14;
     cout << fixed << setprecision(3) << pi;
@@ -461,8 +440,7 @@ Once you've done all of the above, you've basically finished! But there are a co
     cout << fixed << setprecision(1) << pi;
 
     // prints:
-    // 3.1
-    ```
+    // 3.1</code></pre>
 
   - #### IMPORTANT `IOMANIP` FEATURE
     All of the stream manipulators I've listed here, except for `setw()`, are "sticky". This means that whenever you use a manipulator like `setfill('x')`, that gets applied to anything you print after. So make sure you're aware of that when using `cout`. The only one that does not stick is `setw()`, which resets after it's been used.
