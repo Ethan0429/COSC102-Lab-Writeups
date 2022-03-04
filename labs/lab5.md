@@ -183,10 +183,11 @@ So you've opened the file, but now you need to read from it. Luckily, this is al
   - ### Input File Format
  
     Given an input file with the following format, you should easily be able to `fin >>` as many times as there are "words" in the file. Move each value into its respective variable with `while (fin >> v1 >> v2 >> v3 >> v4 >> v5 >> v6 >> v)` (dont use those var names) and do stuff with them. This will read one line at a time from an input file with the following format
-        <pre><code class="language-plaintext">E059564 8 12 2018 89 55 i
-        E515522 7 3 2017 105 50 r
-        E712221 6 4 2015 200 25 h
-        E219221 12 25 17 2000 10 p</code></pre>
+
+      <pre><code class="language-plaintext">E059564 8 12 2018 89 55 i
+    E515522 7 3 2017 105 50 r
+    E712221 6 4 2015 200 25 h
+    E219221 12 25 17 2000 10 p</code></pre>
 
     Each line contains
         
