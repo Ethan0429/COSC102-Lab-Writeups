@@ -238,10 +238,11 @@ And even stricter:
 6. Only print the citations that occurred between the start and end dates (inclusive) you read from step 1.
 
 So input 
-    <pre><code class="language-plaintext">E059564 8 12 2018 89 55 i
-    E515522 7 3 2017 105 50 r
-    E712221 6 4 2015 200 25 h
-    E219221 12 25 17 2000 10 p</code></pre>
+
+  <pre><code class="language-plaintext">E059564 8 12 2018 89 55 i
+E515522 7 3 2017 105 50 r
+E712221 6 4 2015 200 25 h
+E219221 12 25 17 2000 10 p</code></pre>
 
 should have the corresponding output
 
