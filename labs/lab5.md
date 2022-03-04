@@ -445,6 +445,6 @@ Once you've done all of the above, you've basically finished! But there are a co
 
 - ### Formatting `mm`
   
-  remember that there are 12 month strings, so the size of the array is 12. You can index from 0-11, and the `mm` you read in is any value from 1-12) 
+  remember that there are 12 month strings, so the size of the array is 12. You can index from 0-11, and the `mm` you read in is any value from 1-12)
 
 That's it. Bye!
