@@ -130,7 +130,7 @@ All topics discussed in detail are referenced by the official study guide for th
         // erase the input that was placed in the buffer to restore future reading operations
         // which is "hello" in this case
         
-        // notice we use numeric_limits which is from the &ltlimits&gt library
+        // notice we use numeric_limits which is from the &lt;limits&gt; library
         cin.ignore(std::numeric_limits&lt;streamsize&gt;::max(), '\n');
       }</code></pre>
 
