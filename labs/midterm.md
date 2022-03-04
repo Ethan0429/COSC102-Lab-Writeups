@@ -46,7 +46,7 @@ nav_order: 8
   - added completed [Vim](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#vim) section
   - added completed [Unix/Linux](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#unixlinux) section
   - added *mostly* completed [C++ Input/Output](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#c++-inputoutput) section
-  - added [Vector](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#vector)<br><br>
+  - added incomplete [Vector](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#vector) section<br><br>
 *timestamp* - `Fri, 04 Mar 2022 00:49:19 EST`
 
   </div>
