@@ -304,8 +304,8 @@ All of this pedantic output formatting will be accomplished via the `<iomanip>` 
    
     1. #### Calculating Fine Amount
         for printing the fine amount, you'll need to use the fine-multiplier specified in the lab writeup
-          <pre><code class="language-plaintext">
-        Interstate multiplier:  5.2252
+
+          <pre><code class="language-plaintext">Interstate multiplier:  5.2252
         Highway multiplier:     9.4412
         Residential multiplier: 17.1525
         None of the above:      12.152</code></pre>
