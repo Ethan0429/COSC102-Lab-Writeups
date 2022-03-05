@@ -3,7 +3,7 @@ layout: default
 title: Midterm Review
 nav_order: 8
 ---
-# Status: <font color="orange">In-Progress</font> | <font color="blue">Recently Updated</font>
+# Status: <font color="orange">In-Progress</font>
 {: .no_toc }
 
 #### Status Rubric
