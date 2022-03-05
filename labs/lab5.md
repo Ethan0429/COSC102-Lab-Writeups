@@ -67,10 +67,10 @@ nav_order: 1
 - ### Prompt user for
     {: .no_toc }
 
-  - ticket file (`std::string`)
-  - report file (`std::string`)
-  - report start date (3 `int`'s `mm dd yyy`)
-  - report end date (3 `int`'s in the format `mm dd yyy`)
+  - ticket file (`string`)
+  - report file (`string`)
+  - report start date (3 `int`'s `mm dd yyyy`)
+  - report end date (3 `int`'s `mm dd yyyy`)
 
     ##### example
     {: .no_toc }
