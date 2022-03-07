@@ -440,45 +440,45 @@ Again, another stream-type. A lot of students get tripped up with string streams
 
     - ### Use cases
 
-    - Converting string to number
+      - Converting string to number
 
-    <pre><code class="language-c++">#include&lt;sstream&gt;
+      <pre><code class="language-c++">#include&lt;sstream&gt;
 
-    using namespace std;
+      using namespace std;
 
-    int main() {
-      // holds our number
-      int number;
-      // our string we're gonna convert
-      string strNumber = "10";
-      // initialize istringstream with the string "10"
-      istringstream iss(strNumber);
-      // extract "10" and place it in number variable
-      iss >> number;
-    }</code></pre>
+      int main() {
+        // holds our number
+        int number;
+        // our string we're gonna convert
+        string strNumber = "10";
+        // initialize istringstream with the string "10"
+        istringstream iss(strNumber);
+        // extract "10" and place it in number variable
+        iss >> number;
+      }</code></pre>
 
-    - Extracting words from a line
-  
-    <pre><code class="language-c++">#include&lt;sstream&gt;
-    #include&lt;string&gt;
+      - Extracting words from a line
+    
+      <pre><code class="language-c++">#include&lt;sstream&gt;
+      #include&lt;string&gt;
 
-    using namespace std;
+      using namespace std;
 
-    int main() {
-      // holds our line
-      string line;
+      int main() {
+        // holds our line
+        string line;
 
-      // holds our words we'll extract from each line
-      string word1, word2, word3;
+        // holds our words we'll extract from each line
+        string word1, word2, word3;
 
-      // read every line from stdin
-      while (getline(cin, line)) {
-        istringstream iss(line);
+        // read every line from stdin
+        while (getline(cin, line)) {
+          istringstream iss(line);
 
-        // extract words from line to word1, 2, and 3
-        iss >> word1 >> word2 >> word3;
-      }
-    }</code></pre>
+          // extract words from line to word1, 2, and 3
+          iss >> word1 >> word2 >> word3;
+        }
+      }</code></pre>
 
 ## That's it!
 If you have any questions, feel free to ask on the Discord or DM me directly via whichever way you want. I'll be up all night to answer your midterm-related questions!
