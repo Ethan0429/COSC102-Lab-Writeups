@@ -43,6 +43,12 @@ nav_order: 8
 
   <div markdown="1">
 
+`Mon, 07 Mar 2022 11:16:33 EST`
+  - added completed [File Streams](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#file-streams) section<br><br>
+  - 
+`Mon, 07 Mar 2022 10:54:13 EST`
+  - added completed [Vectors](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#vectors) section<br><br>
+
 `Fri, 04 Mar 2022 00:49:19 EST`
   - added completed [Vim](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#vim) section
   - added completed [Unix/Linux](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#unixlinux) section
@@ -205,7 +211,7 @@ All topics discussed in detail are referenced by the official study guide for th
   int main() {
 
     // declare 2d vector
-    
+
     vector&lt;vector&lt;int&gt;&gt; v;
 
     // initialize 2d vector
@@ -215,3 +221,78 @@ All topics discussed in detail are referenced by the official study guide for th
       v[i].resize(10, 0); // add 10 columns to each row
     }
   }</code></pre>
+
+## File Streams
+I've covered file streams pretty extensively in the [Lab 5 writeup](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html), so I'll cover it briefly here since you can just refer to the notes there for more detail if needed
+
+- ### What are file streams?
+  Similar to `cout`/`cin`, a file stream is a way to interpret a file e.g. `ticket.txt` as a stream, which will allow you to process it for input or output.
+
+- ### How to write to and from files using ifstream & ofstream
+  Again, exactly the same as `cin`/`cout`, we read from a file using `ifstream fin` and we write to a file using `ofstream fout`. The **only** difference is we first have to open a file before we can read/write, AND we must close that file as well
+  
+  <pre><code class="language-c++">#include&lt;fstream&gt;
+  using namespace std;
+
+  int main() {
+    // you can call these whatever you want, but we usually use "fin" & "fout"
+    ifstream fin; 
+    ofstream fout; 
+
+    // have to open
+    fin.open("ticket.txt");
+
+    fout.open("output.txt");
+
+    // read from ticket.txt word by word
+    fin &gt; word1 &gt; word2 &gt; etc...
+
+    // write to output.txt
+    fout &lt; "we just read: " &lt; word1 &lt; word2 &lt; etc...
+
+    // MUST close
+    fin.close();
+    fout.close();
+  }</code></pre>
+
+- ### What to #include
+  To use file streams, include the file stream library `#include<fstream>`.
+
+- ### Error checking
+
+  <pre><code class="language-c++">#include&lt;fstream&gt;
+  using namespace std;
+
+  int main() {
+    ifstream fin;
+    
+    // if we can't open the file, exit program
+    if (!fin.open("foo.txt")) {
+      cout &lt;&lt; "Could not open foo.txt!\n";
+      return 1;
+    }
+
+    // otherwise do stuff...
+  }
+  }</code></pre>
+
+- ### `getline()`
+
+  I haven't gone over getline before, but it's pretty self explanatory. It takes two arguments: the stream you'll read from, and the destination you'll write to. (`getline(src, dest)`). It's different from `cin`, but it works the same in that A. it can read from `stdin` (standard input) and B. it can be used the same way in if statements, while loops, etc.
+
+    <pre><code class="language-c++">#include&lt;string&gt;
+  using namespace std;
+
+  int main() {
+    // line buffer
+    string line;
+
+    // read lines until we can't anymore
+    while (getline(cin, line)) {
+      // print each line
+      cout &lt;&lt; line &lt;&lt; '\n';
+    }
+    }</code></pre>
+    <br>
+
+  `getline()` will read a line until it reaches its "delimiter" (a `char` at which it'll stop) which is `\n` by default. It'll discard that delimiter from the stream once read (so it won't be left in the buffer), but it will not include it in the string it reads. So when you read a line, it will not be ended with a `\n`, hence why I output `cout << line << '\n';`.
