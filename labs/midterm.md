@@ -315,7 +315,7 @@ I've covered file streams pretty extensively in the [Lab 5 writeup](https://etha
 
   running `./program`, `argc == 1` and `argv = {"program"}`. Hopefully that makes sense.<br>
 
-  Now you're probably asking why these are useful. It's pretty niche for you right now, but it's nice to be able to run your programs with "input" without really inputting it yousrelf over and over, if you're trying to debug your code for instance. Often times your program will accept a variety of command-line args which will change the behavior of your program based on what they are. E.g. if you have a program that reads a variable number of lines, it'd be nice to choose how many lines are read from command-line arguments instead of inputting it every time and reading it with `cin` or something.<br>
+  Now you're probably asking why these are useful. It's pretty niche for you right now, but it's nice to be able to run your programs with "input" without really inputting it yourself over and over, if you're trying to debug your code for instance. Often times your program will accept a variety of command-line args which will change the behavior of your program based on what they are. E.g. if you have a program that reads a variable number of lines, it'd be nice to choose how many lines are read from command-line arguments instead of inputting it every time and reading it with `cin` or something.<br>
 
   `./read-lines 10` would read 10 lines, `./read-lines 1` would read just 1 line. You get the point.
 
@@ -347,7 +347,7 @@ I've covered file streams pretty extensively in the [Lab 5 writeup](https://etha
     // you define the arguments EXACTLY as they are up there.
   }</code></pre>
 
-- ### Error checking with `argv`
+- ### Error checking with `argc`
   Say we have a program that reads how ever many lines we specify via the command-line. But maybe we don't want the program to run unless someone specifies the line amount. You would implement `argc` error checking to achieve this
 
   <pre><code class="language-c++">int main(int argc, char*[] argv) {
@@ -432,7 +432,7 @@ Again, another stream-type. A lot of students get tripped up with string streams
       // build a string
       string_builder &lt;&lt; "Hello, my name is " &lt;&lt; name &lt;&lt; " and I am &lt;&lt; age &lt;&lt; " years old!\n";
 
-      // create that string
+      /* create that string */
       string final_string = string_builder.str();
     }</code></pre>
 
