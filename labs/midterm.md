@@ -43,6 +43,9 @@ nav_order: 8
 
   <div markdown="1">
 
+`Mon, 07 Mar 2022 11:54:02 EST`
+  - added completed [Argv/Argc](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#argvargc) section<br><br>
+
 `Mon, 07 Mar 2022 11:16:33 EST`
   - added completed [File Streams](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#file-streams) section<br><br>
 
@@ -295,3 +298,61 @@ I've covered file streams pretty extensively in the [Lab 5 writeup](https://etha
     }</code></pre>
 
   `getline()` will read a line until it reaches its "delimiter" (a `char` at which it'll stop) which is `\n` by default. It'll discard that delimiter from the stream once read (so it won't be left in the buffer), but it will not include it in the string it reads. So when you read a line, it will not be ended with a `\n`, hence why I output `cout << line << '\n';`.
+
+## Argv/Argc
+
+- ### What is argv/argc used for?
+  argv/argc are implicitly defined variables that are arguments to `int main()`. They hold the "command-line arguments" and the number of command-line arguments, respectively.
+
+  A command-line argument is anything that comes after you do `./program`. So in `./program one two`, there are 2 command-line args. `one` & `two`.<br>
+
+  `argc` is an `int` that is equal to the number of command-line arguments used, and `argv` is an **array** of **c-style strings** that contains the actual command-line arguments. in C++, there is always at least one command-line argument which is the name of the program itself.<br>
+
+  running `./program one two`, `argc == 3` and `argv == {"program", "one", "two"}`. Notice how although we technically only used two command-line args, `argc` is equal to three. That's what I mean when I say there is always at least one command-line argument, which is the name of the program being ran. In this case `program`. This is also evident in `argv`, as `argv[0]` is the name of the program. This is *always* true.<br>
+
+  running `./program`, `argc == 1` and `argv = {"program"}`. Hopefully that makes sense.<br>
+
+  Now you're probably asking why these are useful. It's pretty niche for you right now, but it's nice to be able to run your programs with "input" without really inputting it yousrelf over and over, if you're trying to debug your code for instance. Often times your program will accept a variety of command-line args which will change the behavior of your program based on what they are. E.g. if you have a program that reads a variable number of lines, it'd be nice to choose how many lines are read from command-line arguments instead of inputting it every time and reading it with `cin` or something.<br>
+
+  `./read-lines 10` would read 10 lines, `./read-lines 1` would read just 1 line. You get the point.
+
+- ### What does each stand for?
+  
+  `Argc` stands for argument count, and `argv` stands for argument values.
+
+- ### What are the types of each one
+
+  `argc` is type `int`, and `argv` is type `char**` or `char*[]` (both the same thing). `char*[]` just means an array (signified by the `[]`) of `char*`, which you can just think of as "C-style" strings for now. So it's an array of C-style strings. It's important to note that a C-style string is not the same thing as when you use `string` in C++. They're different. A `string` is similar to `char*`, but they are very different in practice.<br>**Also note** that even if you have a program `./read-lines 100`, the command-line argument `100` will ont be treated as a number, It is read as a C-style string, so it's stored as `"100"`. You need to do the work yourself to convert it to a number, if necessary.
+
+- ### What is stored in each one
+  
+  I went over this already, but to reiterate, `argc` contains the number of commmand-line args, and `argv` contains the actual command-line args themselves. It's kinda like a scale. When you step on a scale, it shows your weight in lbs (`argc`), but YOU'RE what makes up that amount (`argv`).<br>**Also note that** `argv[0]` will always contain the program name. Thus, even if there are no command-line args passed (e.g. `./myprogram`), `argc` will be equal to 1, and `argv[0]` will be `"myprogram"`.
+
+- ### Why use stringstreams with argc/argv?
+
+  Like I mentioned in the [What are the types of each one](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#what-are-the-types-of-each-one), `argv` holds strings. (C-style, but I'm not gonona keep typing that). So even if you use a number as a command-line arg, it'll be stored as a string. So if you want to convert it to a number (which you will 99% of the time), then the easy way to do it is with `stringstream`'s.
+
+- ### Argc/Argv examples
+  
+  - `./program one two` - `argc == 3` & `argv == {"program", "one", "two"}`
+  - `./foo 1 two 3` - `argc == 4` & `argv == {"foo", "1", "two", "3"}`
+  - `./bar` - `argc == 1` & `argv == {"bar"}`
+
+- ### How it's defined in `main()`
+  
+  <pre><code class="language-c++">int main(int argc, char*[] argv) {
+    // you define the arguments EXACTLY as they are up there.
+  }</code></pre>
+
+- ### Error checking with `argv`
+  Say we have a program that reads how ever many lines we specify via the command-line. But maybe we don't want the program to run unless someone specifies the line amount. You would implement `argc` error checking to achieve this
+
+  <pre><code class="language-c++">int main(int argc, char*[] argv) {
+    // if there aren't two command-line args (the name and line number),
+    // then exit the program
+
+    if (argc != 2) {
+      cout &lt;&lt; "usage: ./read-lines [n]\n";
+      return 1;
+    }
+  }</code></pre>
