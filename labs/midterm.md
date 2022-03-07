@@ -177,7 +177,7 @@ All topics discussed in detail are referenced by the official study guide for th
 
   Vectors exist in Java as well as `Vector`, but they are a bit different behind the scenes compared to `std::vector`. The Java-equivalent you're familiar with is the `ArrayList`, which is almost identical in behavior and function. The *underyling* data structure for `std::vector` is an array, which is something you should all be familiar with. The difference between an array and a `vector` is that arrays are fixed in size, whereas `vectors` can change their size accordingly. That's more or less it. `vectors` provide methods like `push_back()`, `insert()`, `size()`, and more to make your life easier than if you were to use an array. **Just know that once you create an array, you cannot modify its size directly. You can modifiy its contents, but not the bounds of those contents. However with a `vector`, you can modify both the size and the contents whenever you want.**
 
-- ## Syntax for declaring vectors
+- ### Syntax for declaring vectors
   To declare a `vector`, use the following syntax
 
   <pre><code class="language-c++">#include&lt;vector&gt;
@@ -190,7 +190,7 @@ All topics discussed in detail are referenced by the official study guide for th
     vector&lt;int&gt; v4(10, 3); // declare vector of 10 elements, all set to 3
   }</code></pre>
 
-- ## `push_back()`, `size()`, `clear()`, `resize()`
+- ### push_back(), size(), clear(), resize()
   
   Like mentioned previously, `vector` provides many methods that make your life much easier, including but not limited to `push_back()`, `size()`, `clear()`, and `resize()`.
 
@@ -199,10 +199,10 @@ All topics discussed in detail are referenced by the official study guide for th
     - `clear()` - erases all elements in the vector it was called on, reducing its size to 0. (note this does not reduce the *capacity* to 0)
     - `resize(n)` - resizes a `vector`'s capacity to fit `n` elements. So `v.resize(10)` will resize `v` to hold 10 total elements. If you resize an array that already contains elements, it will cut off any elements necessary to resize (if shrinking) or it will expand normally if no cutting is necessary. e.g. a vector of `{1, 2, 3}` with `resize(2)` will be shrunk to `{1, 2}`.
 
-- ## What to #include
+- ### What to #include
   As shown in the first example, you'll need to use `#include<vector>` if you want to have access to the `vector` library.
 
-- ## Vectors of vectors
+- ### Vectors of vectors
   Conceptually, vectors of vectors (I'm gonna call them 2D `vectors` from here on out) are basically just a "table" Like a multiplication table, or even a graph. You can think of it as a 2-dimensional grid that can be indexed the same way you would refer to a coordinate in math. So if you have a 2D `vector`, each with 10 elements, then if you wanted the last element in the table, you'd access it like `v[9][9]`. The mathemtical equivalent would be `(9, 9)`, where the layout is `(x, y)`. If you wanted the element on the 2nd row, first column, you'd access it like `v[1][0]`. It goes `[ROWS][COLS]`. To declare a 2D `vector`, you do
 
   <pre><code class="language-c++">#include&lt;vector&gt;
@@ -276,7 +276,7 @@ I've covered file streams pretty extensively in the [Lab 5 writeup](https://etha
   }
   }</code></pre>
 
-- ### `getline()`
+- ### getline()
 
   I haven't gone over getline before, but it's pretty self explanatory. It takes two arguments: the stream you'll read from, and the destination you'll write to. (`getline(src, dest)`). It's different from `cin`, but it works the same in that A. it can read from `stdin` (standard input) and B. it can be used the same way in if statements, while loops, etc.
 
