@@ -45,7 +45,7 @@ nav_order: 8
 
 `Mon, 07 Mar 2022 11:16:33 EST`
   - added completed [File Streams](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#file-streams) section<br><br>
-  - 
+
 `Mon, 07 Mar 2022 10:54:13 EST`
   - added completed [Vectors](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#vectors) section<br><br>
 
@@ -293,6 +293,5 @@ I've covered file streams pretty extensively in the [Lab 5 writeup](https://etha
       cout &lt;&lt; line &lt;&lt; '\n';
     }
     }</code></pre>
-    <br>
 
   `getline()` will read a line until it reaches its "delimiter" (a `char` at which it'll stop) which is `\n` by default. It'll discard that delimiter from the stream once read (so it won't be left in the buffer), but it will not include it in the string it reads. So when you read a line, it will not be ended with a `\n`, hence why I output `cout << line << '\n';`.
