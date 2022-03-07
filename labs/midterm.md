@@ -3,7 +3,7 @@ layout: default
 title: Midterm Review
 nav_order: 8
 ---
-# Status: <font color="orange">In-Progress</font>
+# Status: <font color="green">Completed</font>
 {: .no_toc }
 
 #### Status Rubric
@@ -430,7 +430,7 @@ Again, another stream-type. A lot of students get tripped up with string streams
       ostringstream string_builder;
 
       // build a string
-      string_builder &lt;&lt; "Hello, my name is " &lt;&lt; name &lt;&lt; " and I am &lt;&lt; age &lt;&lt; " years old!\n";
+      string_builder &lt;&lt; "Hello, my name is " &lt;&lt; name &lt;&lt; " and I am " &lt;&lt; age &lt;&lt; " years old!\n";
 
       /* create that string */
       string final_string = string_builder.str();
