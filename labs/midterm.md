@@ -43,6 +43,9 @@ nav_order: 8
 
   <div markdown="1">
 
+`Mon, 07 Mar 2022 18:21:49 EST`
+  - added completed [String Streams](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#string-streams) section<br><br>
+
 `Mon, 07 Mar 2022 11:54:02 EST`
   - added completed [Argv/Argc](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#argvargc) section<br><br>
 
@@ -356,3 +359,126 @@ I've covered file streams pretty extensively in the [Lab 5 writeup](https://etha
       return 1;
     }
   }</code></pre>
+
+## String Streams
+
+Again, another stream-type. A lot of students get tripped up with string streams, but they are just a way to interpret `strings` as streams. Just like `fstream` lets you interpret files as streams. A stream is just a medium for us to fluidly read/write things in C++. The most common use cases for string streams are to either convert from strings to numbers easily, (or numbers to strings), or to "parse" a line from `getline` into individual words.
+
+- ### What to include
+  To use the string stream library, you must `#include<sstream>`
+
+- ### How to write to strings and extract from strings
+
+  - ##### Declaring an `istringstream`/`ostringstream` object
+
+    Just like `fstream`, you have to create an input stream, and output stream. `istringstream` is the input string stream type, and `ostringstream` is the output string stream type.<br><br>
+
+    You use declare and use an input string stream like so
+
+    <pre><code class="language-c++">#include&lt;sstream&gt;
+    using namespace std;
+
+    int main() {
+      // declare istringstream with a string already opened
+      string my_string = "Parse me!";
+      istringstream iss(my_string);
+
+      string word;
+      // "extract" & print every word from the string we're parsing
+      while (iss &gt;&gt; word) {
+        cout &lt;&lt; word &lt;&lt; '\n';
+      }
+    }</code></pre>
+
+    If you recall back to COSC 101, you'll remember the concept of a *constructor*. When I declare the `istringstream` above, I pass the constructor a string `my_string` to initialize the stream it's going to extract from (`istringstream iss(my_string)`). You can also just declare an empty `istringstream` and initialize it later using the `str()` method.
+
+    <pre><code class="language-c++">#include&lt;sstream&gt;
+    using namespace std;
+
+    int main() {
+      // declare istringstream with a string already opened
+      string my_string = "Parse me!";
+      istringstream iss(); // use default constructor which leaves stream empty
+
+      // initialize stream using .str()
+      iss.str(my_string);
+
+    }</code></pre>
+
+    `str()` can also be used to change whatever the stream is for that string stream. So if you wanted to start extracting from a different string, you would also use `str()`
+
+    <pre><code class="language-c++">#include&lt;sstream&gt;
+    using namespace std;
+
+    int main() {
+      // declare istringstream with a string already opened
+      string my_string = "Parse me! 25";
+      istringstream iss(my_string);
+
+      // change what the stream is for our istringstream
+      string pick_me = "Pick me!";
+      iss.str(pick_me);
+    }</code></pre>
+
+    `ostringstream` is defined similarly, except `.str()` has different behavior. `ostringstream` is like the `StringBuilder` class from Java. It allows you to fluidly "build" a string from words.
+
+    <pre><code class="language-c++">#include&lt;sstream&gt;
+
+    using namespace std;
+
+    int main() {
+      ostringstream string_builder;
+
+      // build a string
+      string_builder &lt;&lt; "Hello, my name is " &lt;&lt; name &lt;&lt; " and I am &lt;&lt; age &lt;&lt; " years old!\n";
+
+      // create that string
+      string final_string = string_builder.str();
+    }</code></pre>
+
+    The above code looks very similar to printing something with `cout`, but it's building a string and then copying that string to an actual variable (`final_string`) So instead of outputting all of that to `stdout`, it writes it to the `ostringstream` buffer, and we extract all of it into a string using `string_builder.str()`. The use case for `ostringstream` is a bit more limited for you guys at the moment, but that's how you can use it.
+
+    - ### Use cases
+
+    - Converting string to number
+
+    <pre><code class="language-c++">#include&lt;sstream&gt;
+
+    using namespace std;
+
+    int main() {
+      // holds our number
+      int number;
+      // our string we're gonna convert
+      string strNumber = "10";
+      // initialize istringstream with the string "10"
+      istringstream iss(strNumber);
+      // extract "10" and place it in number variable
+      iss >> number;
+    }</code></pre>
+
+    - Extracting words from a line
+  
+    <pre><code class="language-c++">#include&lt;sstream&gt;
+    #include&lt;string&gt;
+
+    using namespace std;
+
+    int main() {
+      // holds our line
+      string line;
+
+      // holds our words we'll extract from each line
+      string word1, word2, word3;
+
+      // read every line from stdin
+      while (getline(cin, line)) {
+        istringstream iss(line);
+
+        // extract words from line to word1, 2, and 3
+        iss >> word1 >> word2 >> word3;
+      }
+    }</code></pre>
+
+## That's it!
+If you have any questions, feel free to ask on the Discord or DM me directly via whichever way you want. I'll be up all night to answer your midterm-related questions!
