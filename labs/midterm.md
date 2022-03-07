@@ -165,5 +165,21 @@ All topics discussed in detail are referenced by the official study guide for th
 
   - `iomanip` - You can refer to the [iomanip](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab5.html#iomanip) section of the lab 5 writeup for all of this.
   
-### Vectors
-Coming soon...
+## Vectors
+
+- ### What are vectors? What is it similar to in Java?
+
+  Vectors exist in Java as well as `Vector`, but they are a bit different behind the scenes compared to `std::vector`. The Java-equivalent you're familiar with is the `ArrayList`, which is almost identical in behavior and function. The *underyling* data structure for `std::vector` is an array, which is something you should all be familiar with. The difference between an array and a `vector` is that arrays are fixed in size, whereas `vectors` can change their size accordingly. That's more or less it. `vectors` provide methods like `push_back()`, `insert()`, `size()`, and more to make your life easier than if you were to use an array. **Just know that once you create an array, you cannot modify its size directly. You can modifiy its contents, but not the bounds of those contents. However with a `vector`, you can modify both the size and the contents whenever you want.**
+
+- ## Syntax for declaring vectors
+  To declare a `vector`, use the following syntax
+
+  <pre><code class="language-c++">#include&lt;vector&gt;
+  using namespace std;
+
+  int main() {
+    vector&lt;int&gt; v; // declare empty vectory
+    vector&lt;int&gt; v2 = {1, 2, 3, 4}; // declare vector of 4 elements [1,2,3,4]
+    vector&lt;int&gt; v3(10); // declare vector of 10 empty elements
+    vector&lt;int&gt; v4(10, 3); // declare vector of 10 elements, all set to 3
+  }</code></pre>
