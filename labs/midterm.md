@@ -481,5 +481,7 @@ Again, another stream-type. A lot of students get tripped up with string streams
         }
       }</code></pre>
 
+<hr>
+
 ## That's it!
 If you have any questions, feel free to ask on the Discord or DM me directly via whichever way you want. I'll be up all night to answer your midterm-related questions!
