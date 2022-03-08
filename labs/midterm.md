@@ -313,7 +313,7 @@ I've covered file streams pretty extensively in the [Lab 5 writeup](https://etha
 
   running `./program one two`, `argc == 3` and `argv == {"program", "one", "two"}`. Notice how although we technically only used two command-line args, `argc` is equal to three. That's what I mean when I say there is always at least one command-line argument, which is the name of the program being ran. In this case `program`. This is also evident in `argv`, as `argv[0]` is the name of the program. This is *always* true.<br>
 
-  running `./program`, `argc == 1` and `argv = {"program"}`. Hopefully that makes sense.<br>
+  running `./program`, `argc == 1` and `argv == {"program"}`. Hopefully that makes sense.<br>
 
   Now you're probably asking why these are useful. It's pretty niche for you right now, but it's nice to be able to run your programs with "input" without really inputting it yourself over and over, if you're trying to debug your code for instance. Often times your program will accept a variety of command-line args which will change the behavior of your program based on what they are. E.g. if you have a program that reads a variable number of lines, it'd be nice to choose how many lines are read from command-line arguments instead of inputting it every time and reading it with `cin` or something.<br>
 
@@ -365,6 +365,7 @@ I've covered file streams pretty extensively in the [Lab 5 writeup](https://etha
 Again, another stream-type. A lot of students get tripped up with string streams, but they are just a way to interpret `strings` as streams. Just like `fstream` lets you interpret files as streams. A stream is just a medium for us to fluidly read/write things in C++. The most common use cases for string streams are to either convert from strings to numbers easily, (or numbers to strings), or to "parse" a line from `getline` into individual words.
 
 - ### What to include
+
   To use the string stream library, you must `#include<sstream>`
 
 - ### How to write to strings and extract from strings
