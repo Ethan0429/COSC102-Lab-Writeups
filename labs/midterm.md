@@ -251,10 +251,10 @@ I've covered file streams pretty extensively in the [Lab 5 writeup](https://etha
     fout.open("output.txt");
 
     // read from ticket.txt word by word
-    fin &gt; word1 &gt; word2 &gt; etc...
+    fin &gt;&gt; word1 &gt;&gt; word2 &gt;&gt; etc...
 
     // write to output.txt
-    fout &lt; "we just read: " &lt; word1 &lt; word2 &lt; etc...
+    fout &lt;&lt; "we just read: " &lt;&lt; word1 &lt;&lt; word2 &lt;&lt; etc...
 
     // MUST close
     fin.close();
@@ -476,7 +476,7 @@ Again, another stream-type. A lot of students get tripped up with string streams
           istringstream iss(line);
 
           // extract words from line to word1, 2, and 3
-          iss >> word1 >> word2 >> word3;
+          iss &gt;&gt; word1 &gt;&gt; word2 &gt;&gt; word3;
         }
       }</code></pre>
 
