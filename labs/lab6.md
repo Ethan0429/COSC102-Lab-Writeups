@@ -37,6 +37,7 @@ nav_order: 2
 </tbody>
 </table>
 
+<details>
 <summary>
 <b><font color="maroon">click to view change-log</font></b>
 </summary>
@@ -47,7 +48,7 @@ nav_order: 2
   - added completed [Conceptual Overview](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab6.html#conceptual-overview) section<br><br>
   - added completed [Game Rules & Implementation](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab6.html#game-rules--implementation) section<br><br>
   - added completed [Output Examples](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab6.html#game-rules--implementation) section<br><br>
-  - added completed [Restrictions/Requirements](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab6.html#game-rules--implementation) section<br><br>
+  - added **semi**-completed [Restrictions/Requirements](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab6.html#game-rules--implementation) section<br><br>
 
   </div>
 </details>
@@ -62,34 +63,35 @@ nav_order: 2
 {:toc}
 
 ## Conceptual Overview
+
 In case it wasn't obvious from the name of the lab, the objective of this lab is to emulate a simple, text-based, slightly less complex blackjack game.
 
 - ### Setting up
+
   1. There will be **exactly 2 players** in the game - the actual player and the "dealer".
   2. The deck will consist of 52 cards belonging to both the player and the dealer. (i.e. no duplicates)
   3. Each card in the deck will have both a `value` and a `suit` combination of some kind
-      
-                Values: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King
-                Suits: Hearts, Diamonds, Spades, Clubs
+
+      <pre><code class="language-plaintext">Values: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King
+     Suits: Hearts, Diamonds, Spades, Clubs</code></pre>
         
-so a card could be Ace of Spades, 3 of Clubs, Queen of Hearts -- you get the idea.
-1. Each card will have an abbreviation of
+      so a card could be Ace of Spades, 3 of Clubs, Queen of Hearts -- you get the idea.<br>
 
-|     | Clubs | Hearts | Diamonds | Spades |
-|:---:|:-----:|:------:|:--------:|:------:|
-| Ace |   AC  |   AH   |    AD    |   AS   |
-|  2  |   2C  |   2H   |    2D    |   2S   |
-|  3  |   3C  |   3H   |    3D    |   3S   |
-|  4  |   4C  |   4H   |    4D    |   4S   |
-|  5  |   5C  |   5H   |    5D    |   5S   |
-|  6  |   6C  |   6H   |    6D    |   6S   |
-|  7  |   7C  |   7H   |    7D    |   7S   |
-|  8  |   8C  |   8H   |    8D    |   8S   |
-|  9  |   9C  |   9H   |    9D    |   9S   | 
+  4. Each card will have an abbreviation of
 
-*(so basically just pair the number/letter of the face with the letter of the suit)*
+  |     | Clubs | Hearts | Diamonds | Spades |
+  |:---:|:-----:|:------:|:--------:|:------:|
+  | Ace |   AC  |   AH   |    AD    |   AS   |
+  |  2  |   2C  |   2H   |    2D    |   2S   |
+  |  3  |   3C  |   3H   |    3D    |   3S   |
+  |  4  |   4C  |   4H   |    4D    |   4S   |
+  |  5  |   5C  |   5H   |    5D    |   5S   |
+  |  6  |   6C  |   6H   |    6D    |   6S   |
+  |  7  |   7C  |   7H   |    7D    |   7S   |
+  |  8  |   8C  |   8H   |    8D    |   8S   |
+  |  9  |   9C  |   9H   |    9D    |   9S   | 
 
-If you've played blackjack before, you're probably familiar with the rules already. But you'll want to read this section so you understand the specific things you'll need to implement.
+  *(so basically just pair the number/letter of the face with the letter of the suit)*<br><br>If you've played blackjack before, you're probably familiar with the rules already. But you'll want to read this section so you understand the specific things you'll need to implement.
 
 - ## Game Rules & Implementation
 
