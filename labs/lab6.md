@@ -37,8 +37,20 @@ nav_order: 2
 </tbody>
 </table>
 
-#### <font color="maroon">change-log:</font>
-{: .no_toc }
+<summary>
+<b><font color="maroon">click to view change-log</font></b>
+</summary>
+
+  <div markdown="1">
+
+`Fri, 11 Mar 2022 22:02:49 EST`
+  - added completed [Conceptual Overview]() section<br><br>
+  - added completed [Game Rules & Implementation]() section<br><br>
+  - added completed [Output Examples]() section<br><br>
+  - added completed [Restrictions/Requirements]() section<br><br>
+
+  </div>
+</details>
 <hr>
 
 # Lab 6 - Blackjack
@@ -158,48 +170,47 @@ Dealer wins!</code></pre>
 
 This is the first lab where you'll be **required** to use the following function conventions:
 
-1. ### Prototypes the function "signature" e.g.
-   
-   ```c++
-   // #1 format: <return type> <function name> (<types & names of any parameters you'll use>)
-   int my_function(int arg1, string arg2, double arg3);
+  1. ### Prototypes the function "signature" e.g.
+     
+     <pre><code class="language-c++">// #1 format: &lt;return type&gt; &lt;function name&gt; (&lt;types & names of any parameters you'll use&gt;)
 
-   // #2 format: <return type> <functoin name> (<types of any paramaters you'll use>)
-   int my_function(int  string, double);
+     int my_function(int arg1, string arg2, double arg3);
 
-   // #1 lists paramters with type AND name
-   // #2 lists paramaters with JUST type
-   // choose which one you want to use -- it's up to you
-   ```
-   The protoype includes no implementation, just the signature followed by a `;` like any other line of code, and it must come before your actual function definition.
+     // #2 format: &lt;return type&gt; &lt;functoin name&gt; (&lt;types of any paramaters you'll use&gt;)
 
-2. ### Definitions - the function "implementation" e.g.
-   
-   ```c++
-   // adds two integers and returns their sum
-   int add(int num1, int num2) {
-           return num1 + num2;
-   }
-   ```
-   The definition comes after the prototype and includes the actual code that it runs when called.
+     int my_function(int  string, double);
 
-3. ### Calls - runs a function from another function (usually `main`) scope e.g.
-   
-   ```c++
-   int main() {
-           /* we're in main, but you can call a function
-           from anywhere, this is just an example */
+     // #1 lists paramters with type AND name
+     // #2 lists paramaters with JUST type
+     // choose which one you want to use -- it's up to you</code></pre>
 
-           // we make two ints
-           int a = 1, b = 2;
+     The protoype includes no implementation, just the signature followed by a `;` like any other line of code, and it must come before your actual function definition.
 
-           // we "call" add on our two local int variables
-           int sum = add(a, b);
+  2. ### Definitions - the function "implementation" e.g.
+     
+     <pre><code class="language-c++">// adds two integers and returns their sum
+     int add(int num1, int num2) {
+             return num1 + num2;
+     }</code></pre>
 
-           // sum becomes 3 after the function call
-   }
-   ```
-   This one is pretty self explanatory.
+     The definition comes after the prototype and includes the actual code that it runs when called.
+
+  3. ### Calls - runs a function from another function (usually `main`) scope e.g.
+     
+     <pre><code class="language-c++">int main() {
+      /* we're in main, but you can call a function
+      from anywhere, this is just an example */
+
+      // we make two ints
+      int a = 1, b = 2;
+
+      // we "call" add on our two local int variables
+      int sum = add(a, b);
+
+      // sum becomes 3 after the function call
+     }</code></pre>
+     
+     This one is pretty self explanatory.
   
   You'll need to write **protoypes**, **definitions**, and **calls**, for the following routines:
 
@@ -235,5 +246,3 @@ This is the first lab where you'll be **required** to use the following function
                 name: whatever you want
                 paramter type(s): vector<string>
                 desciption: 
-
-  **NOTE**: You'll need to
