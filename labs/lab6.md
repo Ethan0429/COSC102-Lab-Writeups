@@ -44,10 +44,10 @@ nav_order: 2
   <div markdown="1">
 
 `Fri, 11 Mar 2022 22:02:49 EST`
-  - added completed [Conceptual Overview]() section<br><br>
-  - added completed [Game Rules & Implementation]() section<br><br>
-  - added completed [Output Examples]() section<br><br>
-  - added completed [Restrictions/Requirements]() section<br><br>
+  - added completed [Conceptual Overview](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab6.html#conceptual-overview) section<br><br>
+  - added completed [Game Rules & Implementation](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab6.html#game-rules--implementation) section<br><br>
+  - added completed [Output Examples](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab6.html#game-rules--implementation) section<br><br>
+  - added completed [Restrictions/Requirements](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab6.html#game-rules--implementation) section<br><br>
 
   </div>
 </details>
@@ -117,7 +117,7 @@ If you've played blackjack before, you're probably familiar with the rules alrea
 ## Output Examples
 Here are the example outputs to reference for your own program's correctness
 
-  ##### Example 1 - dealer bust
+  ### Example 1 - dealer bust
 
   <pre><code class="language-plaintext">Dealer has cards: KD 3S               (13)
 You have cards  : QD AS               (11)
@@ -130,7 +130,7 @@ Hit or stand    ? stand
 Dealer hits     : KD 3S KS            (23)
 Dealer busts, player wins!</code></pre>
 
-  ##### Example 2 - player bust
+  ### Example 2 - player bust
 
   <pre><code class="language-plaintext">Dealer has cards: 4S 8D               (12)
 You have cards  : 9D 10H              (19)
@@ -140,7 +140,7 @@ Dealer has cards: 4S 8D               (12)
 You have cards  : 9D 10H 10C          (29)
 Player busts, dealer wins!</code></pre>
 
-  ##### Example 3 - draw
+  ### Example 3 - draw
   
   <pre><code class="language-plaintext">Dealer has cards: KS 9D               (19)
 You have cards  : 9D 10H              (19)
@@ -150,7 +150,7 @@ Dealer has cards: KS 9D               (19)
 You have cards  : 9D 10H              (19)
 Player and dealer draw.</code></pre>
 
-  ##### Example 4 - dealer win
+  ### Example 4 - dealer win
 
   <pre><code class="language-plaintext">Dealer has cards: 2S 9D               (11)
 You have cards  : 10D 10H             (19)
@@ -197,52 +197,48 @@ This is the first lab where you'll be **required** to use the following function
 
   3. ### Calls - runs a function from another function (usually `main`) scope e.g.
      
-     <pre><code class="language-c++">int main() {
-      /* we're in main, but you can call a function
-      from anywhere, this is just an example */
+      <pre><code class="language-c++">int main() {
+  /* we're in main, but you can call a function
+  from anywhere, this is just an example */
 
-      // we make two ints
-      int a = 1, b = 2;
+  // we make two ints
+  int a = 1, b = 2;
 
-      // we "call" add on our two local int variables
-      int sum = add(a, b);
+  // we "call" add on our two local int variables
+  int sum = add(a, b);
 
-      // sum becomes 3 after the function call
-     }</code></pre>
+  // sum becomes 3 after the function call
+    }</code></pre>
      
      This one is pretty self explanatory.
   
   You'll need to write **protoypes**, **definitions**, and **calls**, for the following routines:
 
   1. dealing a single card to player or dealer. 
-        - *function hint*:
-
-                return type: string
-                parameter type(s): string array[52], vector<string>
-                desciption: randomly choose an undealt card
-                & assigns it to the player or deale. Returns the card abbreviation as string.
+        - *function hint*
+          <pre><code class="language-plaintext">return type: string
+          parameter type(s): string array[52], vector<string>
+          desciption: randomly choose an undealt card
+          & assigns it to the player or deale. Returns the card abbreviation as string.</code></pre>
 
   2. return a random number between a min & max value
         - *function hint*
-
-                return type: int
-                name: GetRandom
-                paramter type(s): int, int
-                desciption: returns a random int between
-                [min, max] (inclusive)
+          <pre><code class="language-plaintext"> return type: int
+          name: GetRandom
+          paramter type(s): int, int
+          desciption: returns a random int between
+          [min, max] (inclusive)</code></pre>
 
   3. initializing cards
         - *function hint*
-
-                return type: 
-                name: InitializeCards
-                paramter type(s): 
-                desciption: fills array of 52 cards with every suit/face combination
+          <pre><code class="language-plaintext">return type: 
+          name: InitializeCards
+          paramter type(s): 
+          desciption: fills array of 52 cards with every suit/face combination</code></pre>
 
   4. scoring the player and/or dealer hand.
         - *function hint*
-
-                return type: new vector of cards i.e. vector<string>
-                name: whatever you want
-                paramter type(s): vector<string>
-                desciption: 
+          <pre><code class="language-plaintext">return type: new vector of cards i.e. vector<string>
+          name: whatever you want
+          paramter type(s): vector&lt;string&gt;
+          desciption:</code></pre>
