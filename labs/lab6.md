@@ -197,22 +197,22 @@ This is the first lab where you'll be **required** to use the following function
 
      The definition comes after the prototype and includes the actual code that it runs when called.
 
-  3. ### Calls - runs a function from another function (usually `main`) scope e.g.
+  3. ### Function Calls - runs a function from another function (usually `main`) scope e.g.
      
       <pre><code class="language-c++">int main() {
-  /* we're in main, but you can call a function
-  from anywhere, this is just an example */
-
-  // we make two ints
-  int a = 1, b = 2;
-
-  // we "call" add on our two local int variables
-  int sum = add(a, b);
-
-  // sum becomes 3 after the function call
+     /* we're in main, but you can call a function
+     from anywhere, this is just an example */
+ 
+     // we make two ints
+     int a = 1, b = 2;
+ 
+     // we "call" add on our two local int variables
+     int sum = add(a, b);
+ 
+     // sum becomes 3 after the function call
     }</code></pre>
      
-     This one is pretty self explanatory.
+  This one is pretty self explanatory.
   
   You'll need to write **protoypes**, **definitions**, and **calls**, for the following routines:
 
