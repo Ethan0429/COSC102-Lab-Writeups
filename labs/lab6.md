@@ -4,7 +4,7 @@ title: Lab 6 - Selection Sort
 nav_order: 3
 ---
 
-# Status: <font color="orange">In-Progress</font> | <font color="blue">Recently Updated</font>
+# Status: <font color="green">Completed</font> | <font color="blue">Recently Updated</font>
 {: .no_toc }
 
 #### Status Rubric
@@ -45,12 +45,12 @@ nav_order: 3
   <div markdown="1">
 
 `Wed, 23 Mar 2022 15:51:03 EST`
-  - added [Overview]() section
-  - added [Your First Algoritm!]() section
-  - added [How It Works]() section<br><br>
+  - added [Overview](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab6.html#overview) section
+  - added [Your First Algoritm!](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab6.html#your-first-algorithm---selection-sort) section
+  - added [How It Works](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab6.html#how-it-works) section<br><br>
 
 `Wed, 23 Mar 2022 16:14:03 EST`
-  - added [Step 1]() & [Step 2]() sections
+  - added [Step 1](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab6.html#step-1---file-input) & [Step 2](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab6.html#step-2---implementing-selectionsortvectorint) sections
 
   </div>
 </details>
