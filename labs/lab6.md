@@ -56,7 +56,7 @@ nav_order: 3
 </details>
 <hr>
 
-# Lab 6 - Selection
+# Lab 6 - Selection Sort
 {: .no_toc }
 
 ## Table of contents
