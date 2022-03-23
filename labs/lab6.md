@@ -81,7 +81,7 @@ Algorithm is a pretty arbitrary term in computer science, but I believe selectio
     5. Swap the current min with the first unsorted element.
     6. Repeat until you've done this for every element in the list.<br><br>
 
-    So to reiterate, all you're doing is combing through every element in a list, and comparing each element in that list to every other element in that list that's not sorted. Then yous wap an unsorted element with whatever you've determined to be a minimum element -- if one is found. Hopefully that makes sense.<br><br>Here's a visual representation of the algorithm using the same inputs provided on the Canvas lab page:
+    So to reiterate, all you're doing is combing through every element in a list, and comparing each element in that list to every other element in that list that's not sorted. Then you swap an unsorted element with whatever you've determined to be a minimum element -- if one is found. Hopefully that makes sense.<br><br>Here's a visual representation of the algorithm using the same inputs provided on the Canvas lab page:
     <video controls="controls" width="800" height="600" name="Video Name">
       <source src="../img/ss.mov">
     </video><br><br>
@@ -99,11 +99,11 @@ This means you'll just be using `fstream` (namely `ifstream`) to read a file, an
 
 The input file format is simple, it's just
 
-<pre><code language="language-plaintext">[num1] [num2] [num3] [num4] ...and so on</code></pre>
+<pre><code class="language-plaintext">[num1] [num2] [num3] [num4] ...and so on</code></pre>
 
 So an example would be 
 
-<pre><code language="language-plaintext">1 2 3 4</code></pre>
+<pre><code class="language-plaintext">1 2 3 4</code></pre>
 
 That's it. Read the numbers in, and put them in your `vector`.
 
