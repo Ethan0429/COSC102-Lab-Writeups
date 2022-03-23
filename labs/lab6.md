@@ -69,17 +69,21 @@ Algorithm is a pretty arbitrary term in computer science, but I believe selectio
 
 - ### How It Works
     Selection sort works in the following steps. If you know these, you should know how to implement the algorithm:
+
     1. Select the first **unsorted** element in your list (any arbitrary container e.g. `vector` in this case) and set it as the minimum element.
     2. Compare the next **unsorted** element to the current min.
     3. If the next **unsorted** element is **less than** the current min, then update the min to that element.
     4. Repeat this comparison/update process until you've reached the end of the list.
     5. Swap the current min with the first unsorted element.
-    6. Repeat until you've done this for every element in the list.<br>
-    So to reiterate, all you're doing is combing through every element in a list, and comparing each element in that list to every other element in that list that's not sorted. Then yous wap an unsorted element with whatever you've determined to be a minimum element -- if one is found. Hopefully that makes sense.
+    6. Repeat until you've done this for every element in the list.<br><br>
 
-    Here's a visual representation of the algorithm using the same inputs provided on the Canvas lab page:
+    So to reiterate, all you're doing is combing through every element in a list, and comparing each element in that list to every other element in that list that's not sorted. Then yous wap an unsorted element with whatever you've determined to be a minimum element -- if one is found. Hopefully that makes sense.<br><br>Here's a visual representation of the algorithm using the same inputs provided on the Canvas lab page:
     <video controls="controls" width="800" height="600" name="Video Name">
       <source src="../img/ss.mov">
-    </video>
+    </video><br><br>
+    In the example above
+    - <font color="orange">orange</font> indicates an **already sorted element**. 
+    - <font color="red">Red</font> indicates the element that is currently the min in the whole list. 
+    - <font color="green">green</font> indicates whatever element is being compared to the min (red).
 
 
