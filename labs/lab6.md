@@ -44,10 +44,14 @@ nav_order: 3
 
   <div markdown="1">
 
-`Wed, 23 Mar 2022 13:51:03 EST`
+`Wed, 23 Mar 2022 15:51:03 EST`
   - added [Overview]() section
   - added [Your First Algoritm!]() section
-  - added [How It Works]() section
+  - added [How It Works]() section<br><br>
+
+`Wed, 23 Mar 2022 16:14:03 EST`
+  - added [Step 1]() & [Step 2]() sections
+
   </div>
 </details>
 <hr>
@@ -61,7 +65,7 @@ nav_order: 3
 {:toc}
 
 ## Overview
-This is probably going to be the easiest lab you'll have this semester. The skeleton code is written for you, and selection sort is a very simple algorithm once you understand the concept. The basic idea for this program is to simply read a list of space-separated integers from a text file into a `vector`. Then you'll just sort that vector using selection sort. That's literally it.
+This is probably going to be the easiest lab you'll have this semester. The skeleton code is written for you, and selection sort is a very simple algorithm once you understand the concept. The basic idea for this program is to simply read a list of space-separated integers from a text file into a `vector`. Then you'll just sort that `vector` using selection sort, and print the `vector` contents. That's literally it.
 
 ## Your First Algorithm - Selection Sort!
 
@@ -86,4 +90,26 @@ Algorithm is a pretty arbitrary term in computer science, but I believe selectio
     - <font color="red">Red</font> indicates the element that is currently the min in the whole list. 
     - <font color="green">Green</font> indicates whatever element is being compared to the min (red).
 
+## Step 1 - File Input
+This lab is pretty simple, but I'll try to break it into steps since I'm sure it'll confuse some people a bit. But this is pretty contrived, so don't be surprised if the step-process seems unnecessary. I'm doing this for **you** <3.
 
+The first thing you'll do is read a list of integers from a text file provided to you. You won't need to ask the user for a text file, and you won't need to create any text files. You'll simply read one that already exists. You'll do this in `main`, as outlined by the skeleton code provided to you via Canvas. As usual, you'll need to 1. check if a file can be opened in the first place and return from your program (no print statement just close file & exit) if there is no such file (i.e. cannot be opened), and 2. close your file when you're finished with it.
+
+This means you'll just be using `fstream` (namely `ifstream`) to read a file, and you can use `cin` to read each number and push them onto your `vector`.
+
+The input file format is simple, it's just
+
+<pre><code language="language-plaintext">[num1] [num2] [num3] [num4] ...and so on</code></pre>
+
+So an example would be 
+
+<pre><code language="language-plaintext">1 2 3 4</code></pre>
+
+That's it. Read the numbers in, and put them in your `vector`.
+
+## Step 2 - Implementing `selectionSort(vector<int>)`
+
+The next and final step is to implement the TODO section of `selectionSort(vector<int>)`. Which I've already outlined in as much detail as I can without basically cheating for you. The general flow will be the process of you iterating through your vector and determining what elements are less than your current element, and then swapping the smallest element with the current element, if one is found. If a smaller element isn't found, then that element is already sorted and you can move onto the next and repeat. That's really it!
+
+## Bye!
+That's it! Good luck :)
