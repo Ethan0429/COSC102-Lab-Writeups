@@ -111,5 +111,7 @@ That's it. Read the numbers in, and put them in your `vector`.
 
 The next and final step is to implement the TODO section of `selectionSort(vector<int>)`. Which I've already outlined in as much detail as I can without basically cheating for you. The general flow will be the process of you iterating through your vector and determining what elements are less than your current element, and then swapping the smallest element with the current element, if one is found. If a smaller element isn't found, then that element is already sorted and you can move onto the next and repeat. That's really it!
 
+**OH AND** every time you've iterated through the vector (you'll do this as many times as there are elements in it), you should call the `printVector()` function. It's already written for you, so all you have to do is call it.
+
 ## Bye!
 That's it! Good luck :)
