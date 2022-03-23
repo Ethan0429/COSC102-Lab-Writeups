@@ -82,8 +82,8 @@ Algorithm is a pretty arbitrary term in computer science, but I believe selectio
       <source src="../img/ss.mov">
     </video><br><br>
     In the example above
-    - <font color="orange">orange</font> indicates an **already sorted element**. 
+    - <font color="orange">Orange</font> indicates an **already sorted element**. 
     - <font color="red">Red</font> indicates the element that is currently the min in the whole list. 
-    - <font color="green">green</font> indicates whatever element is being compared to the min (red).
+    - <font color="green">Green</font> indicates whatever element is being compared to the min (red).
 
 
