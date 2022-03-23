@@ -87,7 +87,7 @@ Algorithm is a pretty arbitrary term in computer science, but I believe selectio
     </video><br><br>
     In the example above
     - <font color="orange">Orange</font> indicates an **already sorted element**. 
-    - <font color="red">Red</font> indicates the element that is currently the min in the whole list. 
+    - <font color="red">Red</font> indicates the element that is currently the min out of all of the **unsorted** elements. 
     - <font color="green">Green</font> indicates whatever element is being compared to the min (red).
 
 ## Step 1 - File Input
