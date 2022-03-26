@@ -111,8 +111,8 @@ Ignoring what these do for now, similar to an expression `a + 3` in C++, `a & 3`
 
 - `&` -- `left & right` where right's binary representation is **tested** against left's binary representation. Returns `1` if both bits are `1`, returns `0` otherwise.<br><br>
 - `|` -- `left | right` where right's binary representation is **tested** against left's binary representation. Return `1` if either bit is `1`, returns `0` if both bits are `0`.<br><br>
-- `>>` -- `left >> right` shift `left`'s bits to the right `right` times. However many times a number is shifted, that amount of bits gets ejected from the sequence to the right, and that same amount of bits gets inserted to the left of the sequence as 0's.<br><br>
-- `<<` -- `left << right` shift `left`'s bits to the left `right` times. However many times a number is shifted, that amount of bits gets ejected from the sequence to the left, and that same amount of bits gets inserted to the right of the sequence as 0's.
+- `>>` -- `a >> amnt` shift `a`'s bits to the right `amnt` times. However many times a number is shifted, that amount of bits gets ejected from the sequence to the right, and that same amount of bits gets inserted to the left of the sequence as 0's.<br><br>
+- `<<` -- `a << amnt` shift `a`'s bits to the left `amnt` times. However many times a number is shifted, that amount of bits gets ejected from the sequence to the left, and that same amount of bits gets inserted to the right of the sequence as 0's.
 
 ### Bitmasking
 
