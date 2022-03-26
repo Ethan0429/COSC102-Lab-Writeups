@@ -72,7 +72,7 @@ You can skip this section if you think you know what you're doing in terms of bi
 
 ### Bits & Bytes
   
-Every data type in your computer is stored in memory somehow. Where they're stored is not exactly important right now, but *how they're stored* is. Each data type has a specific amount of **bytes** that it takes up. A single **byte** is a unit comprised of 8 **bits**. Similar to how a meter is 100 centimeters, a byte is 8 bits. Bits are the lowest level unit in computing, and can be either `0` or `1`.<br><br>A `char` for example is 1 byte. That means it is 8 bits. So how do we represent a single char using bits? Well, binary (the "language" that uses bits) is in **base-2**. The decimal system for example is in **base-10**. I'm not going to get too much into it, but just pay attention to this next part
+Every data type in your computer is stored in memory somehow. Where they're stored is not exactly important right now, but *how they're stored* is. Each data type has a specific amount of **bytes** that it takes up. A single **byte** is a unit comprised of 8 **bits**. Similar to how a meter is 100 centimeters, a byte is 8 bits. Bits are the lowest level unit in computing, and can be either `0` or `1`.<br><br>A `char` for example is 1 byte. That means it is 8 bits. So how do we represent a single char using bits? Well, binary (the "language" that uses bits) is in **base-2**. The decimal system for example is in **base-10**. I'm not going to get too much into it, but just pay attention to this next part.
 
 <pre><code class="language-plaintext">0000 0000</code></pre>
 
