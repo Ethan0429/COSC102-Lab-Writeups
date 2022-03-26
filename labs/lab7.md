@@ -67,42 +67,42 @@ In this lab, you'll develop a program that manipulates **bits** of integers belo
 
 ## Background
 
-- ### Bits & Bytes
+### Bits & Bytes
   
-  Every data type in your computer is stored in memory somehow. Where they're stored is not exactly important right now, but *how they're stored* is. Each data type has a specific amount of **bytes** that it takes up. A single **byte** is a unit comprised of 8 **bits**. Similar to how a meter is 100 centimeters, a byte is 8 bits. Bits are the lowest level unit in computing, and can be either `0` or `1`.<br><br>A `char` for example is 1 byte. That means it is 8 bits. So how do we represent a single char using bits? Well, binary (the "language" that uses bits) is in **base-2**. The decimal system for example is in **base-10**. I'm not going to get too much into it, but just pay attention to this next part
+Every data type in your computer is stored in memory somehow. Where they're stored is not exactly important right now, but *how they're stored* is. Each data type has a specific amount of **bytes** that it takes up. A single **byte** is a unit comprised of 8 **bits**. Similar to how a meter is 100 centimeters, a byte is 8 bits. Bits are the lowest level unit in computing, and can be either `0` or `1`.<br><br>A `char` for example is 1 byte. That means it is 8 bits. So how do we represent a single char using bits? Well, binary (the "language" that uses bits) is in **base-2**. The decimal system for example is in **base-10**. I'm not going to get too much into it, but just pay attention to this next part
 
-  <pre><code class="language-plaintext">0000 0000</code></pre>
+<pre><code class="language-plaintext">0000 0000</code></pre>
 
-  The string of bits above is 8 bits in total (usually we'll separate bits by every fourth bit just to make it cleaner) which means in total it makes up some form of data comprising one byte. A `char` is one byte, so it could be represented by the above bits. If we chose to represent a `char` using the bits above, it would be equal to the following `\0`. This is known as the null terminating character. For `char`'s, there is a table that maps a specific decimal value to it's "letter" representation. This is known as an [ASCII table](https://www.asciitable.com/). If all bits in a byte are 0, then its decimal equivalent is just 0. So looking at the ASCII table I just linked, we can see what 0 maps to and then we will understand why the `char` is `\0`. This is why a `char` is one byte. The range of a typical ASCII table is `[0, 127]` inclusive. If all 8 bits are **set** (more on this later), then the bits would look like
+The string of bits above is 8 bits in total (usually we'll separate bits by every fourth bit just to make it cleaner) which means in total it makes up some form of data comprising one byte. A `char` is one byte, so it could be represented by the above bits. If we chose to represent a `char` using the bits above, it would be equal to the following `\0`. This is known as the null terminating character. For `char`'s, there is a table that maps a specific decimal value to it's "letter" representation. This is known as an [ASCII table](https://www.asciitable.com/). If all bits in a byte are 0, then its decimal equivalent is just 0. So looking at the ASCII table I just linked, we can see what 0 maps to and then we will understand why the `char` is `\0`. This is why a `char` is one byte. The range of a typical ASCII table is `[0, 127]` inclusive. If all 8 bits are **set** (more on this later), then the bits would look like
 
-  <pre><code class="language-plaintext">1111 1111</code></pre>
+<pre><code class="language-plaintext">1111 1111</code></pre>
 
-    In this case, the decimal equivalent of those bits would be 255. A `char` can only hold one byte of data, so the highest value it can contain is 255, right? Well actually, most ASCII characters are **unsigned**, which means they do not include negative numbers. A `char` in C++ is implicitly signed. This means it can hold 127 **negative** values, and 127 **positive** values. So now you should see that's where we get the range `[0, 127]`<br><br>All of this to say that you should understand every data type is just a certain amount of bytes, which is just a certain amount of sets of 8 bits. An `int` is no different from a `char` in terms of *what* it stores at the binary level. The only difference between them to your computer is the amount of bytes each can hold. It's then up to the programming language to create rules that dictate what data types are comprised of and how they map into our reality. (e.g. `char` is comprised of 1 byte and it maps to letters, `int` is 4 bytes and it maps to integer values)<br><br>In this lab, you'll be working primarily with `int`'s so let's discuss that. Here are some string of bits representing `int`'s and their decimal equivalent
+  In this case, the decimal equivalent of those bits would be 255. A `char` can only hold one byte of data, so the highest value it can contain is 255, right? Well actually, most ASCII characters are **unsigned**, which means they do not include negative numbers. A `char` in C++ is implicitly signed. This means it can hold 127 **negative** values, and 127 **positive** values. So now you should see that's where we get the range `[0, 127]`<br><br>All of this to say that you should understand every data type is just a certain amount of bytes, which is just a certain amount of sets of 8 bits. An `int` is no different from a `char` in terms of *what* it stores at the binary level. The only difference between them to your computer is the amount of bytes each can hold. It's then up to the programming language to create rules that dictate what data types are comprised of and how they map into our reality. (e.g. `char` is comprised of 1 byte and it maps to letters, `int` is 4 bytes and it maps to integer values)<br><br>In this lab, you'll be working primarily with `int`'s so let's discuss that. Here are some string of bits representing `int`'s and their decimal equivalent
 
-  <pre><code class="language-plaintext">0000 0000 0000 0000 0000 0000 0000 0000 = 0 in dec</code></pre>
-    
-  <pre><code class="language-plaintext">0000 0000 0000 0000 0000 0000 0000 0001 = 1 in dec</code></pre>
-
-  <pre><code class="language-plaintext">0000 0000 0000 0000 0000 0000 0000 0010 = 2 in dec</code></pre>
-
-  <pre><code class="language-plaintext">0000 0000 0000 0000 0000 0000 0001 0000 = 16 in dec</code></pre>
-
-    The pattern here is 2 to the power of the **set** bit's index. A **set** bit is just a bit that is 1 instead of 0. That will give you the decimal equivalent of the binary representation. If there are more than 1 set bits, then you just need to calculate that bit's value individually and then add up all of the values. So if you have `int == 3`, it would look like
-
-  <pre><code class="language-plaintext">0000 0000 0000 0000 0000 0000 0000 0011</code></pre>
-    The first bit's index is 0, and it is set. So `2^0 == 1`. Then the second bit is also set, and its index is 1. So `2^1` is `2`. `2 + 1 == 3`, which is how we calculate the value.
-
-- ### Bitwise Operators
+<pre><code class="language-plaintext">0000 0000 0000 0000 0000 0000 0000 0000 = 0 in dec</code></pre>
   
-  The task you've been given for this lab is to manipulate the bits of integers using **bitwise operators**. Bitwise operators are similar to regular operators like +,-,*,/, etc, except they work at the bit level and have slightly different rules.<br><br>Here are the following bitwise operators you'll be working with for C++
+<pre><code class="language-plaintext">0000 0000 0000 0000 0000 0000 0000 0001 = 1 in dec</code></pre>
 
-  <pre><code class="language-plaintext">&  - bitwise AND operator
-  |  - bitwise OR operator
-  >> - bitshift right operator
-  << - bitshift left operator
-  </code></pre>
+<pre><code class="language-plaintext">0000 0000 0000 0000 0000 0000 0000 0010 = 2 in dec</code></pre>
 
-  Ignoring what these do for now, similar to an expression `a + 3` in C++, `a & 3` does not modify `a`. It hasn't been stored anywhere. You'd have to do `a += 3` to actually modify `a` itself. It's the same with bitwise operators `a &= 3`.
+<pre><code class="language-plaintext">0000 0000 0000 0000 0000 0000 0001 0000 = 16 in dec</code></pre>
+
+  The pattern here is 2 to the power of the **set** bit's index. A **set** bit is just a bit that is 1 instead of 0. That will give you the decimal equivalent of the binary representation. If there are more than 1 set bits, then you just need to calculate that bit's value individually and then add up all of the values. So if you have `int == 3`, it would look like
+
+<pre><code class="language-plaintext">0000 0000 0000 0000 0000 0000 0000 0011</code></pre>
+  The first bit's index is 0, and it is set. So `2^0 == 1`. Then the second bit is also set, and its index is 1. So `2^1` is `2`. `2 + 1 == 3`, which is how we calculate the value.
+
+### Bitwise Operators
+  
+The task you've been given for this lab is to manipulate the bits of integers using **bitwise operators**. Bitwise operators are similar to regular operators like +,-,*,/, etc, except they work at the bit level and have slightly different rules.<br><br>Here are the following bitwise operators you'll be working with for C++
+
+<pre><code class="language-plaintext">&  - bitwise AND operator
+|  - bitwise OR operator
+>> - bitshift right operator
+<< - bitshift left operator
+</code></pre>
+
+Ignoring what these do for now, similar to an expression `a + 3` in C++, `a & 3` does not modify `a`. It hasn't been stored anywhere. You'd have to do `a += 3` to actually modify `a` itself. It's the same with bitwise operators `a &= 3`.
 
 #### Operator Features
 
