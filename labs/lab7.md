@@ -63,9 +63,12 @@ nav_order: 4
 {:toc}
 
 ## Overview
+
 In this lab, you'll develop a program that manipulates **bits** of integers belonging to a `vector`. You should already know what bits are, vaguely at least, but I will cover them in depth in this writeup to help you with the lab.
 
 ## Background
+
+You can skip this section if you think you know what you're doing in terms of bits. But I HIGHLY recommend reading through it all thoroughly -- especially if you'll be taking 230 next year, because you'll thank me for having prepared you for it with the following information. Otherwise, skip to the [Bitwise Operators](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab8.html#bitwise-operators) section and/or [Examples](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/lab8.html#examples) for a briefer explanation if you're confident.
 
 ### Bits & Bytes
   
