@@ -111,7 +111,7 @@ Ignoring what these do for now, similar to an expression `a + 3` in C++, `a & 3`
 - `>>` -- `left >> right` shift's left's bits to the right `right` times. However many times a number is shifted, that amount of bits gets ejected from the string to the right, and that same amount of bits gets inserted to the left of the string as 0's.<br><br>
 - `<<` -- `left << right` shift's left's bits to the left `right` times. However many times a number is shifted, that amount of bits gets ejected from the string to the left, and that same amount of bits gets inserted to the right of the string as 0's.
 
-#### Bitmasking
+### Bitmasking
 
   Before showing you some examples, you should understand the concept of **bitmasking**. All the bitwise operators I've shown you so far (except for the shift ones) are applied to every bit within a given data type. With the following code
 
@@ -135,7 +135,7 @@ Each bit index of `a` is `&`'d against each corresponding bit index of `b`. You'
 
 Now when we do `a & b`, the result will be `8`. The example is a bit contrived, but hopefully that shows what a bitmask is and why you would want to use one. You curate a bitmask for whatever problem you're trying to solve, and then you test that bitmask against a specific value you're analyzing using any one of the bitwise operations that makes sense.
       
-#### Examples
+### Examples
 
 I'm going to show some examples here so you understand what's happening at both the bit and the decimal level using each bitwise operator listed above in C++. (You can edit the following snippets and their inputs however you want and run the code yourself **in the browser** if you're curious to see how it changes)
 
