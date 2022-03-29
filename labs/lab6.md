@@ -4,7 +4,7 @@ title: Lab 6 - Selection Sort
 nav_order: 3
 ---
 
-# Status: <font color="green">Completed</font> | <font color="blue">Recently Updated</font>
+# Status: <font color="green">Completed</font>
 {: .no_toc }
 
 #### Status Rubric
