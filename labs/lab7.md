@@ -154,6 +154,7 @@ I'm going to show some examples here so you understand what's happening at both 
 - #### OR Operator
 
   Notice that the result does not change for any input to `a` less than 255. It compares every set bit from `b` (255 is `1111 1111`, so 8 bits of it are set) and then OR's that with whatever `a` is.
+
   <iframe
   frameBorder="0"
   height="450px"  
@@ -183,5 +184,7 @@ I'm going to show some examples here so you understand what's happening at both 
   src="https://onecompiler.com/cpp/3xxnm29ju?hideTitle=true&hideLanguageSelection=true&hideNew=true"
   width="100%"
   ></iframe>
+
+  <script src="https://ideone.com/e.js/lCw7IY" type="text/javascript" ></script>
 
 Hopefully all of this gives you an idea of how to use each operator and what their functions are.<br><br>**NOTE** that the examples above are a bit barebones so you can think for yourself during the actual lab. (hint: you'll be using a combination of a bitmask, shifting, and `&`/`|` for most of the lab)
