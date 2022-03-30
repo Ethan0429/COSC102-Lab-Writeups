@@ -140,7 +140,7 @@ Now when we do `a & b`, the result will be `8`. The example is a bit contrived, 
       
 ### Examples
 
-I'm going to show some examples here so you understand what's happening at both the bit and the decimal level using each bitwise operator listed above in C++. (You can edit the following snippets and their inputs however you want and run the code yourself **in the browser** by clicking the edit button the in the bottom right of the compiler window if you're curious to see how it changes)
+I'm going to show some examples here so you understand what's happening at both the bit and the decimal level using each bitwise operator listed above in C++. (You can edit the following snippets and their inputs however you want and run the code yourself **in the browser**, btw)
 
 - #### AND Operator
   
