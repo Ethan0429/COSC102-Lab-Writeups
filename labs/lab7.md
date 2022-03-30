@@ -185,6 +185,4 @@ I'm going to show some examples here so you understand what's happening at both 
   width="100%"
   ></iframe>
 
-  <script src="https://ideone.com/e.js/lCw7IY" type="text/javascript" ></script>
-
 Hopefully all of this gives you an idea of how to use each operator and what their functions are.<br><br>**NOTE** that the examples above are a bit barebones so you can think for yourself during the actual lab. (hint: you'll be using a combination of a bitmask, shifting, and `&`/`|` for most of the lab)
