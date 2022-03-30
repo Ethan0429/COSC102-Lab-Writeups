@@ -144,24 +144,44 @@ I'm going to show some examples here so you understand what's happening at both 
 
 - #### AND Operator
   
-  <iframe width="800px" height="200px" src="https://godbolt.org/e?readOnly=true&hideEditorToolbars=true#g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:c%2B%2B,source:'%23include+%3Ciostream%3E%0Ausing+namespace+std%3B%0A%0Aint+main()+%7B%0A++++/*+program+will+%22test%22+the+5th+bit+of+a+number+and+return%0A++++true+if+that+bit+is+set,+or+false+if+not+*/%0A%0A++++int+a%3B%0A++++cin+%3E%3E+a%3B%0A++++//+we+give+input+17+for+a...%0A%0A++++int+b+%3D+16%3B+//+1+0000+in+binary+(omitting+preceding+0!'s)%0A%0A++++printf(%22a:+%25d,+b:+%25d%5Cn%22,+a,+b)%3B%0A%0A++++if+(a+%26+b)+%7B%0A++++++++cout+%3C%3C+%225th+bit+is+set!!%5Cn%22%3B%0A++++%7D%0A++++else+%7B%0A++++++++cout+%3C%3C+%225th+bit+is+not+set!!%5Cn%22%3B%0A++++%7D%0A++++return+0%0A%7D'),l:'5',n:'0',o:'C%2B%2B+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:executor,i:(argsPanelShown:'1',compilationPanelShown:'1',compiler:g112,compilerOutShown:'0',execArgs:'',execStdin:'17',fontScale:14,fontUsePx:'0',j:1,lang:c%2B%2B,libs:!(),options:'',source:1,stdinPanelShown:'0',tree:'1',wrap:'1'),l:'5',n:'0',o:'Executor+x86-64+gcc+11.2+(C%2B%2B,+Editor+%231)',t:'0')),header:(),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',n:'0',o:'',t:'0')),version:4"></iframe>
+  <iframe
+  frameBorder="0"
+  height="450px"  
+  src="https://onecompiler.com/cpp/3xxnk5z7r?hideTitle=true&hideLanguageSelection=true&hideNew=true"
+  width="100%"
+  ></iframe>
 
 - #### OR Operator
 
   Notice that the result does not change for any input to `a` less than 255. It compares every set bit from `b` (255 is `1111 1111`, so 8 bits of it are set) and then OR's that with whatever `a` is.
-
-  <iframe width="800px" height="200px" src="https://godbolt.org/e?readOnly=true&hideEditorToolbars=true#g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:c%2B%2B,source:'%23include+%3Ciostream%3E%0Ausing+namespace+std%3B%0A%0Aint+main()+%7B%0A++++/*+program+will+%22test%22+the+5th+bit+of+a+number+and+return%0A++++true+if+that+bit+is+set,+or+false+if+not+*/%0A%0A++++int+a%3B%0A++++cin+%3E%3E+a%3B%0A++++//+we+give+input+17+for+a...%0A%0A++++int+b+%3D+16%3B+//+1+0000+in+binary+(omitting+preceding+0!'s)%0A%0A++++printf(%22a:+%25d,+b:+%25d%5Cn%22,+a,+b)%3B%0A%0A++++if+(a+%26+b)+%7B%0A++++++++cout+%3C%3C+%225th+bit+is+set!!%5Cn%22%3B%0A++++%7D%0A++++else+%7B%0A++++++++cout+%3C%3C+%225th+bit+is+not+set!!%5Cn%22%3B%0A++++%7D%0A++++return+0%0A%7D'),l:'5',n:'0',o:'C%2B%2B+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:executor,i:(argsPanelShown:'1',compilationPanelShown:'1',compiler:g112,compilerOutShown:'0',execArgs:'',execStdin:'17',fontScale:14,fontUsePx:'0',j:1,lang:c%2B%2B,libs:!(),options:'',source:1,stdinPanelShown:'0',tree:'1',wrap:'1'),l:'5',n:'0',o:'Executor+x86-64+gcc+11.2+(C%2B%2B,+Editor+%231)',t:'0')),header:(),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',n:'0',o:'',t:'0')),version:4"></iframe>
+  <iframe
+  frameBorder="0"
+  height="450px"  
+  src="https://onecompiler.com/cpp/3xxnkkhes?hideTitle=true&hideLanguageSelection=true&hideNew=true"
+  width="100%"
+  ></iframe>
 
 - #### Bitshift Right Operator
   
   Notice that how ever many times an integer is shifted right, the resulting integer is `original_number / 2 * shiftamnt`. If the resulting integer is something like 1.6, the decimal is "truncated", (rounded down basically), so `17 >> 1` would just be 8.
 
-  <iframe width="800px" height="200px" src="https://godbolt.org/e?readOnly=true&hideEditorToolbars=true#g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:c%2B%2B,source:'%23include+%3Ciostream%3E%0Ausing+namespace+std%3B%0A%0Aint+main()+%7B%0A++++/*+program+will+%22test%22+the+5th+bit+of+a+number+and+return%0A++++true+if+that+bit+is+set,+or+false+if+not+*/%0A%0A++++int+a%3B%0A++++cin+%3E%3E+a%3B%0A++++//+we+give+input+17+for+a...%0A%0A++++int+b+%3D+16%3B+//+1+0000+in+binary+(omitting+preceding+0!'s)%0A%0A++++printf(%22a:+%25d,+b:+%25d%5Cn%22,+a,+b)%3B%0A%0A++++if+(a+%26+b)+%7B%0A++++++++cout+%3C%3C+%225th+bit+is+set!!%5Cn%22%3B%0A++++%7D%0A++++else+%7B%0A++++++++cout+%3C%3C+%225th+bit+is+not+set!!%5Cn%22%3B%0A++++%7D%0A++++return+0%0A%7D'),l:'5',n:'0',o:'C%2B%2B+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:executor,i:(argsPanelShown:'1',compilationPanelShown:'1',compiler:g112,compilerOutShown:'0',execArgs:'',execStdin:'17',fontScale:14,fontUsePx:'0',j:1,lang:c%2B%2B,libs:!(),options:'',source:1,stdinPanelShown:'0',tree:'1',wrap:'1'),l:'5',n:'0',o:'Executor+x86-64+gcc+11.2+(C%2B%2B,+Editor+%231)',t:'0')),header:(),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',n:'0',o:'',t:'0')),version:4"></iframe>
+  <iframe
+  frameBorder="0"
+  height="450px"  
+  src="https://onecompiler.com/cpp/3xxnkxzz9?hideTitle=true&hideLanguageSelection=true&hideNew=true"
+  width="100%"
+  ></iframe>
+
 
 - #### Bitshift Left Operator
   
   The behavior for this is the same as bitshift right, but instead the resulting integer in this case is `original_number * 2 * shiftamnt`.
 
-  <iframe width="800px" height="200px" src="https://godbolt.org/e?readOnly=true&hideEditorToolbars=true#g:!((g:!((g:!((h:codeEditor,i:(filename:'1',fontScale:14,fontUsePx:'0',j:1,lang:c%2B%2B,source:'%23include+%3Ciostream%3E%0Ausing+namespace+std%3B%0A%0Aint+main()+%7B%0A++++/*+program+will+%22test%22+the+5th+bit+of+a+number+and+return%0A++++true+if+that+bit+is+set,+or+false+if+not+*/%0A%0A++++int+a%3B%0A++++cin+%3E%3E+a%3B%0A++++//+we+give+input+17+for+a...%0A%0A++++int+b+%3D+16%3B+//+1+0000+in+binary+(omitting+preceding+0!'s)%0A%0A++++printf(%22a:+%25d,+b:+%25d%5Cn%22,+a,+b)%3B%0A%0A++++if+(a+%26+b)+%7B%0A++++++++cout+%3C%3C+%225th+bit+is+set!!%5Cn%22%3B%0A++++%7D%0A++++else+%7B%0A++++++++cout+%3C%3C+%225th+bit+is+not+set!!%5Cn%22%3B%0A++++%7D%0A++++return+0%0A%7D'),l:'5',n:'0',o:'C%2B%2B+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:executor,i:(argsPanelShown:'1',compilationPanelShown:'1',compiler:g112,compilerOutShown:'0',execArgs:'',execStdin:'17',fontScale:14,fontUsePx:'0',j:1,lang:c%2B%2B,libs:!(),options:'',source:1,stdinPanelShown:'0',tree:'1',wrap:'1'),l:'5',n:'0',o:'Executor+x86-64+gcc+11.2+(C%2B%2B,+Editor+%231)',t:'0')),header:(),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',n:'0',o:'',t:'0')),version:4"></iframe>
+  <iframe
+  frameBorder="0"
+  height="450px"  
+  src="https://onecompiler.com/cpp/3xxnm29ju?hideTitle=true&hideLanguageSelection=true&hideNew=true"
+  width="100%"
+  ></iframe>
 
 Hopefully all of this gives you an idea of how to use each operator and what their functions are.<br><br>**NOTE** that the examples above are a bit barebones so you can think for yourself during the actual lab. (hint: you'll be using a combination of a bitmask, shifting, and `&`/`|` for most of the lab)
