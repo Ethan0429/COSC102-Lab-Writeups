@@ -187,7 +187,7 @@ i=3   i=0</code></pre>
 
 Hexadecimal is always confusing at first, BUT it's your best friend when dealing with bits/bytes. It's just a more compact, and frankly easier way to represent binary numbers. Every hexadecimal number is preceded with `0x` just by convention. It means nothing other than telling whoever is reading that the number that follows is hex.<br><br>Where binary can only use numbers 1 & 2, hex can use numbers 0-9 AND *letters* A-F (or a-f, just be consistent with case).<br><br>Here's a table that shows the relation between binary, decimal, and hex.
 
-<img src="../img/hextable.png" height=400>
+<img src="../img/hextable.png" height="400" width="auto">
 
 From the table, you should be able to see that a single hex digit is able to represent 4 binary digits, which makes it much easier for representing binary in a compact form. Now what happens when you you increment `0xF` by 1? It becomes `0x10`. Let's keep going.
 
