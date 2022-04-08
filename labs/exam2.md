@@ -206,7 +206,7 @@ From the table, you should be able to see that a single hex digit is able to rep
 - `0x1C + 1 = 0x1D`
 - `0x1D + 1 = 0x1E`
 - `0x1E + 1 = 0x1F`
-- `0x1F + 1 = 0x20` :arrow_backward: See here we've restarted again. You won't add an entirely new digit until all currently existing digits are `F`. so `0xFF + 1 = 0x100`. So a fairly small hex number of hex digits can hold a very large number! Pretty cool.<br><br>**Note that hexadecimal is base-16, binary is base-2, and decimal is base-10**. The base determines when you create a new digit.
+- `0x1F + 1 = 0x20` ⬅️ See here we've restarted again. You won't add an entirely new digit until all currently existing digits are `F`. so `0xFF + 1 = 0x100`. So a fairly small hex number of hex digits can hold a very large number! Pretty cool.<br><br>**Note that hexadecimal is base-16, binary is base-2, and decimal is base-10**. The base determines when you create a new digit.
 
 ## Converting To/From Binary & Hex
 
