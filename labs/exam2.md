@@ -44,16 +44,16 @@ nav_order: 9
   <div markdown="1">
 
 `Fri, 08 Apr 2022 17:43:49 EST`
-  - added [Unix/Linux](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#unixlinux) section<br><br>
+  - added [Unix/Linux](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/exam2.html#unixlinux) section<br><br>
 
 `Fri, 08 Apr 2022 17:43:49 EST`
-  - added [Searching Algorithms](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#searching-algorithms) section<br><br>
+  - added [Searching Algorithms](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/exam2.html#searching-algorithms) section<br><br>
 
 `Fri, 08 Apr 2022 17:43:49 EST`
-  - added [Sorting Algorithms](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#sorting-algorithms) section<br><br>
+  - added [Sorting Algorithms](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/exam2.html#sorting-algorithms) section<br><br>
 
 `Fri, 08 Apr 2022 17:43:49 EST`
-  - added [Number Systems](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/midterm.html#number-systems) section<br><br>
+  - added [Number Systems](https://ethan0429.github.io/COSC102-Lab-Writeups/labs/exam2.html#number-systems) section<br><br>
 
   </div>
 </details>
