@@ -266,4 +266,81 @@ Hex is in base-16, so here's how you convert from hex to decimal<br><br>Starting
 Final result: 0xAC = 172
 </code></pre>
 
+## Practice Questions
+
+<details>
+  <summary>1. Put the following numbers in order from smallest to largest:
+  <code>0xBA, 0x12, 0xF1, 0x1F</code></summary>
+   <pre>   Solution:
+   0x12, 0x1F, 0xBA, 0xF1</pre>
+</details>
+
+<details>
+  <summary>2. Convert <code>0xBA</code> to decimal.
+</summary>
+<pre>   Solution: 186</pre>
+</details>
+
+<details>
+<summary>3. Convert <code>1110 0001</code> to hexadecimal.</summary>
+   <pre>   Solution: 0xE1
+   I taught them to take each set of 4 binary digits and change that to a hex digit.
+   1st set: 1110 is 8s, 4s, and 2s place (14) = E (or, it's 1111 which is F minus 1, so E)
+   2nd set: 0001 is 1s place only, so 1.
+   0xE1
+   They may ask (again) if they need to know 0x, 0b, 0d and just say yes.
+   I may give them the 0x, I may not.</pre>
+   </details>
+
+<details>
+<summary>Here's one with two ops together:
+<code>(1101 0111) & (1 << 2)</code></summary>
+   <pre>   Solution:
+    (1101 0111)
+   &(0000 0100)
+   =(0000 0100)</pre>
+   </details>
+
+<details>
+<summary>4. Part 1: Perform the operation: <code>~(1101)</code></summary>
+   <pre>Solution: 0010</pre>
+   <details><summary>Part 2: What does this effectively perform? a. sets all the bits, b. clears all the bits, or c. flips all the bits</summary>
+     <pre>Solution: C</pre>
+     </details>
+     </details>
+
+<details>
+<summary>5. Given this array: <code>{5, 8, 1, 3, 5, 9, 0, 2}</code>
+   What is the state of the array after...<br>
+   1 step in bubble sort?   <code>{5, 8, 1, 3, 5, 9, 0, 2}</code><br>
+   2 steps in bubble sort?  <code>{5, 1, 8, 3, 5, 9, 0, 2}</code><br>
+   3 steps in bubble sort?  <code>{5, 1, 3, 8, 5, 9, 0, 2}</code></summary>
+   <pre>   (1st pair is 5 and 8, no swap performed)
+   (Next pair is 8 and 1, swap)
+   (Next pair is 8 and 3, swap)</pre>
+   </details>
+
+<details>
+<summary>6. The ASCII value of 'Y' is <code>0x59</code>. What is the ASCII value of 'Z'?</summary>
+   <pre>Answer: 0x5A (They do not need to memorize the ASCII table, <br>but should know that the alphabet is in order. So 0x59 + 1 is 0x5A</pre>
+   </details>
+
+
+<details>
+<summary>7.  I run an <code>ls -l</code> command inside a directory, and see this as output:<br> 
+<code>-rw-r--r--@ 1 ccc  staff  2090 Apr  7 10:36 myfile.txt</code><br>
+Part 1:<br>
+What are the user's permissions?</summary>
+<pre>Answer: read, write</pre>
+
+<details>
+<summary>Part 2:<br> 
+How would we change the permissions for the user and world permissions to remain the same, but the group have read and write permissions?</summary>
+
+<pre>Answer: chmod 664 myfile.txt</pre>
+</details>
+</details>
+
+
+<hr>
 That's all!
