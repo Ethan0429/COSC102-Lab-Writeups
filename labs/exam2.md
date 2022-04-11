@@ -284,12 +284,10 @@ Final result: 0xAC = 172
 <details>
 <summary>3. Convert <code>1110 0001</code> to hexadecimal.</summary>
    <pre>   Solution: 0xE1
-   I taught them to take each set of 4 binary digits and change that to a hex digit.
    1st set: 1110 is 8s, 4s, and 2s place (14) = E (or, it's 1111 which is F minus 1, so E)
    2nd set: 0001 is 1s place only, so 1.
    0xE1
-   They may ask (again) if they need to know 0x, 0b, 0d and just say yes.
-   I may give them the 0x, I may not.</pre>
+.</pre>
    </details>
 
 <details>
@@ -341,6 +339,6 @@ How would we change the permissions for the user and world permissions to remain
 </details>
 </details>
 
-
 <hr>
+
 That's all!
