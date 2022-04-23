@@ -173,6 +173,7 @@ Flips all pixels around the x-axis. The general idea here is to examine two rows
 | T | . | . | . |
 | B | . | . | . |
 | . | . | . | . |
+
 etc...
 
  Here is how I recommend you do this:
@@ -184,47 +185,48 @@ etc...
 
 ### `void flip_y()`
 
-This will be almost exactly like your `flip_x()` method, except 2 differences. Replace the **top/bottom** concept with **left/right**, AND every time you iterate, you'll be jumping to the next row in the same column (or the next column if you've reached the end of a column).<br><br>So imagining we have a picture of width 10 and height 4, then to loop through a full column (let's say it's the first column in the picture in this case so `i = 0` at first), you'd look at the pixel at index `i`, `i+10`, `i+10*2`, and `i+10*3`. That's 4 rows we looked at, but all in the same column.<br>Here's what the first 5 iterations should look like, imagine we're swapping the pixels at `L` & `R` every time.
+This will be almost exactly like your `flip_x()` method, except 2 differences. Replace the **top/bottom** concept with **left/right**, AND every time you iterate, you'll be jumping to the next row in the same column (or the next column if you've reached the end of a column).<br><br>So imagining we have a picture of width 4 and height 4, then to loop through a full column (let's say it's the first column in the picture in this case so `i = 0` at first), you'd look at the pixel at index `i`, `i+4`, `i+4*2`, and `i+4*3`. That's 4 rows we looked at, but all in the same column.<br>Here's what the first 5 iterations should look like, imagine we're swapping the pixels at `L` & `R` every time.
 
 **Step 1**:
 
-| L | . | . | . | . | . | . | . | . | R |
-|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
-| . | . | . | . | . | . | . | . | . | . |
-| . | . | . | . | . | . | . | . | . | . |
-| . | . | . | . | . | . | . | . | . | . |
+| L | . | . | R |
+|:--|:--|:--|:--|
+| . | . | . | . |
+| . | . | . | . |
+| . | . | . | . | 
 
 **Step 2**:
 
-| . | . | . | . | . | . | . | . | . | . |
-|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
-| L | . | . | . | . | . | . | . | . | R |
-| . | . | . | . | . | . | . | . | . | . |
-| . | . | . | . | . | . | . | . | . | . |
+| . | . | . | . |
+|:--|:--|:--|:--|
+| L | . | . | R |
+| . | . | . | . |
+| . | . | . | . | 
 
 **Step 3**:
 
-| . | . | . | . | . | . | . | . | . | . |
-|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
-| . | . | . | . | . | . | . | . | . | . |
-| L | . | . | . | . | . | . | . | . | R |
-| . | . | . | . | . | . | . | . | . | . |
+| . | . | . | . |
+|:--|:--|:--|:--|
+| . | . | . | . |
+| L | . | . | R |
+| . | . | . | . | 
 
 **Step 4**:
 
-| . | . | . | . | . | . | . | . | . | . |
-|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
-| . | . | . | . | . | . | . | . | . | . |
-| . | . | . | . | . | . | . | . | . | . |
-| L | . | . | . | . | . | . | . | . | R |
+| . | . | . | . |
+|:--|:--|:--|:--|
+| . | . | . | . |
+| . | . | . | . |
+| L | . | . | R | 
 
 **Step 5**:
 
-| . | L | . | . | . | . | . | . | R | . |
-|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
-| . | . | . | . | . | . | . | . | . | . |
-| . | . | . | . | . | . | . | . | . | . |
-| . | . | . | . | . | . | . | . | . | . |
+| . | L | R | . |
+|:--|:--|:--|:--|
+| . | . | . | . |
+| . | . | . | . |
+| . | . | . | . | 
+
 etc...
 
 ### `bool read_input(istream& is)` 
