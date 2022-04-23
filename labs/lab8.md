@@ -231,18 +231,27 @@ etc...
 
 ### `bool read_input(istream& is)` 
 
-This method will read from either a file using `fstream` or it will read from `stdin` (`cin`) based on the command line args provided to your program. Remember command line args are shows in `int main(int argc, char** argv)` where `argc` is the amount of arguments passed while `argv` is the array that holds the C-style strings for these arguments. so `./ppm file.ppm` will have `argc = 2` and `argv[0] = "./ppm"` and `argv[1] = "file.ppm"`.  For this program, if the first argument is `"-"`, then you'll want to read from `stdin`. Otherwise it should be something like `file.ppm`, in which case you'll open it using `fstream`. That's why for `read_input()`, we're using the paramater type `istream`, which is a general purpose type for input streams. `fin` and `cin` are both types of `istream`, so either of those can be passed to `read_input()` and will still work.<br><br>
+A lot of students seem to be confused on what is going on with `read_input()` here, so I will try to explain it to the best of my ability. All this method does it read the input of **either** a `.ppm` *file* **OR** `stdin`. Recall that if you are **reading input from a file**, you will use `ifstream`, which we commonly name `fin`. If you're reading input from `stdin`, then you will use `cin`. Now, pay attention: **Both `fin` and `cin` are stream objects**. Classes can have hierarchies and therefore can inheret attributes from other classes if we build them that way. `fin` and `cin` both inherit from the `istream` class, as they are both *input streams*. All this means is that when you call `read_input([INSERT ISTREAM OBJECT HERE])`, you can call `read_input(cin)` OR `read_input(fin)`, because both `cin` and `fin` are `istream` objects. Once you're actually *inside* the method, whether you used `cin` or `fin` as your argument, you'll refer to it as `is` (or whatever you've named the `istream` parameter) in the actual method itself. You can use `is` the same way you'd use `fin` or `cin`. The caveat here is you need to decide whether or not you'll be using `fin` or `cin` based on the commandline arguments for your program.<br><br>The program will be run like this `./ppm [in.ppm | -] [out.ppm | -]`. Where you see a `|`, you choose either of the operands preceding/following the `|` for that argument. So you can run your program like `./ppm file.ppm newfile.ppm` or `./ppm - -` or `./ppm bee.ppm -` or `./ppm - poo.ppm`.<br>The 1st argument is the file we're reading from. IF that argument is just `-`, then we're reading from `stdin`<br>The 2nd argument is the file we're outputting to. IF that argument is just `-` then we're writing to `stdout`.<br>Simply put, in `main()`, you'll want to check the arguments and decide based off of them whether or not you will be using `cin` to read or `fin` to read. If the 1st argument is a `-`. then you'll be using `cin`, which means you will simply call `read_line(cin)`. Otherwise, you'll **attempt** to open the file with `fin`. If the file is open, then you will call `read_line(fin)`, where you'll read input normally. (make sure to close your file after your finished with your `read_line` call though).<br><br>Since the rgb values can be on separate lines or broken up in various ways, AND comments can be littered throughout the file, I've devised a kinda weird way of reading the input. The method will remove all lines with # (comments) and will build a single string using `stringstream` and `getline`. Then from that single string that's inside your `stringstream`, you'll be able to extract everything from it like you would with `cin` or `fin`.
 
-This method has you assign the values you've read to each index in your vector of pixels. Basically, you'll want to do the following:
+<pre><code class="language-cpp">bool Picture::read_input(istream& in) {
+    string line; // will hold our current "line"
+    stringstream ss; // used to build our full string
+    
+    // read every LINE from input using getline
+    // SKIP any line that starts with #
+    // build a string using your ss (ss << blah) and the line you just read 
+    // (remember to append a space at the end of each string)
 
-1. (BEFORE calling `read_input()`) determine whether or not you'll use `fstream` or `cin`
-2. if you're using `fstream`, open the file first, then call `read_input(fin)`. If you're using `cin`, then just call `read_input(cin)`
-3. **before reading anything, always make sure to skip lines that begin with `#`**
-4. Read header (`P3`), return `false` if the header read isn't valid
-5. Read `width` and `height`
-6. Read `max intensity`
-7. Now you'll read every rgb value. The way I recommend to do this is set up a for loop that loops as many times as there are pixels (i.e. `width * height`). In that for loop, read the entire line using `getline(is, line)`. This reads a line from the stream `is` to the `string line`. 
-8. Check if `line[0]` is `'#'`, (that's a `char`, not a `string`) and if it is then you should skip that iteration, BUT make sure you decrement `i` when you skip, because otherwise we'd have empty spaces in our vector.
-9. If `line[0]` is not `'#'`, then we can parse our `line` using the `stringstream` we made with it. Read the `r` `g` and `b` values from this line and create a `Pixel` object with these rgb values.
-10. Pushback onto your vector the newly created `Pixel`.
-11. Do this for every pixel you have to read.
+    // read the header, width, height, and max intensity separately
+
+    // make sure the header is P3, otherwise return false
+
+    // create placeholder Pixel object
+    Pixel px;
+
+    // extract every r, g, b value from your ss and into the respective Pixel fields
+    // for your px object
+    // then add that object to your vector of Pixels
+
+    return true;
+}</code></pre>
