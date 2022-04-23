@@ -134,30 +134,35 @@ Inverts all pixels i.e. set every pixel color equal to `max_intensity - r/g/b`. 
 
 Flips all pixels around the x-axis. The general idea here is to examine two rows simultaneously. So we look at every pixel in the top row, and swap each pixel with the corresponding pixel in the bottom row, and then we jump to the next set of rows after we've finished one.<br>Here is what the first 5 iterations should look like:
 **Step 1**:
+
 | T | . | . | . |
 |---|---|---|---|
 | . | . | . | . |
 | . | . | . | . |
 | B | . | . | . |
 **Step 2**:
+
 | . | T | . | . |
 |---|---|---|---|
 | . | . | . | . |
 | . | . | . | . |
 | . | B | . | . |
 **Step 3**:
+
 | . | . | T | . |
 |---|---|---|---|
 | . | . | . | . |
 | . | . | . | . |
 | . | . | B | . |
 **Step 4**:
+
 | . | . | . | T |
 |---|---|---|---|
 | . | . | . | . |
 | . | . | . | . |
 | . | . | . | B |
 **Step 5**:
+
 | . | . | . | . |
 |---|---|---|---|
 | T | . | . | . |
@@ -176,30 +181,35 @@ etc...
 
 This will be almost exactly like your `flip_x()` method, except 2 differences. Replace the **top/bottom** concept with **left/right**, AND every time you iterate, you'll be jumping to the next row in the same column (or the next column if you've reached the end of a column).<br><br>So imagining we have a picture of width 10 and height 4, then to loop through a full column (let's say it's the first column in the picture in this case so `i = 0` at first), you'd look at the pixel at index `i`, `i+10`, `i+10*2`, and `i+10*3`. That's 4 rows we looked at, but all in the same column.<br>Here's what the first 5 iterations should look like, imagine we're swapping the pixels at `L` & `R` every time.
 **Step 1**:
+
 | L | . | . | . | . | . | . | . | . | R |
 |---|---|---|---|---|---|---|---|---|---|
 | . | . | . | . | . | . | . | . | . | . |
 | . | . | . | . | . | . | . | . | . | . |
 | . | . | . | . | . | . | . | . | . | . |
 **Step 2**:
+
 | . | . | . | . | . | . | . | . | . | . |
 |---|---|---|---|---|---|---|---|---|---|
 | L | . | . | . | . | . | . | . | . | R |
 | . | . | . | . | . | . | . | . | . | . |
 | . | . | . | . | . | . | . | . | . | . |
 **Step 3**:
+
 | . | . | . | . | . | . | . | . | . | . |
 |---|---|---|---|---|---|---|---|---|---|
 | . | . | . | . | . | . | . | . | . | . |
 | L | . | . | . | . | . | . | . | . | R |
 | . | . | . | . | . | . | . | . | . | . |
 **Step 4**:
+
 | . | . | . | . | . | . | . | . | . | . |
 |---|---|---|---|---|---|---|---|---|---|
 | . | . | . | . | . | . | . | . | . | . |
 | . | . | . | . | . | . | . | . | . | . |
 | L | . | . | . | . | . | . | . | . | R |
 **Step 5**:
+
 | . | L | . | . | . | . | . | . | R | . |
 |---|---|---|---|---|---|---|---|---|---|
 | . | . | . | . | . | . | . | . | . | . |
@@ -224,5 +234,3 @@ This method has you assign the values you've read to each index in your vector o
 9. If `line[0]` is not `'#'`, then we can parse our `line` using the `stringstream` we made with it. Read the `r` `g` and `b` values from this line and create a `Pixel` object with these rgb values.
 10. Pushback onto your vector the newly created `Pixel`.
 11. Do this for every pixel you have to read.
-
-
