@@ -137,7 +137,7 @@ Flips all pixels around the x-axis. The general idea here is to examine two rows
 **Step 1**:
 
 | T | . | . | . |
-|---|---|---|---|
+|:--|:--|:--|:--|
 | . | . | . | . |
 | . | . | . | . |
 | B | . | . | . |
@@ -145,7 +145,7 @@ Flips all pixels around the x-axis. The general idea here is to examine two rows
 **Step 2**:
 
 | . | T | . | . |
-|---|---|---|---|
+|:--|:--|:--|:--|
 | . | . | . | . |
 | . | . | . | . |
 | . | B | . | . |
@@ -153,7 +153,7 @@ Flips all pixels around the x-axis. The general idea here is to examine two rows
 **Step 3**:
 
 | . | . | T | . |
-|---|---|---|---|
+|:--|:--|:--|:--|
 | . | . | . | . |
 | . | . | . | . |
 | . | . | B | . |
@@ -161,7 +161,7 @@ Flips all pixels around the x-axis. The general idea here is to examine two rows
 **Step 4**:
 
 | . | . | . | T |
-|---|---|---|---|
+|:--|:--|:--|:--|
 | . | . | . | . |
 | . | . | . | . |
 | . | . | . | B |
@@ -169,7 +169,7 @@ Flips all pixels around the x-axis. The general idea here is to examine two rows
 **Step 5**:
 
 | . | . | . | . |
-|---|---|---|---|
+|:--|:--|:--|:--|
 | T | . | . | . |
 | B | . | . | . |
 | . | . | . | . |
@@ -189,7 +189,7 @@ This will be almost exactly like your `flip_x()` method, except 2 differences. R
 **Step 1**:
 
 | L | . | . | . | . | . | . | . | . | R |
-|---|---|---|---|---|---|---|---|---|---|
+|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
 | . | . | . | . | . | . | . | . | . | . |
 | . | . | . | . | . | . | . | . | . | . |
 | . | . | . | . | . | . | . | . | . | . |
@@ -197,7 +197,7 @@ This will be almost exactly like your `flip_x()` method, except 2 differences. R
 **Step 2**:
 
 | . | . | . | . | . | . | . | . | . | . |
-|---|---|---|---|---|---|---|---|---|---|
+|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
 | L | . | . | . | . | . | . | . | . | R |
 | . | . | . | . | . | . | . | . | . | . |
 | . | . | . | . | . | . | . | . | . | . |
@@ -205,7 +205,7 @@ This will be almost exactly like your `flip_x()` method, except 2 differences. R
 **Step 3**:
 
 | . | . | . | . | . | . | . | . | . | . |
-|---|---|---|---|---|---|---|---|---|---|
+|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
 | . | . | . | . | . | . | . | . | . | . |
 | L | . | . | . | . | . | . | . | . | R |
 | . | . | . | . | . | . | . | . | . | . |
@@ -213,7 +213,7 @@ This will be almost exactly like your `flip_x()` method, except 2 differences. R
 **Step 4**:
 
 | . | . | . | . | . | . | . | . | . | . |
-|---|---|---|---|---|---|---|---|---|---|
+|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
 | . | . | . | . | . | . | . | . | . | . |
 | . | . | . | . | . | . | . | . | . | . |
 | L | . | . | . | . | . | . | . | . | R |
@@ -221,7 +221,7 @@ This will be almost exactly like your `flip_x()` method, except 2 differences. R
 **Step 5**:
 
 | . | L | . | . | . | . | . | . | R | . |
-|---|---|---|---|---|---|---|---|---|---|
+|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
 | . | . | . | . | . | . | . | . | . | . |
 | . | . | . | . | . | . | . | . | . | . |
 | . | . | . | . | . | . | . | . | . | . |
