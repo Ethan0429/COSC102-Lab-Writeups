@@ -113,12 +113,12 @@ A private list of `Pixel`s. These will be our "coordinates" so to speak.
 - `private int` - max intensity of the picture
   
 
-### `const & Pixel get_pixel(int row, int col)` 
+### `const Pixel& get_pixel(int row, int col) const` 
 
 A public method that returns a **read-only** `Pixel` object based off of the row & col passed as arguments. You'll need to do some arithmetic to convert the `(row, col)` to a valid index to your vector of pixels, since the vector is 1D.
 
 
-### `&Pixel get_pixel(int row, int col)`
+### `Pixel & get_pixel(int row, int col)`
 
 A public method that returns a **mutable** `Pixel` object based off of the row & col passed as arguments. You'll notice this is an overloaded method, since there is another method with a similar signature. The difference between the two is the return value. This method returns `&Pixel`, whereas the other returns `const & Pixel`. i.e. this method is able to modify that pixel it returns, but the other one is not able to do so.
 
