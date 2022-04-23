@@ -241,9 +241,8 @@ A lot of students seem to be confused on what is going on with `read_input()` he
     # SKIP any line that starts with #
     # build a string using your ss (ss << blah) and the line you just read 
     # (remember to append a space at the end of each string)
-    for line in file:
-      linestr = readline(file)
-      if linestr[0] == '#':
+    while readline(inputstream, linebuffer):
+      if linebuffer[0] == '#':
         continue
       else:
       # add our line to stringstream & append ' '
