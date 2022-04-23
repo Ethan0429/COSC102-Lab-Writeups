@@ -133,6 +133,7 @@ Inverts all pixels i.e. set every pixel color equal to `max_intensity - r/g/b`. 
 ### `void flip_x()` 
 
 Flips all pixels around the x-axis. The general idea here is to examine two rows simultaneously. So we look at every pixel in the top row, and swap each pixel with the corresponding pixel in the bottom row, and then we jump to the next set of rows after we've finished one.<br>Here is what the first 5 iterations should look like:
+
 **Step 1**:
 
 | T | . | . | . |
@@ -140,6 +141,7 @@ Flips all pixels around the x-axis. The general idea here is to examine two rows
 | . | . | . | . |
 | . | . | . | . |
 | B | . | . | . |
+
 **Step 2**:
 
 | . | T | . | . |
@@ -147,6 +149,7 @@ Flips all pixels around the x-axis. The general idea here is to examine two rows
 | . | . | . | . |
 | . | . | . | . |
 | . | B | . | . |
+
 **Step 3**:
 
 | . | . | T | . |
@@ -154,6 +157,7 @@ Flips all pixels around the x-axis. The general idea here is to examine two rows
 | . | . | . | . |
 | . | . | . | . |
 | . | . | B | . |
+
 **Step 4**:
 
 | . | . | . | T |
@@ -161,6 +165,7 @@ Flips all pixels around the x-axis. The general idea here is to examine two rows
 | . | . | . | . |
 | . | . | . | . |
 | . | . | . | B |
+
 **Step 5**:
 
 | . | . | . | . |
@@ -180,6 +185,7 @@ etc...
 ### `void flip_y()`
 
 This will be almost exactly like your `flip_x()` method, except 2 differences. Replace the **top/bottom** concept with **left/right**, AND every time you iterate, you'll be jumping to the next row in the same column (or the next column if you've reached the end of a column).<br><br>So imagining we have a picture of width 10 and height 4, then to loop through a full column (let's say it's the first column in the picture in this case so `i = 0` at first), you'd look at the pixel at index `i`, `i+10`, `i+10*2`, and `i+10*3`. That's 4 rows we looked at, but all in the same column.<br>Here's what the first 5 iterations should look like, imagine we're swapping the pixels at `L` & `R` every time.
+
 **Step 1**:
 
 | L | . | . | . | . | . | . | . | . | R |
@@ -187,6 +193,7 @@ This will be almost exactly like your `flip_x()` method, except 2 differences. R
 | . | . | . | . | . | . | . | . | . | . |
 | . | . | . | . | . | . | . | . | . | . |
 | . | . | . | . | . | . | . | . | . | . |
+
 **Step 2**:
 
 | . | . | . | . | . | . | . | . | . | . |
@@ -194,6 +201,7 @@ This will be almost exactly like your `flip_x()` method, except 2 differences. R
 | L | . | . | . | . | . | . | . | . | R |
 | . | . | . | . | . | . | . | . | . | . |
 | . | . | . | . | . | . | . | . | . | . |
+
 **Step 3**:
 
 | . | . | . | . | . | . | . | . | . | . |
@@ -201,6 +209,7 @@ This will be almost exactly like your `flip_x()` method, except 2 differences. R
 | . | . | . | . | . | . | . | . | . | . |
 | L | . | . | . | . | . | . | . | . | R |
 | . | . | . | . | . | . | . | . | . | . |
+
 **Step 4**:
 
 | . | . | . | . | . | . | . | . | . | . |
@@ -208,6 +217,7 @@ This will be almost exactly like your `flip_x()` method, except 2 differences. R
 | . | . | . | . | . | . | . | . | . | . |
 | . | . | . | . | . | . | . | . | . | . |
 | L | . | . | . | . | . | . | . | . | R |
+
 **Step 5**:
 
 | . | L | . | . | . | . | . | . | R | . |
