@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Lab 8 - BITSET
+title: Lab 7 - BITSET
 nav_order: 4
 ---
 # Status: <font color="orange">In-Progress</font> | <font color="blue">Recently Updated</font>

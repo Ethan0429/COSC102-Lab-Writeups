@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Midterm Review
-nav_order: 8
+nav_order: 9
 ---
 # Status: <font color="green">Completed</font>
 {: .no_toc }
