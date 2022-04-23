@@ -231,27 +231,38 @@ etc...
 
 ### `bool read_input(istream& in)` 
 
-A lot of students seem to be confused on what is going on with `read_input()` here, so I will try to explain it to the best of my ability. All this method does it read the input of **either** a `.ppm` *file* **OR** `stdin`. Recall that if you are **reading input from a file**, you will use `ifstream`, which we commonly name `fin`. If you're reading input from `stdin`, then you will use `cin`. Now, pay attention: **Both `fin` and `cin` are stream objects**. Classes can have hierarchies and therefore can inheret attributes from other classes if we build them that way. `fin` and `cin` both inherit from the `istream` class, as they are both *input streams*. All this means is that when you call `read_input([INSERT ISTREAM OBJECT HERE])`, you can call `read_input(cin)` OR `read_input(fin)`, because both `cin` and `fin` are `istream` objects. Once you're actually *inside* the method, whether you used `cin` or `fin` as your argument, you'll refer to it as `in` (or whatever you've named the `istream` parameter) in the actual method itself. You can use `in` the same way you'd use `fin` or `cin`. The caveat here is you need to decide whether or not you'll be using `fin` or `cin` based on the commandline arguments for your program.<br><br>The program will be run like this `./ppm [in.ppm | -] [out.ppm | -]`. Where you see a `|`, you choose either of the operands preceding/following the `|` for that argument. So you can run your program like `./ppm file.ppm newfile.ppm` or `./ppm - -` or `./ppm bee.ppm -` or `./ppm - poo.ppm`.<br>The 1st argument is the file we're reading from. IF that argument is just `-`, then we're reading from `stdin`<br>The 2nd argument is the file we're outputting to. IF that argument is just `-` then we're writing to `stdout`.<br>Simply put, in `main()`, you'll want to check the arguments and decide based off of them whether or not you will be using `cin` to read or `fin` to read. If the 1st argument is a `-`. then you'll be using `cin`, which means you will simply call `read_line(cin)`. Otherwise, you'll **attempt** to open the file with `fin`. If the file is open, then you will call `read_line(fin)`, where you'll read input normally. (make sure to close your file after you're finished with your `read_line` call though).<br><br>Since the rgb values can be on separate lines or broken up in various ways, AND comments can be littered throughout the file, I've devised a kinda weird way of reading the input. The method will remove all lines with # (comments) and will build a single string using `stringstream` and `getline`. Then from that single string that's inside your `stringstream`, you'll be able to extract everything from it like you would with `cin` or `fin`.
+A lot of students seem to be confused on what is going on with `read_input()` here, so I will try to explain it to the best of my ability. All this method does it read the input of **either** a `.ppm` *file* **OR** `stdin`. Recall that if you are **reading input from a file**, you will use `ifstream`, which we commonly name `fin`. If you're reading input from `stdin`, then you will use `cin`. Now, pay attention: **Both `fin` and `cin` are stream objects**. Classes can have hierarchies and therefore can inheret attributes from other classes if we build them that way. `fin` and `cin` both inherit from the `istream` class, as they are both *input streams*. All this means is that when you call `read_input([INSERT ISTREAM OBJECT HERE])`, you can call `read_input(cin)` OR `read_input(fin)`, because both `cin` and `fin` are `istream` objects. Once you're actually *inside* the method, whether you used `cin` or `fin` as your argument, you'll refer to it as `in` (or whatever you've named the `istream` parameter) in the actual method itself. You can use `in` the same way you'd use `fin` or `cin`. The caveat here is you need to decide whether or not you'll be using `fin` or `cin` based on the commandline arguments for your program.<br><br>The program will be run like this `./ppm [in.ppm | -] [out.ppm | -]`. Where you see a `|`, you choose either of the operands preceding/following the `|` for that argument. So you can run your program like `./ppm file.ppm newfile.ppm` or `./ppm - -` or `./ppm bee.ppm -` or `./ppm - poo.ppm`.<br>The 1st argument is the file we're reading from. IF that argument is just `-`, then we're reading from `stdin`<br>The 2nd argument is the file we're outputting to. IF that argument is just `-` then we're writing to `stdout`.<br>Simply put, in `main()`, you'll want to check the arguments and decide based off of them whether or not you will be using `cin` to read or `fin` to read. If the 1st argument is a `-`. then you'll be using `cin`, which means you will simply call `read_line(cin)`. Otherwise, you'll **attempt** to open the file with `fin`. If the file is open, then you will call `read_line(fin)`, where you'll read input normally. (make sure to close your file after you're finished with your `read_line` call though).<br><br>Since the rgb values can be on separate lines or broken up in various ways, AND comments can be littered throughout the file, I've devised a kinda weird way of reading the input. The method will remove all lines with # (comments) and will build a single string using `stringstream` and `getline`. Then from that single string that's inside your `stringstream`, you'll be able to extract everything from it like you would with `cin` or `fin`. The following pseudocode is in Python, so the syntax will not be the same when you're trying to translate this to C++. Stringstreams don't even exist in Python. This is just to show you what the flow of this method should look like in your program. You should be able to convert it to C++ yourself.
 
-<pre><code class="language-cpp">bool Picture::read_input(istream& in) {
-    string line; // will hold our current "line"
-    stringstream ss; // used to build our full string
+<pre><code class="language-python"># create string to hold line
+    # create stringstream to build our completed string
     
-    // read every LINE from input using getline
-    // SKIP any line that starts with #
-    // build a string using your ss (ss << blah) and the line you just read 
-    // (remember to append a space at the end of each string)
 
-    // read the header, width, height, and max intensity separately
+    # read every LINE from input using getline
+    # SKIP any line that starts with #
+    # build a string using your ss (ss << blah) and the line you just read 
+    # (remember to append a space at the end of each string)
+    for line in file:
+      linestr = readline(file)
+      if linestr[0] == '#':
+        continue
+      else:
+      # add our line to stringstream & append ' '
 
-    // make sure the header is P3, otherwise return false
+    # extract the header, width, height, and max intensity separately -- from the stringstream
 
-    // create placeholder Pixel object
-    Pixel px;
+    # make sure the header is P3, otherwise return false
 
-    // extract every r, g, b value from your ss and into the respective Pixel fields
-    // for your px object
-    // then add that object to your vector of Pixels
+    # create placeholder Pixel object
+    Pixel px
 
-    return true;
+    # extract every r, g, b value from your ss and into the respective Pixel fields
+    # for your px object
+    # then add that object to your vector of Pixels
+    for r, g, b in stringstream:
+      px.r = r
+      px.g = g
+      px.b = b
+      pixels.add(px)
+
+    return True
 }</code></pre>
