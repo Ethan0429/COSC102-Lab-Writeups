@@ -263,4 +263,4 @@ for r, g, b in stringstream:
   pixels.add(px)
 
 return True
-}</code></pre>
+</code></pre>
