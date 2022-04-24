@@ -4,7 +4,7 @@ title: Lab 8 - PPM Manipulation
 nav_order: 5
 ---
 
-# Status: <font color="orange">In-Progress</font> | <font color="blue">Recently Updated</font>
+# Status: <font color="green">Completed</font> | <font color="blue">Recently Updated</font>
 {: .no_toc }
 
 #### Status Rubric
@@ -264,3 +264,8 @@ for r, g, b in stringstream:
 
 return True
 </code></pre>
+
+---
+
+# That's it
+I won't go over other parts of the lab because they should be trivial enough to complete if you've done everything I've listed here and understood it well enough.
