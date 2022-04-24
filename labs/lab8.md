@@ -118,9 +118,9 @@ A private list of `Pixel`s. These will be our "coordinates" so to speak.
 A public method that returns a **read-only** `Pixel` object based off of the row & col passed as arguments. You'll need to do some arithmetic to convert the `(row, col)` to a valid index to your vector of pixels, since the vector is 1D.
 
 
-### `Pixel & get_pixel(int row, int col)`
+### `Pixel& get_pixel(int row, int col)`
 
-A public method that returns a **mutable** `Pixel` object based off of the row & col passed as arguments. You'll notice this is an overloaded method, since there is another method with a similar signature. The difference between the two is the return value. This method returns `&Pixel`, whereas the other returns `const & Pixel`. i.e. this method is able to modify that pixel it returns, but the other one is not able to do so.
+A public method that returns a **mutable** `Pixel` object based off of the row & col passed as arguments. You'll notice this is an overloaded method, since there is another method with a similar signature. The difference between the two is the return value. This method returns `Pixel&`, whereas the other returns `const Pixel&`. i.e. this method is able to modify that pixel it returns, but the other one is not able to do so.
 
 ### `void set_pixel(int row, int col, const & Pixel px)` 
 
@@ -177,15 +177,15 @@ Flips all pixels around the x-axis. The general idea here is to examine two rows
 etc...
 
  Here is how I recommend you do this:
-1. Loop through **half** of your vector.
-2. Each iteration, create 2 sets of row/col variables -- one for the top row, another for the bottom row -- 4 variables in total.
-3. Each iteration of the loop, calculate the **TOP** row/col based on whatever your `i` currently is.
-4. Each iteration of the loop, calculate the **BOTTOM** row/col based on whatever your `i` currently is, BUT start from the **first** index of the **last** row.
-5. Use `get_pixel(topRow, topCol)` to get the `topPixel`, and `get_pixel(botRow, botCol)` to get the `botPixel`. Then use `set_pixel(topRow, topCol, botPixel)` to set the top pixel equal to the bottom pixel, and `set_pixel(botRow, botCol, topPixel)` to set the bottom pixel equal to the top pixel. This effectively swaps the two pixels. 
+1. Set up a nested for loop to iterate through every column and every row in your picture.
+2. The idea here is that you'll go through every cell in a row at the top AND at the bottom, and then swap the two cells. To do this, you can iterate through for the top cell as usual, but the bottom cell will need to start at a different position. So where the top cell should be iterating through `(i, j)` where `i` is the row and `j` is the column, the bottom cell should be in the **same column** but different row. It should be in the row opposite of the top row. You can do some simple arithmetic to calculate what row this should be. So again, the top cell will iterate through `(i, j)`, whereas the bottom cell will iterate through `(bottomrow, j)`
+3. Call `get_pixel(i, j)` to get the top pixel and `get_pixel(bottomrow, j)` to get the bottom pixel. You should store these into respective temporary values.
+4. Swap the two positions using `set_pixel()`. I won't elaborate further because it should be pretty intuitive here
+5. You'll break out of your loop when you find that the current row that your top cell is at (`i`) is **passed _or_ the same row** (think about what that means) as the bottom cell's current row you calculated.
 
 ### `void flip_y()`
 
-This will be almost exactly like your `flip_x()` method, except 2 differences. Replace the **top/bottom** concept with **left/right**, AND every time you iterate, you'll be jumping to the next row in the same column (or the next column if you've reached the end of a column).<br><br>So imagining we have a picture of width 4 and height 4, then to loop through a full column (let's say it's the first column in the picture in this case so `i = 0` at first), you'd look at the pixel at index `i`, `i+4`, `i+4*2`, and `i+4*3`. That's 4 rows we looked at, but all in the same column.<br>Here's what the first 5 iterations should look like, imagine we're swapping the pixels at `L` & `R` every time.
+This will be almost exactly like your `flip_x()` method, except you'll swap the roles of your nested loops, and you'll replace the concept of top/bottom with left/right. This should be easy enough to do if you've already done `flip_x()`, so I will leave it at this.
 
 **Step 1**:
 
