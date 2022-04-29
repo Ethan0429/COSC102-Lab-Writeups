@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Lab 9 - Multi-User Dungeonsnav_order: 6
+title: Lab 9 - Multi-User Dungeons
+nav_order: 6
 ---
 
 # Status: <font color="green">Completed</font> | <font color="blue">Recently Updated</font>
