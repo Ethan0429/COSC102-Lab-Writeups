@@ -49,7 +49,7 @@ nav_order: 6
 
 # Overview
 
-This lab will be a text-based RPG-esque game that works by generating "dungeons" based off of a file containing a variable amount of room information. The funky part of this lab is that it'll most likely be your first time using **pointers**! So strap in because this stuff sucks, and if you think you know pointers I would bet money you don't. (I don't know if I even know them)
+This lab will be a text-based maze-ish game that works by generating "dungeons" based off of a file containing a variable amount of room information. The funky part of this lab is that it'll most likely be your first time using **pointers**! So strap in because this stuff sucks, and if you think you know pointers I would bet money you don't. (I don't know if I even know them)
 
 # My Recommendations ❗ Read This ❗
 
