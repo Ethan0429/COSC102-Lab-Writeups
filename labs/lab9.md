@@ -308,7 +308,7 @@ Now that you've completed the reading portion, you should have an object that co
 
 # ❤️
 
-This was your last lab for this class. I'll miss TA'ing for you all and writing these. Good luck to those of you who are continuing the CS cirriculum next year! (and anyone for that matter I guess) Feel free to DM me wherever you want, as I'll mostly likely answer no matter what :)
+This was your last lab for this class. I'll miss TA'ing for you all and writing these. Good luck to those of you who are continuing the CS curriculum next year! (and anyone for that matter I guess) Feel free to DM me wherever you want, as I'll most likely answer no matter what :)
 
-❤️❤️❤️
+❤️❤️❤️ <br>
 \- Ethan 
