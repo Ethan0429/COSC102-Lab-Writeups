@@ -51,7 +51,7 @@ nav_order: 6
 
 This lab will be a text-based RPG-esque game that works by generating "dungeons" based off of a file containing a variable amount of room information. The funky part of this lab is that it'll most likely be your first time using **pointers**! So strap in because this stuff sucks, and if you think you know pointers I would bet money you don't. (I don't know if I even know them)
 
-# My Recommendations :exclamation: Read This :exclamation:
+# My Recommendations ❗ Read This ❗
 
 I highly recommend you do this lab with a class. It will make it a lot easier than if you're just trying to do functional programming. I'll give some vague descriptions about what I think your class would look like, but I think this is a good time to learn how to start structuring them yourselves because you'll definitely have to later.
 
@@ -77,7 +77,7 @@ As part of my recommendation, these are the tools I think you should use:
 - `clear()` - Just throwing this out there, **you'll almost certainly use this at least once**.
 - `string` - This might seem obvious, you'll have to use it in the lab anyway of course. But remember that a `string` is BASICALLY juts a `vector` but all of its elements are `char`s. It gives provides the same methods your familiar with from `vector` like `push_back()` and `pop_back()` - two things I used in my code.
 - `seekg()`/`tellg()` - these two methods belong to `fstream`. **You'll have to use both at least once**.
-- Google - Not even joking. If you don't understand how something works like `getline`, `ignore`, `clear`, Google is your friend. Google until your fingers are bleeding, because I swear it will solve most of your problems. I would bet 99% of the stuff I know in terms of programming is thanks to Google. Don't know what `seekg()` does? GOOGLE IT. You'll see exactly what it does when you do that. Once you've learned what it does, you might be a bit confused on how to use it for your particular case. Let's say you learn that `seekg()` allows you to move the file pointer for a currently open file to a certain position. (So in english, it lets you move around in your file.) You know that now, but how do I move to the beginning of the file? GOOGLE IT. (unless you learned it already in which case :heart:)
+- Google - Not even joking. If you don't understand how something works like `getline`, `ignore`, `clear`, Google is your friend. Google until your fingers are bleeding, because I swear it will solve most of your problems. I would bet 99% of the stuff I know in terms of programming is thanks to Google. Don't know what `seekg()` does? GOOGLE IT. You'll see exactly what it does when you do that. Once you've learned what it does, you might be a bit confused on how to use it for your particular case. Let's say you learn that `seekg()` allows you to move the file pointer for a currently open file to a certain position. (So in english, it lets you move around in your file.) You know that now, but how do I move to the beginning of the file? GOOGLE IT. (unless you learned it already in which case ❤️)
 
 # Restrictions
 
@@ -306,9 +306,9 @@ Now that you've completed the reading portion, you should have an object that co
 
 ---
 
-# :heart:
+# ❤️
 
 This was your last lab for this class. I'll miss TA'ing for you all and writing these. Good luck to those of you who are continuing the CS cirriculum next year! (and anyone for that matter I guess) Feel free to DM me wherever you want, as I'll mostly likely answer no matter what :)
 
-:heart::heart::heart:
+❤️❤️❤️
 \- Ethan 
