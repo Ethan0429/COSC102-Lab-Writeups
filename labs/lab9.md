@@ -65,7 +65,7 @@ In general, my code was comprised of these things:
   - Methods that are part of your dungeon class. These should let allow you to execute some kind of command.
   - Loop in `main` that allows the user to call your class's methods to play the game.
   
-The hard part about the class, the rooms, and exits in particular is that they will *all* need to be dynamically allocated.
+The hard part about the the rooms and exits in particular is that they will *all* need to be dynamically allocated.
 
 ## Tools You Should Use
 
@@ -81,7 +81,7 @@ As part of my recommendation, these are the tools I think you should use:
 
 # Restrictions
 
-Not to beat a dead horse here, but the restrictions are very important for this lab so consider the horse abused -- **Any container or object (instantiation of a class/struct) will be dynamically allocated**. You're not allowed to use objects allocated on the stack. You must use pointers in this lab, which will be difficult because you've never even touched them before most likely. There's a lot of rules to pointers, so don't be afraid to ask questions because we'll answer all of them!
+Not to beat a dead horse here, but the restrictions are very important for this lab so consider the horse abused -- **Any container or object (instantiation of a class/struct) will be dynamically allocated**. You're not allowed to use objects allocated on the stack if they're associated with the rooms (excluding strings and your greater class assuming you wrote yours the way I wrote mine). You must use pointers in this lab, which will be difficult because you've never even touched them before most likely. There's a lot of rules to pointers, so don't be afraid to ask questions because we'll answer all of them!
 
 # Pointers, `new`, `delete`, oh my!
 
