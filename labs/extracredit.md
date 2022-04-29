@@ -4,7 +4,7 @@ title: Extra Credit Lab - Blackjack
 nav_order: 2
 ---
 
-# Status: <font color="orange">In-Progress</font> | <font color="blue">Recently Updated</font>
+# Status: <font color="orange">In-Progress</font>
 {: .no_toc }
 
 #### Status Rubric
