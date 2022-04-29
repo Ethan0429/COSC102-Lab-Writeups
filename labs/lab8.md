@@ -4,7 +4,7 @@ title: Lab 8 - PPM Manipulation
 nav_order: 5
 ---
 
-# Status: <font color="green">Completed</font> | <font color="blue">Recently Updated</font>
+# Status: <font color="green">Completed</font>
 {: .no_toc }
 
 #### Status Rubric
